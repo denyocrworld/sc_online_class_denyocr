@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "852066716687",
+    "project_id": "booking-core-api",
+    "storage_bucket": "booking-core-api.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852066716687:android:3ec621e715f18cdc43277a",
+        "android_client_info": {
+          "package_name": "com.codekaze.booking_api"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "852066716687-30qib6d0kii2mjgc9t2si0r0n3endr90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvyp0gEDd5dbDhFN57olzedQwc0BG4knc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "852066716687-30qib6d0kii2mjgc9t2si0r0n3endr90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
