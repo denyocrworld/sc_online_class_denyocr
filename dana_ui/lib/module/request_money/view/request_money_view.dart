@@ -55,6 +55,9 @@ class RequestMoneyView extends StatefulWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const SizedBox(
+                        height: 40.0,
+                      ),
                       //Alt+Shift+J
                       SingleChildScrollView(
                         controller: ScrollController(),
