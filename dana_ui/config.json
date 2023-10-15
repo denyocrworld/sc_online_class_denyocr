@@ -4,7 +4,8 @@
         "transaction_history",
         "transaction_history_in_progress",
         "transaction_history_completed",
-        "request_money"
+        "request_money",
+        "topup"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

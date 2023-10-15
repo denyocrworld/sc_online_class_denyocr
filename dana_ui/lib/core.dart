@@ -7,6 +7,8 @@ export 'package:dana_ui/module/request_money/controller/request_money_controller
 export 'package:dana_ui/module/request_money/view/request_money_view.dart';
 export 'package:dana_ui/module/send_money/controller/send_money_controller.dart';
 export 'package:dana_ui/module/send_money/view/send_money_view.dart';
+export 'package:dana_ui/module/topup/controller/topup_controller.dart';
+export 'package:dana_ui/module/topup/view/topup_view.dart';
 export 'package:dana_ui/module/transaction_history/controller/transaction_history_controller.dart';
 export 'package:dana_ui/module/transaction_history/view/transaction_history_view.dart';
 export 'package:dana_ui/module/transaction_history_completed/controller/transaction_history_completed_controller.dart';
