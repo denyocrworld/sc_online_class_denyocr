@@ -5,7 +5,14 @@
         "transaction_history_in_progress",
         "transaction_history_completed",
         "request_money",
-        "topup"
+        "topup",
+        "main_navigation",
+        "dashboard",
+        "wallet",
+        "profile",
+        "profile_personal",
+        "profile_business",
+        "qrscan"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

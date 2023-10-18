@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: Get.navigatorKey,
       theme: getDefaultTheme(),
       debugShowCheckedModeBanner: false,
-      home: const TopupView(),
+      home: const MainNavigationView(),
     );
   }
 }

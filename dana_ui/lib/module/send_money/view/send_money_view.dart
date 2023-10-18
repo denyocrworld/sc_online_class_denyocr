@@ -16,7 +16,7 @@ class SendMoneyView extends StatefulWidget {
         backgroundColor: Colors.transparent,
         centerTitle: true,
         elevation: 0.0,
-        title: const Text("SendMoney"),
+        title: const Text("Send Money"),
         actions: [
           IconButton(
             onPressed: () {},
@@ -32,7 +32,7 @@ class SendMoneyView extends StatefulWidget {
         child: Stack(
           children: [
             Container(
-              height: 150,
+              height: 180,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: primaryColor,
@@ -41,7 +41,7 @@ class SendMoneyView extends StatefulWidget {
             Positioned(
               left: 20,
               right: 20,
-              top: 60,
+              top: 100,
               bottom: 0,
               child: SingleChildScrollView(
                 controller: ScrollController(),
