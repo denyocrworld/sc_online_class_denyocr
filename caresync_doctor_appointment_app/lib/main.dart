@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // AppSession.isMember = DB.get("is_member");
   runMainApp();
 }
 

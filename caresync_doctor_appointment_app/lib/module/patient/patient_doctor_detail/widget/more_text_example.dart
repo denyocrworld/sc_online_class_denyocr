@@ -16,16 +16,26 @@ class MoreTextExample extends StatefulWidget {
   State<MoreTextExample> createState() => _MoreTextExampleState();
 }
 
+// state management
+//
+/*
+class AppSession {
+  static bool isMember = false;
+}
+*/
+
 class _MoreTextExampleState extends State<MoreTextExample> {
   bool showAll = false;
+
+  updateState() {
+    showAll = !showAll;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        showAll = !showAll;
-        setState(() {});
-      },
+      onTap: () => updateState(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
