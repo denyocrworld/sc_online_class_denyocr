@@ -1,4 +1,3 @@
-import 'package:flutter/services.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +20,7 @@ class MainApp extends StatelessWidget {
       navigatorKey: Get.navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: getDefaultTheme(),
-      home: PatientMainNavigationView(),
+      home: LoginView(),
     );
   }
 }
