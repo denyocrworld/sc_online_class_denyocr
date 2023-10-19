@@ -8,6 +8,10 @@
         "patient/patient_doctor_list",
         "patient/patient_lab_test_list",
         "patient/patient_medical_treatment_list",
+        "patient/patient_order",
+        "patient/patient_order_detail",
+        "patient/patient_order_patient_data",
+        "patient/patient_order_payment",
         "doctor/doctor_main_navigation",
         "doctor/doctor_dashboard",
         "doctor/doctor_profile"

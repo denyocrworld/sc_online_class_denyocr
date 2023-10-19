@@ -31,7 +31,7 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
           width: MediaQuery.of(context).size.width,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            clipBehavior: Clip.none,
+            clipBehavior: Clip.antiAlias,
             child: Row(
                 children: List.generate(widget.headers.length, (index) {
               var header = widget.headers[index];
@@ -62,7 +62,7 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
                         "$header",
                         style: TextStyle(
                           color: infoColor,
-                          fontSize: 16.0,
+                          fontSize: 12.0,
                         ),
                       ),
                     ),
@@ -93,7 +93,7 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
                       "$header",
                       style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 16.0,
+                        fontSize: 12.0,
                       ),
                     ),
                   ),

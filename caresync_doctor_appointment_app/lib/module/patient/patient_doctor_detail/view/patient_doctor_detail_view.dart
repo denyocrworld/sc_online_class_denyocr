@@ -385,7 +385,8 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
                                           color: primaryColor,
                                         ),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () =>
+                                          Get.to(PatientOrderView()),
                                       child: Text(
                                         "16:30 - 18:30",
                                         style: TextStyle(
@@ -583,22 +584,22 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.all(12.0),
-        height: 66,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: warningColor,
-          ),
-          onPressed: () {},
-          child: const Text(
-            "Buat Janji Konsultasi",
-            style: TextStyle(
-              color: Colors.white,
-            ),
-          ),
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   padding: const EdgeInsets.all(12.0),
+      //   height: 66,
+      //   child: ElevatedButton(
+      //     style: ElevatedButton.styleFrom(
+      //       backgroundColor: warningColor,
+      //     ),
+      //     onPressed: () {},
+      //     child: const Text(
+      //       "Buat Janji Konsultasi",
+      //       style: TextStyle(
+      //         color: Colors.white,
+      //       ),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
