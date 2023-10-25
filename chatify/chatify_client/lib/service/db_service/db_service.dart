@@ -1,8 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-// shared_preferences
-//  hive  >>  isaar
-// sqflite
 class DBService {
   static late SharedPreferences prefs;
   static init() async {
@@ -18,6 +15,6 @@ class DBService {
   }
 
   static clear(String key) async {
-    prefs.remove(key);
+    await prefs.clear();
   }
 }
