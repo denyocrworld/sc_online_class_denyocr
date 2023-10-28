@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1050727493090",
+    "project_id": "caresync-fee83",
+    "storage_bucket": "caresync-fee83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050727493090:android:e06adef6312585e83d9dbb",
+        "android_client_info": {
+          "package_name": "com.capekngoding.caresync"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050727493090-q51onsc4b9159o2bkaehgmurrs46nl6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6Cg6i8UVyz25IzPANkY5XBA48Uo1yZD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050727493090-q51onsc4b9159o2bkaehgmurrs46nl6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
