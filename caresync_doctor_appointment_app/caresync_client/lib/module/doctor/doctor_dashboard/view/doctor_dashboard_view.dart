@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/doctor_dashboard_bloc.dart';
@@ -43,11 +42,11 @@ class _DoctorDashboardViewState extends State<DoctorDashboardView> {
     );
   }
 
-  Widget buildView( 
-      BuildContext context,
-      DoctorDashboardBloc bloc,
-      DoctorDashboardState state,
-    ) {
+  Widget buildView(
+    BuildContext context,
+    DoctorDashboardBloc bloc,
+    DoctorDashboardState state,
+  ) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('DoctorDashboard'),
@@ -71,5 +70,4 @@ class _DoctorDashboardViewState extends State<DoctorDashboardView> {
       ),
     );
   }
-}    
-    
+}

@@ -35,7 +35,7 @@ class _PatientProfileViewState extends State<PatientProfileView> {
       create: (BuildContext context) => bloc,
       child: BlocListener<PatientProfileBloc, PatientProfileState>(
         listener: (context, state) {
-          if(state.logoutSuccess){
+          if (state.logoutSuccess) {
             Get.offAll(LoginView());
           }
         },

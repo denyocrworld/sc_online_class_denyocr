@@ -9,3 +9,6 @@
 
 1. Buat Project Laravel
 2. Migrasikan Database yang diperlukan 
+
+- Update API-nya supaya sesusai kebutuhan kita
+- Implementasikan API yang sudah di Aplikasi Flutter

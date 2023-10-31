@@ -20,8 +20,8 @@ mixin _$PatientDoctorListState {
   set counter(int value) => throw _privateConstructorUsedError;
   List<dynamic> get categories => throw _privateConstructorUsedError;
   set categories(List<dynamic> value) => throw _privateConstructorUsedError;
-  List<dynamic> get doctorList => throw _privateConstructorUsedError;
-  set doctorList(List<dynamic> value) => throw _privateConstructorUsedError;
+  List<Doctor> get doctorList => throw _privateConstructorUsedError;
+  set doctorList(List<Doctor> value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PatientDoctorListStateCopyWith<PatientDoctorListState> get copyWith =>
@@ -34,7 +34,7 @@ abstract class $PatientDoctorListStateCopyWith<$Res> {
           $Res Function(PatientDoctorListState) then) =
       _$PatientDoctorListStateCopyWithImpl<$Res, PatientDoctorListState>;
   @useResult
-  $Res call({int counter, List<dynamic> categories, List<dynamic> doctorList});
+  $Res call({int counter, List<dynamic> categories, List<Doctor> doctorList});
 }
 
 /// @nodoc
@@ -67,7 +67,7 @@ class _$PatientDoctorListStateCopyWithImpl<$Res,
       doctorList: null == doctorList
           ? _value.doctorList
           : doctorList // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<Doctor>,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$PatientDoctorListStateImplCopyWith<$Res>
       __$$PatientDoctorListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter, List<dynamic> categories, List<dynamic> doctorList});
+  $Res call({int counter, List<dynamic> categories, List<Doctor> doctorList});
 }
 
 /// @nodoc
@@ -113,7 +113,7 @@ class __$$PatientDoctorListStateImplCopyWithImpl<$Res>
       doctorList: null == doctorList
           ? _value.doctorList
           : doctorList // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<Doctor>,
     ));
   }
 }
@@ -150,38 +150,7 @@ class _$PatientDoctorListStateImpl implements _PatientDoctorListState {
         'Plastic Surgeon',
         'Anesthesiologist'
       ],
-      this.doctorList = const [
-        {
-          'photo':
-              'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-          'doctor_name': 'Dr. Amanda Smith',
-          'specialization': 'Cardiologist',
-          'address': '123 Main Street, Cityville',
-          'location_in_km': 5.2,
-          'patient_count': 120,
-          'next_schedule': '2023-10-20 09:30 AM'
-        },
-        {
-          'photo':
-              'https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-          'doctor_name': 'Dr. John Doe',
-          'specialization': 'Dermatologist',
-          'address': '456 Elm Street, Townsville',
-          'location_in_km': 7.5,
-          'patient_count': 90,
-          'next_schedule': '2023-10-22 11:00 AM'
-        },
-        {
-          'photo':
-              'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-          'doctor_name': 'Dr. Lisa Johnson',
-          'specialization': 'Pediatrician',
-          'address': '789 Oak Avenue, Villageland',
-          'location_in_km': 3.8,
-          'patient_count': 150,
-          'next_schedule': '2023-10-18 10:15 AM'
-        }
-      ]});
+      this.doctorList = const []});
 
   @override
   @JsonKey()
@@ -191,7 +160,7 @@ class _$PatientDoctorListStateImpl implements _PatientDoctorListState {
   List<dynamic> categories;
   @override
   @JsonKey()
-  List<dynamic> doctorList;
+  List<Doctor> doctorList;
 
   @override
   String toString() {
@@ -210,7 +179,7 @@ abstract class _PatientDoctorListState implements PatientDoctorListState {
   factory _PatientDoctorListState(
       {int counter,
       List<dynamic> categories,
-      List<dynamic> doctorList}) = _$PatientDoctorListStateImpl;
+      List<Doctor> doctorList}) = _$PatientDoctorListStateImpl;
 
   @override
   int get counter;
@@ -219,8 +188,8 @@ abstract class _PatientDoctorListState implements PatientDoctorListState {
   List<dynamic> get categories;
   set categories(List<dynamic> value);
   @override
-  List<dynamic> get doctorList;
-  set doctorList(List<dynamic> value);
+  List<Doctor> get doctorList;
+  set doctorList(List<Doctor> value);
   @override
   @JsonKey(ignore: true)
   _$$PatientDoctorListStateImplCopyWith<_$PatientDoctorListStateImpl>

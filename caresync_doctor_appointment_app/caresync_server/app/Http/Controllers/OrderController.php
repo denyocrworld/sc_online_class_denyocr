@@ -26,7 +26,7 @@ class OrderController extends Controller
 
         $orders = $query->paginate($limit, ['*'], 'page', $page);
 
-        return response()->json(['data' => $orders], Response::HTTP_OK);
+        return response()->json($orders, Response::HTTP_OK);
     }
 
     public function store(Request $request)

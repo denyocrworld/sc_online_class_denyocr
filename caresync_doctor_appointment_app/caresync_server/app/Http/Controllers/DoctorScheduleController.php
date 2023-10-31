@@ -26,7 +26,7 @@ class DoctorScheduleController extends Controller
 
         $schedules = $query->paginate($limit, ['*'], 'page', $page);
 
-        return response()->json(['data' => $schedules], Response::HTTP_OK);
+        return response()->json($schedules, Response::HTTP_OK);
     }
 
     public function store(Request $request)

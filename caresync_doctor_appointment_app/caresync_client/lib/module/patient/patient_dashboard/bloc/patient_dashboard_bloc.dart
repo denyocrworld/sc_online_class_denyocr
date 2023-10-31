@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../event/patient_dashboard_event.dart';
 import '../state/patient_dashboard_state.dart';
@@ -8,13 +7,13 @@ mixin _BlocLifecycle {
   void dispose() {}
 }
 
-class PatientDashboardBloc extends Bloc<PatientDashboardEvent, PatientDashboardState> with _BlocLifecycle {
+class PatientDashboardBloc
+    extends Bloc<PatientDashboardEvent, PatientDashboardState>
+    with _BlocLifecycle {
   PatientDashboardBloc() : super(PatientDashboardState()) {
     on<PatientDashboardIncrementEvent>((event, emit) {
-      
-        state.counter++;
-        emit(state.copyWith());
-      
+      state.counter++;
+      emit(state.copyWith());
     });
   }
 
@@ -36,5 +35,3 @@ class PatientDashboardBloc extends Bloc<PatientDashboardEvent, PatientDashboardS
     return super.close();
   }
 }
-      
-    

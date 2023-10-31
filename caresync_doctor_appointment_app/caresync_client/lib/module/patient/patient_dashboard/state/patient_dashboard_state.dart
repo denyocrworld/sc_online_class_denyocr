@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'patient_dashboard_state.freezed.dart';
 
@@ -8,5 +7,3 @@ class PatientDashboardState with _$PatientDashboardState {
     @Default(0) int counter,
   }) = _PatientDashboardState;
 }
-    
-    

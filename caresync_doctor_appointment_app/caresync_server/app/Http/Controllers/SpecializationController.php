@@ -26,7 +26,7 @@ class SpecializationController extends Controller
 
         $specializations = $query->paginate($limit, ['*'], 'page', $page);
 
-        return response()->json(['data' => $specializations], Response::HTTP_OK);
+        return response()->json($specializations, Response::HTTP_OK);
     }
 
     public function store(Request $request)

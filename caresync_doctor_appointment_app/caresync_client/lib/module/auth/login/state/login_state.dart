@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'login_state.freezed.dart';
 
@@ -9,5 +8,3 @@ class LoginState with _$LoginState {
     @Default(false) bool isLoginSuccess,
   }) = _LoginState;
 }
-    
-    

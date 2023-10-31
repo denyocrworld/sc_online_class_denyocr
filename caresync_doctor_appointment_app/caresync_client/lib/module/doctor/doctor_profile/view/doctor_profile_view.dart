@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/doctor_profile_bloc.dart';
@@ -43,11 +42,11 @@ class _DoctorProfileViewState extends State<DoctorProfileView> {
     );
   }
 
-  Widget buildView( 
-      BuildContext context,
-      DoctorProfileBloc bloc,
-      DoctorProfileState state,
-    ) {
+  Widget buildView(
+    BuildContext context,
+    DoctorProfileBloc bloc,
+    DoctorProfileState state,
+  ) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('DoctorProfile'),
@@ -71,5 +70,4 @@ class _DoctorProfileViewState extends State<DoctorProfileView> {
       ),
     );
   }
-}    
-    
+}

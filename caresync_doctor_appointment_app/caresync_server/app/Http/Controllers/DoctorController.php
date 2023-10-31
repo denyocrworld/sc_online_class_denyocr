@@ -25,7 +25,7 @@ class DoctorController extends Controller
 
         $doctors = $query->paginate($limit, ['*'], 'page', $page);
 
-        return response()->json(['data' => $doctors], Response::HTTP_OK);
+        return response()->json( $doctors, Response::HTTP_OK);
     }
 
     public function store(Request $request)

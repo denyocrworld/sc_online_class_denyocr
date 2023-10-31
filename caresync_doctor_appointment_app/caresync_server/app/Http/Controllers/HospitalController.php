@@ -25,7 +25,7 @@ class HospitalController extends Controller
 
         $hospitals = $query->paginate($limit, ['*'], 'page', $page);
 
-        return response()->json(['data' => $hospitals], Response::HTTP_OK);
+        return response()->json($hospitals, Response::HTTP_OK);
     }
 
     public function store(Request $request)

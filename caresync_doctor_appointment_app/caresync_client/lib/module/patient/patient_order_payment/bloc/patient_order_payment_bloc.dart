@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../event/patient_order_payment_event.dart';
 import '../state/patient_order_payment_state.dart';
@@ -8,13 +7,13 @@ mixin _BlocLifecycle {
   void dispose() {}
 }
 
-class PatientOrderPaymentBloc extends Bloc<PatientOrderPaymentEvent, PatientOrderPaymentState> with _BlocLifecycle {
+class PatientOrderPaymentBloc
+    extends Bloc<PatientOrderPaymentEvent, PatientOrderPaymentState>
+    with _BlocLifecycle {
   PatientOrderPaymentBloc() : super(PatientOrderPaymentState()) {
     on<PatientOrderPaymentIncrementEvent>((event, emit) {
-      
-        state.counter++;
-        emit(state.copyWith());
-      
+      state.counter++;
+      emit(state.copyWith());
     });
   }
 
@@ -36,5 +35,3 @@ class PatientOrderPaymentBloc extends Bloc<PatientOrderPaymentEvent, PatientOrde
     return super.close();
   }
 }
-      
-    

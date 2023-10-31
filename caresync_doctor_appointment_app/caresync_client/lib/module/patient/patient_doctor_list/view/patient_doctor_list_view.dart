@@ -52,6 +52,7 @@ class _PatientDoctorListViewState extends State<PatientDoctorListView> {
     PatientDoctorListBloc bloc,
     PatientDoctorListState state,
   ) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(

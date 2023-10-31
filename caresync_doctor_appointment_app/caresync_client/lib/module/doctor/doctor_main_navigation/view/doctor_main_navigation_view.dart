@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/doctor_main_navigation_bloc.dart';
@@ -9,7 +8,8 @@ class DoctorMainNavigationView extends StatefulWidget {
   const DoctorMainNavigationView({Key? key}) : super(key: key);
 
   @override
-  State<DoctorMainNavigationView> createState() => _DoctorMainNavigationViewState();
+  State<DoctorMainNavigationView> createState() =>
+      _DoctorMainNavigationViewState();
 }
 
 class _DoctorMainNavigationViewState extends State<DoctorMainNavigationView> {
@@ -43,11 +43,11 @@ class _DoctorMainNavigationViewState extends State<DoctorMainNavigationView> {
     );
   }
 
-  Widget buildView( 
-      BuildContext context,
-      DoctorMainNavigationBloc bloc,
-      DoctorMainNavigationState state,
-    ) {
+  Widget buildView(
+    BuildContext context,
+    DoctorMainNavigationBloc bloc,
+    DoctorMainNavigationState state,
+  ) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('DoctorMainNavigation'),
@@ -71,5 +71,4 @@ class _DoctorMainNavigationViewState extends State<DoctorMainNavigationView> {
       ),
     );
   }
-}    
-    
+}

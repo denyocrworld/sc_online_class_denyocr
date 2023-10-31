@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/model/doctor/doctor.dart';
 import 'package:hyper_ui/module/patient/patient_doctor_detail/widget/more_text_example.dart';
 import 'package:hyper_ui/shared/widget/expansion_panel/expansion_panel.dart';
 import '../bloc/patient_doctor_detail_bloc.dart';
@@ -8,7 +9,7 @@ import '../event/patient_doctor_detail_event.dart';
 import '../state/patient_doctor_detail_state.dart';
 
 class PatientDoctorDetailView extends StatefulWidget {
-  final Map item;
+  final Doctor item;
   PatientDoctorDetailView({
     Key? key,
     required this.item,
@@ -106,9 +107,7 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
                       children: [
                         CircleAvatar(
                           radius: 32.0,
-                          backgroundImage: NetworkImage(
-                            widget.item["photo"],
-                          ),
+                          backgroundImage: NetworkImage(widget.item.photo),
                         ),
                         SizedBox(
                           width: 8.0,
@@ -118,7 +117,7 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                widget.item["doctor_name"],
+                                widget.item.doctorName ?? "-",
                                 style: TextStyle(
                                   fontSize: 16.0,
                                   fontWeight: FontWeight.bold,
@@ -128,7 +127,7 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
                                 height: 4.0,
                               ),
                               Text(
-                                widget.item["specialization"],
+                                widget.item.specializationId?.toString() ?? "-",
                                 style: TextStyle(
                                   fontSize: 14.0,
                                 ),
@@ -150,8 +149,8 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
                                     text: '',
                                     children: <TextSpan>[
                                       TextSpan(
-                                        text:
-                                            "${widget.item["patient_count"]} patient",
+                                        //TODO: patient_count
+                                        text: "23 patient",
                                         style: TextStyle(
                                           color: primaryColor,
                                           fontSize: 10.0,

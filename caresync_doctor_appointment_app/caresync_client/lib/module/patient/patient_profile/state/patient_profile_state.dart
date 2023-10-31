@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'patient_profile_state.freezed.dart';
 
@@ -9,5 +8,3 @@ class PatientProfileState with _$PatientProfileState {
     @Default(false) bool logoutSuccess,
   }) = _PatientProfileState;
 }
-    
-    

@@ -18,7 +18,7 @@ class PatientProfileBloc extends Bloc<PatientProfileEvent, PatientProfileState>
     on<PatientProfileLogoutEvent>((event, emit) async {
       await AuthService().logout();
       state.logoutSuccess = true;
-      emit(state.copyWith()); 
+      emit(state.copyWith());
     });
   }
 

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
@@ -44,11 +43,11 @@ class _TutorialViewState extends State<TutorialView> {
     );
   }
 
-  Widget buildView( 
-      BuildContext context,
-      TutorialBloc bloc,
-      TutorialState state,
-    ) {
+  Widget buildView(
+    BuildContext context,
+    TutorialBloc bloc,
+    TutorialState state,
+  ) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tutorial'),
@@ -75,5 +74,4 @@ class _TutorialViewState extends State<TutorialView> {
       ),
     );
   }
-}    
-    
+}
