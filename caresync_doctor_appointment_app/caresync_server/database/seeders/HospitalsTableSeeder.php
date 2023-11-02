@@ -15,7 +15,7 @@ class HospitalsTableSeeder extends Seeder
         for ($i = 1; $i <= 20; $i++) {
             $hospitalsData[] = [
                 'hospital_name' => 'Hospital ' . $i,
-                'hospital_address' => 'Address ' . $i,
+                'hospital_address' => 'Jln. Kamboja No. 40, Bogor Tengah, Bogor',
                 'hospital_location_latitude' => rand(100, 999) / 10, 
                 'hospital_location_longitude' => rand(100, 999) / 10,
                 'hospital_phone_number' => '021 24828284', 

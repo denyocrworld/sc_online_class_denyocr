@@ -26,12 +26,21 @@ mixin _$Doctor {
   dynamic get photo => throw _privateConstructorUsedError;
   @JsonKey(name: 'specialization_id')
   int? get specializationId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'hospital_id')
-  int? get hospitalId => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  @JsonKey(name: 'medical_treatment')
+  String? get medicalTreatment => throw _privateConstructorUsedError;
+  @JsonKey(name: 'practical_experience')
+  String? get practicalExperience => throw _privateConstructorUsedError;
+  @JsonKey(name: 'educational_background')
+  String? get educationalBackground => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
   DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'doctor_schedules')
+  List<DoctorSchedule>? get doctorSchedules =>
+      throw _privateConstructorUsedError;
+  Specialization? get specialization => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,9 +57,16 @@ abstract class $DoctorCopyWith<$Res> {
       @JsonKey(name: 'doctor_name') String? doctorName,
       dynamic photo,
       @JsonKey(name: 'specialization_id') int? specializationId,
-      @JsonKey(name: 'hospital_id') int? hospitalId,
+      String? description,
+      @JsonKey(name: 'medical_treatment') String? medicalTreatment,
+      @JsonKey(name: 'practical_experience') String? practicalExperience,
+      @JsonKey(name: 'educational_background') String? educationalBackground,
       @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt});
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'doctor_schedules') List<DoctorSchedule>? doctorSchedules,
+      Specialization? specialization});
+
+  $SpecializationCopyWith<$Res>? get specialization;
 }
 
 /// @nodoc
@@ -70,9 +86,14 @@ class _$DoctorCopyWithImpl<$Res, $Val extends Doctor>
     Object? doctorName = freezed,
     Object? photo = freezed,
     Object? specializationId = freezed,
-    Object? hospitalId = freezed,
+    Object? description = freezed,
+    Object? medicalTreatment = freezed,
+    Object? practicalExperience = freezed,
+    Object? educationalBackground = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? doctorSchedules = freezed,
+    Object? specialization = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -91,10 +112,22 @@ class _$DoctorCopyWithImpl<$Res, $Val extends Doctor>
           ? _value.specializationId
           : specializationId // ignore: cast_nullable_to_non_nullable
               as int?,
-      hospitalId: freezed == hospitalId
-          ? _value.hospitalId
-          : hospitalId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      medicalTreatment: freezed == medicalTreatment
+          ? _value.medicalTreatment
+          : medicalTreatment // ignore: cast_nullable_to_non_nullable
+              as String?,
+      practicalExperience: freezed == practicalExperience
+          ? _value.practicalExperience
+          : practicalExperience // ignore: cast_nullable_to_non_nullable
+              as String?,
+      educationalBackground: freezed == educationalBackground
+          ? _value.educationalBackground
+          : educationalBackground // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -103,7 +136,27 @@ class _$DoctorCopyWithImpl<$Res, $Val extends Doctor>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      doctorSchedules: freezed == doctorSchedules
+          ? _value.doctorSchedules
+          : doctorSchedules // ignore: cast_nullable_to_non_nullable
+              as List<DoctorSchedule>?,
+      specialization: freezed == specialization
+          ? _value.specialization
+          : specialization // ignore: cast_nullable_to_non_nullable
+              as Specialization?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SpecializationCopyWith<$Res>? get specialization {
+    if (_value.specialization == null) {
+      return null;
+    }
+
+    return $SpecializationCopyWith<$Res>(_value.specialization!, (value) {
+      return _then(_value.copyWith(specialization: value) as $Val);
+    });
   }
 }
 
@@ -119,9 +172,17 @@ abstract class _$$DoctorImplCopyWith<$Res> implements $DoctorCopyWith<$Res> {
       @JsonKey(name: 'doctor_name') String? doctorName,
       dynamic photo,
       @JsonKey(name: 'specialization_id') int? specializationId,
-      @JsonKey(name: 'hospital_id') int? hospitalId,
+      String? description,
+      @JsonKey(name: 'medical_treatment') String? medicalTreatment,
+      @JsonKey(name: 'practical_experience') String? practicalExperience,
+      @JsonKey(name: 'educational_background') String? educationalBackground,
       @JsonKey(name: 'created_at') DateTime? createdAt,
-      @JsonKey(name: 'updated_at') DateTime? updatedAt});
+      @JsonKey(name: 'updated_at') DateTime? updatedAt,
+      @JsonKey(name: 'doctor_schedules') List<DoctorSchedule>? doctorSchedules,
+      Specialization? specialization});
+
+  @override
+  $SpecializationCopyWith<$Res>? get specialization;
 }
 
 /// @nodoc
@@ -139,9 +200,14 @@ class __$$DoctorImplCopyWithImpl<$Res>
     Object? doctorName = freezed,
     Object? photo = freezed,
     Object? specializationId = freezed,
-    Object? hospitalId = freezed,
+    Object? description = freezed,
+    Object? medicalTreatment = freezed,
+    Object? practicalExperience = freezed,
+    Object? educationalBackground = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
+    Object? doctorSchedules = freezed,
+    Object? specialization = freezed,
   }) {
     return _then(_$DoctorImpl(
       id: freezed == id
@@ -160,10 +226,22 @@ class __$$DoctorImplCopyWithImpl<$Res>
           ? _value.specializationId
           : specializationId // ignore: cast_nullable_to_non_nullable
               as int?,
-      hospitalId: freezed == hospitalId
-          ? _value.hospitalId
-          : hospitalId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      medicalTreatment: freezed == medicalTreatment
+          ? _value.medicalTreatment
+          : medicalTreatment // ignore: cast_nullable_to_non_nullable
+              as String?,
+      practicalExperience: freezed == practicalExperience
+          ? _value.practicalExperience
+          : practicalExperience // ignore: cast_nullable_to_non_nullable
+              as String?,
+      educationalBackground: freezed == educationalBackground
+          ? _value.educationalBackground
+          : educationalBackground // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -172,6 +250,14 @@ class __$$DoctorImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      doctorSchedules: freezed == doctorSchedules
+          ? _value._doctorSchedules
+          : doctorSchedules // ignore: cast_nullable_to_non_nullable
+              as List<DoctorSchedule>?,
+      specialization: freezed == specialization
+          ? _value.specialization
+          : specialization // ignore: cast_nullable_to_non_nullable
+              as Specialization?,
     ));
   }
 }
@@ -184,9 +270,16 @@ class _$DoctorImpl implements _Doctor {
       @JsonKey(name: 'doctor_name') this.doctorName,
       this.photo,
       @JsonKey(name: 'specialization_id') this.specializationId,
-      @JsonKey(name: 'hospital_id') this.hospitalId,
+      this.description,
+      @JsonKey(name: 'medical_treatment') this.medicalTreatment,
+      @JsonKey(name: 'practical_experience') this.practicalExperience,
+      @JsonKey(name: 'educational_background') this.educationalBackground,
       @JsonKey(name: 'created_at') this.createdAt,
-      @JsonKey(name: 'updated_at') this.updatedAt});
+      @JsonKey(name: 'updated_at') this.updatedAt,
+      @JsonKey(name: 'doctor_schedules')
+      final List<DoctorSchedule>? doctorSchedules,
+      this.specialization})
+      : _doctorSchedules = doctorSchedules;
 
   factory _$DoctorImpl.fromJson(Map<String, dynamic> json) =>
       _$$DoctorImplFromJson(json);
@@ -202,18 +295,39 @@ class _$DoctorImpl implements _Doctor {
   @JsonKey(name: 'specialization_id')
   final int? specializationId;
   @override
-  @JsonKey(name: 'hospital_id')
-  final int? hospitalId;
+  final String? description;
+  @override
+  @JsonKey(name: 'medical_treatment')
+  final String? medicalTreatment;
+  @override
+  @JsonKey(name: 'practical_experience')
+  final String? practicalExperience;
+  @override
+  @JsonKey(name: 'educational_background')
+  final String? educationalBackground;
   @override
   @JsonKey(name: 'created_at')
   final DateTime? createdAt;
   @override
   @JsonKey(name: 'updated_at')
   final DateTime? updatedAt;
+  final List<DoctorSchedule>? _doctorSchedules;
+  @override
+  @JsonKey(name: 'doctor_schedules')
+  List<DoctorSchedule>? get doctorSchedules {
+    final value = _doctorSchedules;
+    if (value == null) return null;
+    if (_doctorSchedules is EqualUnmodifiableListView) return _doctorSchedules;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final Specialization? specialization;
 
   @override
   String toString() {
-    return 'Doctor(id: $id, doctorName: $doctorName, photo: $photo, specializationId: $specializationId, hospitalId: $hospitalId, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Doctor(id: $id, doctorName: $doctorName, photo: $photo, specializationId: $specializationId, description: $description, medicalTreatment: $medicalTreatment, practicalExperience: $practicalExperience, educationalBackground: $educationalBackground, createdAt: $createdAt, updatedAt: $updatedAt, doctorSchedules: $doctorSchedules, specialization: $specialization)';
   }
 
   @override
@@ -227,12 +341,22 @@ class _$DoctorImpl implements _Doctor {
             const DeepCollectionEquality().equals(other.photo, photo) &&
             (identical(other.specializationId, specializationId) ||
                 other.specializationId == specializationId) &&
-            (identical(other.hospitalId, hospitalId) ||
-                other.hospitalId == hospitalId) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.medicalTreatment, medicalTreatment) ||
+                other.medicalTreatment == medicalTreatment) &&
+            (identical(other.practicalExperience, practicalExperience) ||
+                other.practicalExperience == practicalExperience) &&
+            (identical(other.educationalBackground, educationalBackground) ||
+                other.educationalBackground == educationalBackground) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+                other.updatedAt == updatedAt) &&
+            const DeepCollectionEquality()
+                .equals(other._doctorSchedules, _doctorSchedules) &&
+            (identical(other.specialization, specialization) ||
+                other.specialization == specialization));
   }
 
   @JsonKey(ignore: true)
@@ -243,9 +367,14 @@ class _$DoctorImpl implements _Doctor {
       doctorName,
       const DeepCollectionEquality().hash(photo),
       specializationId,
-      hospitalId,
+      description,
+      medicalTreatment,
+      practicalExperience,
+      educationalBackground,
       createdAt,
-      updatedAt);
+      updatedAt,
+      const DeepCollectionEquality().hash(_doctorSchedules),
+      specialization);
 
   @JsonKey(ignore: true)
   @override
@@ -267,9 +396,16 @@ abstract class _Doctor implements Doctor {
       @JsonKey(name: 'doctor_name') final String? doctorName,
       final dynamic photo,
       @JsonKey(name: 'specialization_id') final int? specializationId,
-      @JsonKey(name: 'hospital_id') final int? hospitalId,
+      final String? description,
+      @JsonKey(name: 'medical_treatment') final String? medicalTreatment,
+      @JsonKey(name: 'practical_experience') final String? practicalExperience,
+      @JsonKey(name: 'educational_background')
+      final String? educationalBackground,
       @JsonKey(name: 'created_at') final DateTime? createdAt,
-      @JsonKey(name: 'updated_at') final DateTime? updatedAt}) = _$DoctorImpl;
+      @JsonKey(name: 'updated_at') final DateTime? updatedAt,
+      @JsonKey(name: 'doctor_schedules')
+      final List<DoctorSchedule>? doctorSchedules,
+      final Specialization? specialization}) = _$DoctorImpl;
 
   factory _Doctor.fromJson(Map<String, dynamic> json) = _$DoctorImpl.fromJson;
 
@@ -284,14 +420,27 @@ abstract class _Doctor implements Doctor {
   @JsonKey(name: 'specialization_id')
   int? get specializationId;
   @override
-  @JsonKey(name: 'hospital_id')
-  int? get hospitalId;
+  String? get description;
+  @override
+  @JsonKey(name: 'medical_treatment')
+  String? get medicalTreatment;
+  @override
+  @JsonKey(name: 'practical_experience')
+  String? get practicalExperience;
+  @override
+  @JsonKey(name: 'educational_background')
+  String? get educationalBackground;
   @override
   @JsonKey(name: 'created_at')
   DateTime? get createdAt;
   @override
   @JsonKey(name: 'updated_at')
   DateTime? get updatedAt;
+  @override
+  @JsonKey(name: 'doctor_schedules')
+  List<DoctorSchedule>? get doctorSchedules;
+  @override
+  Specialization? get specialization;
   @override
   @JsonKey(ignore: true)
   _$$DoctorImplCopyWith<_$DoctorImpl> get copyWith =>

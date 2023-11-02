@@ -32,7 +32,7 @@ class PatientDoctorListItem extends StatelessWidget {
                 CircleAvatar(
                   radius: 32.0,
                   backgroundImage: NetworkImage(
-                    item.photo ?? "https://i.ibb.co/PGv8ZzG/me.jpg",
+                    item.photo ?? "https://i.ibb.co/S32HNjD/no-image.jpg",
                   ),
                 ),
                 SizedBox(
@@ -63,30 +63,7 @@ class PatientDoctorListItem extends StatelessWidget {
                             width: 6.0,
                           ),
                           Text(
-                            item.specializationId?.toString() ?? "-",
-                            style: TextStyle(
-                              fontSize: 12.0,
-                              color: Color(0xff7f7f7f),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 6.0,
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            MdiIcons.hospital,
-                            size: 16.0,
-                            color: Color(0xff7f7f7f),
-                          ),
-                          const SizedBox(
-                            width: 6.0,
-                          ),
-                          Text(
-                            //TODO: Implementasikan address disni
-                            "-",
+                            item.specialization?.specializationName ?? "-",
                             style: TextStyle(
                               fontSize: 12.0,
                               color: Color(0xff7f7f7f),
@@ -117,58 +94,7 @@ class PatientDoctorListItem extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 6.0,
-                      ),
-                      RichText(
-                        text: TextSpan(
-                          text: '',
-                          style: DefaultTextStyle.of(context).style,
-                          children: <TextSpan>[
-                            TextSpan(
-                              //TODO: implementasikan patient_count
-                              text: '23 patient',
-                              style: TextStyle(
-                                color: infoColor,
-                                fontSize: 12.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            TextSpan(
-                              text:
-                                  ' have made an appointment with this doctor.',
-                              style: TextStyle(
-                                color: Color(0xff7f7f7f),
-                                fontSize: 12.0,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
                     ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 12.0,
-            ),
-            Row(
-              children: [
-                Icon(
-                  MdiIcons.calendar,
-                  size: 16.0,
-                  color: Color(0xff7f7f7f),
-                ),
-                const SizedBox(
-                  width: 6.0,
-                ),
-                Text(
-                  //TODO: Implementasikan next_scheduke
-                  "Next schedule: 3 Dec 2023",
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Color(0xff7f7f7f),
                   ),
                 ),
               ],
@@ -176,80 +102,16 @@ class PatientDoctorListItem extends StatelessWidget {
             Divider(),
             Row(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Biaya Konsultasi",
-                      style: TextStyle(
-                        fontSize: 12.0,
-                        color: Color(0xff7f7f7f),
-                      ),
+                Expanded(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: warningColor,
                     ),
-                    const SizedBox(
-                      height: 6.0,
-                    ),
-                    Text(
-                      "Rp100.000",
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                        color: warningColor,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 12.0,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Ulasan Dokter",
-                      style: TextStyle(
-                        fontSize: 12.0,
-                        color: Color(0xff7f7f7f),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 6.0,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "100%",
-                          style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            color: infoColor,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 4.0,
-                        ),
-                        Text(
-                          "(19)",
-                          style: TextStyle(
-                            fontSize: 12.0,
-                            color: Color(0xff7f7f7f),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  width: 12.0,
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: warningColor,
+                    onPressed: () => Get.to(PatientDoctorDetailView(
+                      item: item,
+                    )),
+                    child: const Text("Buat Janji"),
                   ),
-                  onPressed: () => Get.to(PatientDoctorDetailView(
-                    item: item,
-                  )),
-                  child: const Text("Buat Janji"),
                 ),
               ],
             ),

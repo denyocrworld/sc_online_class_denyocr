@@ -52,7 +52,6 @@ class _PatientDashboardViewState extends State<PatientDashboardView> {
     PatientDashboardBloc bloc,
     PatientDashboardState state,
   ) {
-
     /* 
     return DefaultTabController(
       length: 3,

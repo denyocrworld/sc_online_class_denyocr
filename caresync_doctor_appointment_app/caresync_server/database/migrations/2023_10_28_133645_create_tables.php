@@ -57,8 +57,11 @@ return new class extends Migration
             $table->id();
             $table->string('doctor_name');
             $table->string('photo')->nullable();
+            $table->string('description')->nullable();
+            $table->string('medical_treatment')->nullable();
+            $table->string('practical_experience')->nullable();
+            $table->string('educational_background')->nullable();
             $table->integer('specialization_id')->nullable();
-            $table->integer('hospital_id')->nullable();
             // TODO: Ini tidak bekerja, kenapa ya?
             // $table->foreign('specialization_id')->references('id')->on('specializations')->nullable();
             // $table->foreign('hospital_id')->references('id')->on('hospitals')->nullable();
@@ -73,6 +76,7 @@ return new class extends Migration
             $table->string('day');
             $table->string('start_time');
             $table->string('end_time');
+            $table->double('consultation_fee');
             $table->integer('patient_limit');
             // $table->foreign('hospital_id')->references('id')->on('hospitals');
             // $table->foreign('doctor_id')->references('id')->on('doctors');
