@@ -38,10 +38,12 @@ return new class extends Migration
             $table->string('hospital_address');
             $table->double('hospital_location_latitude');
             $table->double('hospital_location_longitude');
+            $table->string('hospital_phone_number');
+            $table->string('hospital_whatsapp_number');
+            $table->string('hospital_email');
             $table->timestamps();
         });
 
-       
 
         // Tabel specializations
         Schema::create('specializations', function (Blueprint $table) {
@@ -68,8 +70,9 @@ return new class extends Migration
             $table->id();
             $table->integer('hospital_id');
             $table->integer('doctor_id');
-            $table->date('schedule_date');
-            $table->string('schedule_time');
+            $table->string('day');
+            $table->string('start_time');
+            $table->string('end_time');
             $table->integer('patient_limit');
             // $table->foreign('hospital_id')->references('id')->on('hospitals');
             // $table->foreign('doctor_id')->references('id')->on('doctors');

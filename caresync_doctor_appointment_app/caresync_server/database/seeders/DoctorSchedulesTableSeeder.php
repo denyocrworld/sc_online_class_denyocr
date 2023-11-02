@@ -14,35 +14,44 @@ class DoctorSchedulesTableSeeder extends Seeder
      */
     public function run()
     {
-        // Data dummy jadwal dokter
-        $schedulesData = [
-            [
-                'hospital_id' => 1,
-                'doctor_id' => 1,
-                'schedule_date' => '2023-11-01',
-                'schedule_time' => '09:00 AM',
-                'patient_limit' => 20,
-            ],
-            [
-                'hospital_id' => 2,
-                'doctor_id' => 2,
-                'schedule_date' => '2023-11-02',
-                'schedule_time' => '10:00 AM',
-                'patient_limit' => 15,
-            ],
-            [
-                'hospital_id' => 3,
-                'doctor_id' => 3,
-                'schedule_date' => '2023-11-03',
-                'schedule_time' => '02:00 PM',
-                'patient_limit' => 25,
-            ],
-            // Tambahkan data jadwal dokter lainnya di sini...
-        ];
 
-        // Masukkan data ke dalam tabel doctor_schedules
-        foreach ($schedulesData as $data) {
-            DoctorSchedule::create($data);
+        $doctors = \App\Models\Doctor::all();
+        foreach ($doctors as $doctor) {
+            $daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            $randomDay = $daysOfWeek[array_rand($daysOfWeek)];
+
+            $schedulesData = [
+                [
+                    'hospital_id' => 1,
+                    'doctor_id' => $doctor->id,
+                    'day' => $randomDay,
+                    'start_time' => '10:00',
+                    'end_time' => '12:00',
+                    'patient_limit' => 5,
+                ],
+                [
+                    'hospital_id' => 2,
+                    'doctor_id' => $doctor->id,
+                    'day' => $randomDay,
+                    'start_time' => '15:00',
+                    'end_time' => '16:00',
+                    'patient_limit' => 5,
+                ],
+                [
+                    'hospital_id' => 3,
+                    'doctor_id' => $doctor->id,
+                    'day' => $randomDay,
+                    'start_time' => '20:00',
+                    'end_time' => '21:00',
+                    'patient_limit' => 5,
+                ],
+                // Tambahkan data jadwal dokter lainnya di sini...
+            ];
+
+            // Masukkan data ke dalam tabel doctor_schedules
+            foreach ($schedulesData as $data) {
+                DoctorSchedule::create($data);
+            }
         }
     }
 }

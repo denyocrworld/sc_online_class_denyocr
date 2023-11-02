@@ -15,4 +15,14 @@ class Doctor extends Model
     // ];
 
     protected $guarded = ['id'];
+
+    public function doctorSchedules()
+    {
+        return $this->hasMany(DoctorSchedule::class);
+    }
+
+    public function specialization()
+    {
+        return $this->belongsTo(Specialization::class);
+    }
 }

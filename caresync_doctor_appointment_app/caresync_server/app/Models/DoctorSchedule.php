@@ -9,4 +9,14 @@ class DoctorSchedule extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
+
+    public function hospital()
+    {
+        return $this->belongsTo(Hospital::class);
+    }
 }

@@ -16,8 +16,11 @@ class HospitalsTableSeeder extends Seeder
             $hospitalsData[] = [
                 'hospital_name' => 'Hospital ' . $i,
                 'hospital_address' => 'Address ' . $i,
-                'hospital_location_latitude' => rand(100, 999) / 10, // Contoh nilai acak
-                'hospital_location_longitude' => rand(100, 999) / 10, // Contoh nilai acak
+                'hospital_location_latitude' => rand(100, 999) / 10, 
+                'hospital_location_longitude' => rand(100, 999) / 10,
+                'hospital_phone_number' => '021 24828284', 
+                'hospital_whatsapp_number' => '01240124124', 
+                'hospital_email' => 'demo@gmail.com',
             ];
         }
 
