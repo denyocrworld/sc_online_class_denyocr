@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import 'package:hyper_ui/shared/widget/container/qcontainer.dart';
 import '../bloc/patient_order_detail_bloc.dart';
@@ -56,97 +57,104 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            QContainer(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Selected doctor",
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 8.0,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      backgroundImage: NetworkImage(
-                        "https://i.ibb.co/PGv8ZzG/me.jpg",
-                      ),
-                    ),
-                    minLeadingWidth: 0.0,
-                    contentPadding: EdgeInsets.all(0.0),
-                    title: Text("Drg. Gumawan Hermawan, Sp.KG"),
-                    subtitle: Text(
-                      "Dokter Konservasi Gigi",
+            BlocBuilder<PatientDoctorDetailBloc, PatientDoctorDetailState>(
+                builder: (context, state) {
+              final patientDoctorDetailBloc =
+                  context.read<PatientDoctorDetailBloc>();
+
+              return QContainer(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Selected doctor",
                       style: TextStyle(
-                        color: Colors.grey[600],
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                  Divider(),
-                  ListTile(
-                    leading: Container(
-                      width: 48.0,
-                      height: 48.0,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvc3BpdGFsfGVufDB8fDB8fHww",
-                          ),
-                          fit: BoxFit.cover,
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    ListTile(
+                      leading: CircleAvatar(
+                        radius: 24.0,
+                        backgroundImage: NetworkImage(
+                          "https://i.ibb.co/PGv8ZzG/me.jpg",
                         ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            8.0,
-                          ),
+                      ),
+                      minLeadingWidth: 0.0,
+                      contentPadding: EdgeInsets.all(0.0),
+                      title: Text(
+                          patientDoctorDetailBloc.state.doctor!.doctorName!),
+                      subtitle: Text(
+                        "Dokter Konservasi Gigi",
+                        style: TextStyle(
+                          color: Colors.grey[600],
                         ),
                       ),
                     ),
-                    minLeadingWidth: 0.0,
-                    contentPadding: EdgeInsets.all(0.0),
-                    title: Text("RS Miami Dramaga Bogor"),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          height: 4.0,
-                        ),
-                        Text(
-                          "Dokter Konservasi Gigi",
-                          style: TextStyle(
-                            color: Colors.grey[600],
+                    Divider(),
+                    ListTile(
+                      leading: Container(
+                        width: 48.0,
+                        height: 48.0,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvc3BpdGFsfGVufDB8fDB8fHww",
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              8.0,
+                            ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 4.0,
-                        ),
-                        Text(
-                          "Senin, 16 October 2023",
-                          style: TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.grey[600],
+                      ),
+                      minLeadingWidth: 0.0,
+                      contentPadding: EdgeInsets.all(0.0),
+                      title: Text("RS Miami Dramaga Bogor"),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            height: 4.0,
                           ),
-                        ),
-                        const SizedBox(
-                          height: 4.0,
-                        ),
-                        Text(
-                          "Consultation fee Rp100.000",
-                          style: TextStyle(
-                            fontSize: 12.0,
-                            color: warningColor,
+                          Text(
+                            "Dokter Konservasi Gigi",
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                            ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(
+                            height: 4.0,
+                          ),
+                          Text(
+                            "Senin, 16 October 2023",
+                            style: TextStyle(
+                              fontSize: 12.0,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 4.0,
+                          ),
+                          Text(
+                            "Consultation fee Rp100.000",
+                            style: TextStyle(
+                              fontSize: 12.0,
+                              color: warningColor,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ),
+                  ],
+                ),
+              );
+            }),
             const SizedBox(
               height: 12.0,
             ),

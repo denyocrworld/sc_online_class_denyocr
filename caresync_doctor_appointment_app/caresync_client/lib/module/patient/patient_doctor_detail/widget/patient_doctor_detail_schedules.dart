@@ -1,5 +1,11 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
+// Dependency Injection
+// Argument Class
+// Argument dari Routes-nya
+// GlobalState
+// Static Variables
+
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/model/doctor/doctor.dart';

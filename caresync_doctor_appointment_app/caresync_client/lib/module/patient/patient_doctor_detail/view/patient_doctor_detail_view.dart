@@ -28,6 +28,7 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
   @override
   void initState() {
     bloc.initState();
+    bloc.state.doctor = widget.item;
     super.initState();
   }
 
