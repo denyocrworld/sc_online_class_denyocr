@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import '../event/patient_order_patient_data_event.dart';
 import '../state/patient_order_patient_data_state.dart';
 
@@ -7,6 +8,7 @@ mixin _BlocLifecycle {
   void dispose() {}
 }
 
+@singleton
 class PatientOrderPatientDataBloc
     extends Bloc<PatientOrderPatientDataEvent, PatientOrderPatientDataState>
     with _BlocLifecycle {

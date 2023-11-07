@@ -5,5 +5,6 @@ part 'patient_order_payment_state.freezed.dart';
 class PatientOrderPaymentState with _$PatientOrderPaymentState {
   factory PatientOrderPaymentState({
     @Default(0) int counter,
+    @Default(null) String? paymentUrl,
   }) = _PatientOrderPaymentState;
 }

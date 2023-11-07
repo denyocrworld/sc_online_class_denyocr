@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import 'package:hyper_ui/shared/util/validator/validator.dart';
 import 'package:hyper_ui/shared/widget/container/qcontainer.dart';
@@ -24,6 +25,7 @@ class PatientOrderPatientDataView extends StatefulWidget {
 class _PatientOrderPatientDataViewState
     extends State<PatientOrderPatientDataView> {
   PatientOrderPatientDataBloc bloc = PatientOrderPatientDataBloc();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -70,83 +72,94 @@ class _PatientOrderPatientDataViewState
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               QContainer(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Patient data",
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
+                child: Form(
+                  key: formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Patient data",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 6.0,
-                    ),
-                    Text(
-                      "Fill in the forms",
-                      style: TextStyle(
-                        fontSize: 12.0,
-                        color: Colors.grey[600],
+                      const SizedBox(
+                        height: 6.0,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 12.0,
-                    ),
-                    QTextField(
-                      label: "Full name",
-                      validator: Validator.required,
-                      value: null,
-                      onChanged: (value) {},
-                    ),
-                    const SizedBox(
-                      height: 12.0,
-                    ),
-                    QDatePicker(
-                      label: "Birth date",
-                      validator: Validator.required,
-                      value: null,
-                      onChanged: (value) {
-                        print("value: $value");
-                      },
-                    ),
-                    const SizedBox(
-                      height: 12.0,
-                    ),
-                    QRadioField2(
-                      label: "Gender",
-                      validator: Validator.atLeastOneitem,
-                      items: [
-                        {
-                          "label": "Female",
-                          "value": 1,
+                      Text(
+                        "Fill in the forms",
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 12.0,
+                      ),
+                      QTextField(
+                        label: "Full name",
+                        validator: Validator.required,
+                        value: null,
+                        onChanged: (value) {
+                          state.fullName = value;
                         },
-                        {
-                          "label": "Male",
-                          "value": 2,
-                        }
-                      ],
-                      onChanged: (value, label) {},
-                    ),
-                    const SizedBox(
-                      height: 12.0,
-                    ),
-                    QTextField(
-                      label: "ID Card",
-                      validator: Validator.required,
-                      value: null,
-                      onChanged: (value) {},
-                    ),
-                    const SizedBox(
-                      height: 12.0,
-                    ),
-                    QMemoField(
-                      label: "Address",
-                      validator: Validator.required,
-                      value: null,
-                      onChanged: (value) {},
-                    ),
-                  ],
+                      ),
+                      const SizedBox(
+                        height: 12.0,
+                      ),
+                      QDatePicker(
+                        label: "Birth date",
+                        validator: Validator.required,
+                        value: null,
+                        onChanged: (value) {
+                          state.birthDate = DateFormat("y-MM-dd").format(value);
+                        },
+                      ),
+                      const SizedBox(
+                        height: 12.0,
+                      ),
+                      QRadioField2(
+                        label: "Gender",
+                        validator: Validator.atLeastOneitem,
+                        items: [
+                          {
+                            "label": "Female",
+                            "value": "Female",
+                          },
+                          {
+                            "label": "Male",
+                            "value": "Male",
+                          }
+                        ],
+                        onChanged: (value, label) {
+                          state.gender = value;
+                        },
+                      ),
+                      const SizedBox(
+                        height: 12.0,
+                      ),
+                      QTextField(
+                        label: "ID Card",
+                        validator: Validator.required,
+                        value: null,
+                        onChanged: (value) {
+                          state.idCard = value;
+                        },
+                      ),
+                      const SizedBox(
+                        height: 12.0,
+                      ),
+                      QMemoField(
+                        label: "Address",
+                        validator: Validator.required,
+                        value: null,
+                        onChanged: (value) {
+                          state.address = value;
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -163,7 +176,14 @@ class _PatientOrderPatientDataViewState
             style: ElevatedButton.styleFrom(
               backgroundColor: warningColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              bool isValid = formKey.currentState!.validate();
+              if (isValid) {
+                var stepNavigationController =
+                    StepNavigationController.instance;
+                stepNavigationController.updateIndex(3);
+              }
+            },
             child: const Text("Continue"),
           ),
         ),

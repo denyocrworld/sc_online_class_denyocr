@@ -88,28 +88,7 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
             // final patientDoctorDetailBloc =
             //     context.read<PatientDoctorDetailBloc>();
 
-            GetIt getIt = GetIt.instance;
-            final patientDoctorDetailBloc = getIt<PatientDoctorDetailBloc>();
-
-            return Scaffold(
-              appBar: AppBar(
-                title:
-                    Text("${patientDoctorDetailBloc.state.doctor?.doctorName}"),
-                actions: [],
-              ),
-              body: SingleChildScrollView(
-                child: Container(
-                  padding: EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      Text(
-                          "${patientDoctorDetailBloc.state.doctor?.doctorName}"),
-                      Text("${patientDoctorDetailBloc.state.counter}"),
-                    ],
-                  ),
-                ),
-              ),
-            );
+            return buildView(context, bloc, state);
           },
         ),
       ),
@@ -121,6 +100,11 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
     PatientOrderDetailBloc bloc,
     PatientOrderDetailState state,
   ) {
+    GetIt getIt = GetIt.instance;
+    final patientDoctorDetailBloc = getIt<PatientDoctorDetailBloc>();
+    final doctor = patientDoctorDetailBloc.state.doctor!;
+    final schedule = patientDoctorDetailBloc.state.schedule!;
+
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -128,179 +112,173 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            BlocBuilder<PatientDoctorDetailBloc, PatientDoctorDetailState>(
-                builder: (context, state) {
-              final patientDoctorDetailBloc =
-                  context.read<PatientDoctorDetailBloc>();
-
-              return QContainer(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Selected doctor",
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 8.0,
-                    ),
-                    ListTile(
-                      leading: CircleAvatar(
-                        radius: 24.0,
-                        backgroundImage: NetworkImage(
-                          "https://i.ibb.co/PGv8ZzG/me.jpg",
-                        ),
-                      ),
-                      minLeadingWidth: 0.0,
-                      contentPadding: EdgeInsets.all(0.0),
-                      title: Text(
-                          patientDoctorDetailBloc.state.doctor!.doctorName!),
-                      subtitle: Text(
-                        "Dokter Konservasi Gigi",
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                        ),
-                      ),
-                    ),
-                    Divider(),
-                    ListTile(
-                      leading: Container(
-                        width: 48.0,
-                        height: 48.0,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(
-                              "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvc3BpdGFsfGVufDB8fDB8fHww",
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(
-                              8.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      minLeadingWidth: 0.0,
-                      contentPadding: EdgeInsets.all(0.0),
-                      title: Text("RS Miami Dramaga Bogor"),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 4.0,
-                          ),
-                          Text(
-                            "Dokter Konservasi Gigi",
-                            style: TextStyle(
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 4.0,
-                          ),
-                          Text(
-                            "Senin, 16 October 2023",
-                            style: TextStyle(
-                              fontSize: 12.0,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 4.0,
-                          ),
-                          Text(
-                            "Consultation fee Rp100.000",
-                            style: TextStyle(
-                              fontSize: 12.0,
-                              color: warningColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            }),
-            SizedBox(
-              height: 12.0,
-            ),
             QContainer(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Data pemesanan",
+                    "Selected doctor",
                     style: TextStyle(
                       fontSize: 14.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   SizedBox(
-                    height: 6.0,
+                    height: 8.0,
                   ),
-                  Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.grey[600],
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 24.0,
+                      backgroundImage: NetworkImage(
+                        doctor.photo ?? "https://i.ibb.co/S32HNjD/no-image.jpg",
+                      ),
+                    ),
+                    minLeadingWidth: 0.0,
+                    contentPadding: EdgeInsets.all(0.0),
+                    title: Text(doctor.doctorName!),
+                    subtitle: Text(
+                      doctor.specialization!.specializationName!,
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    height: 6.0,
-                  ),
-                  Text(
-                    "Your mobile number",
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.grey[600],
+                  Divider(),
+                  ListTile(
+                    leading: Container(
+                      width: 48.0,
+                      height: 48.0,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            schedule.hospital!.photo ??
+                                "https://i.ibb.co/S32HNjD/no-image.jpg",
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            8.0,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                  Text(
-                    "082146727409",
-                    style: TextStyle(
-                      fontSize: 14.0,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 6.0,
-                  ),
-                  Text(
-                    "Your email",
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  Text(
-                    "denyocr.world@gmail.com",
-                    style: TextStyle(
-                      fontSize: 14.0,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 6.0,
-                  ),
-                  Text(
-                    "Full name",
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                  Text(
-                    "Deniansyah",
-                    style: TextStyle(
-                      fontSize: 14.0,
+                    minLeadingWidth: 0.0,
+                    contentPadding: EdgeInsets.all(0.0),
+                    title: Text(schedule.hospital!.hospitalName!),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 4.0,
+                        ),
+                        Text(
+                          schedule.hospital!.hospitalAddress!,
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 4.0,
+                        ),
+                        Text(
+                          schedule.hospital!.hospitalWhatsappNumber!,
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 4.0,
+                        ),
+                        Text(
+                          "Consultation fee Rp${schedule.consultationFee}",
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: warningColor,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
             ),
+            SizedBox(
+              height: 12.0,
+            ),
+            // QContainer(
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.start,
+            //     children: [
+            //       Text(
+            //         "Data pemesanan",
+            //         style: TextStyle(
+            //           fontSize: 14.0,
+            //           fontWeight: FontWeight.bold,
+            //         ),
+            //       ),
+            //       SizedBox(
+            //         height: 6.0,
+            //       ),
+            //       Text(
+            //         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            //         style: TextStyle(
+            //           fontSize: 12.0,
+            //           color: Colors.grey[600],
+            //         ),
+            //       ),
+            //       SizedBox(
+            //         height: 6.0,
+            //       ),
+            //       Text(
+            //         "Your mobile number",
+            //         style: TextStyle(
+            //           fontSize: 12.0,
+            //           color: Colors.grey[600],
+            //         ),
+            //       ),
+            //       Text(
+            //         "082146727409",
+            //         style: TextStyle(
+            //           fontSize: 14.0,
+            //         ),
+            //       ),
+            //       SizedBox(
+            //         height: 6.0,
+            //       ),
+            //       Text(
+            //         "Your email",
+            //         style: TextStyle(
+            //           fontSize: 12.0,
+            //           color: Colors.grey[600],
+            //         ),
+            //       ),
+            //       Text(
+            //         "denyocr.world@gmail.com",
+            //         style: TextStyle(
+            //           fontSize: 14.0,
+            //         ),
+            //       ),
+            //       SizedBox(
+            //         height: 6.0,
+            //       ),
+            //       Text(
+            //         "Full name",
+            //         style: TextStyle(
+            //           fontSize: 12.0,
+            //           color: Colors.grey[600],
+            //         ),
+            //       ),
+            //       Text(
+            //         "Deniansyah",
+            //         style: TextStyle(
+            //           fontSize: 14.0,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -314,7 +292,13 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
             style: ElevatedButton.styleFrom(
               backgroundColor: warningColor,
             ),
-            onPressed: () {},
+            onPressed: () {
+              // var stepNavigationController =
+              //     GetIt.I<StepNavigationController>();
+              var stepNavigationController = StepNavigationController.instance;
+              stepNavigationController.updateIndex(2);
+              // patientOrderBloc.add(event)
+            },
             child: Text("Continue"),
           ),
         ),

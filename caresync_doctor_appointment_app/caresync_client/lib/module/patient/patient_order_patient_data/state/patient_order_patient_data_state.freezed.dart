@@ -18,6 +18,16 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PatientOrderPatientDataState {
   int get counter => throw _privateConstructorUsedError;
   set counter(int value) => throw _privateConstructorUsedError;
+  String? get fullName => throw _privateConstructorUsedError;
+  set fullName(String? value) => throw _privateConstructorUsedError;
+  String? get birthDate => throw _privateConstructorUsedError;
+  set birthDate(String? value) => throw _privateConstructorUsedError;
+  String? get gender => throw _privateConstructorUsedError;
+  set gender(String? value) => throw _privateConstructorUsedError;
+  String? get idCard => throw _privateConstructorUsedError;
+  set idCard(String? value) => throw _privateConstructorUsedError;
+  String? get address => throw _privateConstructorUsedError;
+  set address(String? value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PatientOrderPatientDataStateCopyWith<PatientOrderPatientDataState>
@@ -32,7 +42,13 @@ abstract class $PatientOrderPatientDataStateCopyWith<$Res> {
       _$PatientOrderPatientDataStateCopyWithImpl<$Res,
           PatientOrderPatientDataState>;
   @useResult
-  $Res call({int counter});
+  $Res call(
+      {int counter,
+      String? fullName,
+      String? birthDate,
+      String? gender,
+      String? idCard,
+      String? address});
 }
 
 /// @nodoc
@@ -50,12 +66,37 @@ class _$PatientOrderPatientDataStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? counter = null,
+    Object? fullName = freezed,
+    Object? birthDate = freezed,
+    Object? gender = freezed,
+    Object? idCard = freezed,
+    Object? address = freezed,
   }) {
     return _then(_value.copyWith(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      fullName: freezed == fullName
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gender: freezed == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idCard: freezed == idCard
+          ? _value.idCard
+          : idCard // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -69,7 +110,13 @@ abstract class _$$PatientOrderPatientDataStateImplCopyWith<$Res>
       __$$PatientOrderPatientDataStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter});
+  $Res call(
+      {int counter,
+      String? fullName,
+      String? birthDate,
+      String? gender,
+      String? idCard,
+      String? address});
 }
 
 /// @nodoc
@@ -86,12 +133,37 @@ class __$$PatientOrderPatientDataStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = null,
+    Object? fullName = freezed,
+    Object? birthDate = freezed,
+    Object? gender = freezed,
+    Object? idCard = freezed,
+    Object? address = freezed,
   }) {
     return _then(_$PatientOrderPatientDataStateImpl(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      fullName: freezed == fullName
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gender: freezed == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idCard: freezed == idCard
+          ? _value.idCard
+          : idCard // ignore: cast_nullable_to_non_nullable
+              as String?,
+      address: freezed == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -100,15 +172,36 @@ class __$$PatientOrderPatientDataStateImplCopyWithImpl<$Res>
 
 class _$PatientOrderPatientDataStateImpl
     implements _PatientOrderPatientDataState {
-  _$PatientOrderPatientDataStateImpl({this.counter = 0});
+  _$PatientOrderPatientDataStateImpl(
+      {this.counter = 0,
+      this.fullName = null,
+      this.birthDate = null,
+      this.gender = null,
+      this.idCard = null,
+      this.address = null});
 
   @override
   @JsonKey()
   int counter;
+  @override
+  @JsonKey()
+  String? fullName;
+  @override
+  @JsonKey()
+  String? birthDate;
+  @override
+  @JsonKey()
+  String? gender;
+  @override
+  @JsonKey()
+  String? idCard;
+  @override
+  @JsonKey()
+  String? address;
 
   @override
   String toString() {
-    return 'PatientOrderPatientDataState(counter: $counter)';
+    return 'PatientOrderPatientDataState(counter: $counter, fullName: $fullName, birthDate: $birthDate, gender: $gender, idCard: $idCard, address: $address)';
   }
 
   @JsonKey(ignore: true)
@@ -122,12 +215,32 @@ class _$PatientOrderPatientDataStateImpl
 
 abstract class _PatientOrderPatientDataState
     implements PatientOrderPatientDataState {
-  factory _PatientOrderPatientDataState({int counter}) =
-      _$PatientOrderPatientDataStateImpl;
+  factory _PatientOrderPatientDataState(
+      {int counter,
+      String? fullName,
+      String? birthDate,
+      String? gender,
+      String? idCard,
+      String? address}) = _$PatientOrderPatientDataStateImpl;
 
   @override
   int get counter;
   set counter(int value);
+  @override
+  String? get fullName;
+  set fullName(String? value);
+  @override
+  String? get birthDate;
+  set birthDate(String? value);
+  @override
+  String? get gender;
+  set gender(String? value);
+  @override
+  String? get idCard;
+  set idCard(String? value);
+  @override
+  String? get address;
+  set address(String? value);
   @override
   @JsonKey(ignore: true)
   _$$PatientOrderPatientDataStateImplCopyWith<

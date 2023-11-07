@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PatientDoctorDetailState {
   int get counter => throw _privateConstructorUsedError;
   set counter(int value) => throw _privateConstructorUsedError;
+  DoctorSchedule? get schedule => throw _privateConstructorUsedError;
+  set schedule(DoctorSchedule? value) => throw _privateConstructorUsedError;
   Doctor? get doctor => throw _privateConstructorUsedError;
   set doctor(Doctor? value) => throw _privateConstructorUsedError;
   String? get startTime => throw _privateConstructorUsedError;
@@ -36,8 +38,14 @@ abstract class $PatientDoctorDetailStateCopyWith<$Res> {
           $Res Function(PatientDoctorDetailState) then) =
       _$PatientDoctorDetailStateCopyWithImpl<$Res, PatientDoctorDetailState>;
   @useResult
-  $Res call({int counter, Doctor? doctor, String? startTime, String? endTime});
+  $Res call(
+      {int counter,
+      DoctorSchedule? schedule,
+      Doctor? doctor,
+      String? startTime,
+      String? endTime});
 
+  $DoctorScheduleCopyWith<$Res>? get schedule;
   $DoctorCopyWith<$Res>? get doctor;
 }
 
@@ -56,6 +64,7 @@ class _$PatientDoctorDetailStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? counter = null,
+    Object? schedule = freezed,
     Object? doctor = freezed,
     Object? startTime = freezed,
     Object? endTime = freezed,
@@ -65,6 +74,10 @@ class _$PatientDoctorDetailStateCopyWithImpl<$Res,
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      schedule: freezed == schedule
+          ? _value.schedule
+          : schedule // ignore: cast_nullable_to_non_nullable
+              as DoctorSchedule?,
       doctor: freezed == doctor
           ? _value.doctor
           : doctor // ignore: cast_nullable_to_non_nullable
@@ -78,6 +91,18 @@ class _$PatientDoctorDetailStateCopyWithImpl<$Res,
           : endTime // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DoctorScheduleCopyWith<$Res>? get schedule {
+    if (_value.schedule == null) {
+      return null;
+    }
+
+    return $DoctorScheduleCopyWith<$Res>(_value.schedule!, (value) {
+      return _then(_value.copyWith(schedule: value) as $Val);
+    });
   }
 
   @override
@@ -102,8 +127,15 @@ abstract class _$$PatientDoctorDetailStateImplCopyWith<$Res>
       __$$PatientDoctorDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter, Doctor? doctor, String? startTime, String? endTime});
+  $Res call(
+      {int counter,
+      DoctorSchedule? schedule,
+      Doctor? doctor,
+      String? startTime,
+      String? endTime});
 
+  @override
+  $DoctorScheduleCopyWith<$Res>? get schedule;
   @override
   $DoctorCopyWith<$Res>? get doctor;
 }
@@ -122,6 +154,7 @@ class __$$PatientDoctorDetailStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = null,
+    Object? schedule = freezed,
     Object? doctor = freezed,
     Object? startTime = freezed,
     Object? endTime = freezed,
@@ -131,6 +164,10 @@ class __$$PatientDoctorDetailStateImplCopyWithImpl<$Res>
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      schedule: freezed == schedule
+          ? _value.schedule
+          : schedule // ignore: cast_nullable_to_non_nullable
+              as DoctorSchedule?,
       doctor: freezed == doctor
           ? _value.doctor
           : doctor // ignore: cast_nullable_to_non_nullable
@@ -152,6 +189,7 @@ class __$$PatientDoctorDetailStateImplCopyWithImpl<$Res>
 class _$PatientDoctorDetailStateImpl implements _PatientDoctorDetailState {
   _$PatientDoctorDetailStateImpl(
       {this.counter = 0,
+      this.schedule = null,
       this.doctor = null,
       this.startTime = null,
       this.endTime = null});
@@ -159,6 +197,9 @@ class _$PatientDoctorDetailStateImpl implements _PatientDoctorDetailState {
   @override
   @JsonKey()
   int counter;
+  @override
+  @JsonKey()
+  DoctorSchedule? schedule;
   @override
   @JsonKey()
   Doctor? doctor;
@@ -171,7 +212,7 @@ class _$PatientDoctorDetailStateImpl implements _PatientDoctorDetailState {
 
   @override
   String toString() {
-    return 'PatientDoctorDetailState(counter: $counter, doctor: $doctor, startTime: $startTime, endTime: $endTime)';
+    return 'PatientDoctorDetailState(counter: $counter, schedule: $schedule, doctor: $doctor, startTime: $startTime, endTime: $endTime)';
   }
 
   @JsonKey(ignore: true)
@@ -185,6 +226,7 @@ class _$PatientDoctorDetailStateImpl implements _PatientDoctorDetailState {
 abstract class _PatientDoctorDetailState implements PatientDoctorDetailState {
   factory _PatientDoctorDetailState(
       {int counter,
+      DoctorSchedule? schedule,
       Doctor? doctor,
       String? startTime,
       String? endTime}) = _$PatientDoctorDetailStateImpl;
@@ -192,6 +234,9 @@ abstract class _PatientDoctorDetailState implements PatientDoctorDetailState {
   @override
   int get counter;
   set counter(int value);
+  @override
+  DoctorSchedule? get schedule;
+  set schedule(DoctorSchedule? value);
   @override
   Doctor? get doctor;
   set doctor(Doctor? value);

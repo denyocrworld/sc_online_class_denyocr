@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
 use App\Models\Order;
+use App\Models\DoctorSchedule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 class OrderController extends Controller
 {
@@ -58,5 +62,54 @@ class OrderController extends Controller
     {
         $order->delete();
         return response(null, Response::HTTP_NO_CONTENT);
+    }
+
+    public function createPaymentLink(Request $request)
+    {
+        $data = $request->all();
+        $doctor_schedule_id = $data['doctor_schedule_id'];
+        $schedule = DoctorSchedule::with(['doctor', 'hospital'])
+            ->find($doctor_schedule_id);
+        // return $schedule['consultation_fee'];
+
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Basic U0ItTWlkLXNlcnZlci1vcEpaVkM4TGloazVwLXZHdHg2YUt5SFk6',
+        ])->post('https://api.sandbox.midtrans.com/v1/payment-links', [
+            'transaction_details' => [
+                'order_id' => Str::uuid(),
+                'gross_amount' => $schedule['consultation_fee'],
+                'payment_link_id' => Str::uuid(),
+            ],
+            'credit_card' => [
+                'secure' => true,
+            ],
+            'usage_limit' => 1,
+            'expiry' => [
+                'duration' => 1,
+                'unit' => 'days',
+            ],
+            'item_details' => [
+                [
+                    'id' => $schedule['id'],
+                    'name' => 'Doctor appointment',
+                    'price' => $schedule['consultation_fee'],
+                    'quantity' => 1,
+                ],
+            ],
+            //TODO: Isi dengan users details
+            'customer_details' => [
+                'first_name' => 'John',
+                'last_name' => 'Doe',
+                'email' => 'john.doe@example.com',
+                'phone' => '+62181000000000',
+                'notes' => 'Thank you for your order. Please follow the instructions to complete payment.',
+            ],
+        ]);
+
+        $responseData = $response->json();
+        return response()->json([
+            "data" => $responseData
+        ]);
     }
 }

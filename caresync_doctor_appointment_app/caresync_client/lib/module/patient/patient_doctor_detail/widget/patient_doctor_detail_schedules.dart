@@ -7,6 +7,7 @@
 // Static Variables
 
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/model/doctor/doctor.dart';
 import 'package:hyper_ui/module/patient/patient_doctor_detail/model/patient_doctor_detail_schedule_list.dart';
@@ -161,6 +162,9 @@ class PatientDoctorDetaulSchedules extends StatelessWidget {
                             ),
                           ),
                           onPressed: () async {
+                            var patientDoctorDetailBloc =
+                                GetIt.I<PatientDoctorDetailBloc>();
+                            patientDoctorDetailBloc.state.schedule = schedule;
                             await Get.to(PatientOrderView());
                           },
                           child: Text(

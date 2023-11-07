@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PatientOrderPaymentState {
   int get counter => throw _privateConstructorUsedError;
   set counter(int value) => throw _privateConstructorUsedError;
+  String? get paymentUrl => throw _privateConstructorUsedError;
+  set paymentUrl(String? value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PatientOrderPaymentStateCopyWith<PatientOrderPaymentState> get copyWith =>
@@ -30,7 +32,7 @@ abstract class $PatientOrderPaymentStateCopyWith<$Res> {
           $Res Function(PatientOrderPaymentState) then) =
       _$PatientOrderPaymentStateCopyWithImpl<$Res, PatientOrderPaymentState>;
   @useResult
-  $Res call({int counter});
+  $Res call({int counter, String? paymentUrl});
 }
 
 /// @nodoc
@@ -48,12 +50,17 @@ class _$PatientOrderPaymentStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? counter = null,
+    Object? paymentUrl = freezed,
   }) {
     return _then(_value.copyWith(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      paymentUrl: freezed == paymentUrl
+          ? _value.paymentUrl
+          : paymentUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -67,7 +74,7 @@ abstract class _$$PatientOrderPaymentStateImplCopyWith<$Res>
       __$$PatientOrderPaymentStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter});
+  $Res call({int counter, String? paymentUrl});
 }
 
 /// @nodoc
@@ -84,12 +91,17 @@ class __$$PatientOrderPaymentStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = null,
+    Object? paymentUrl = freezed,
   }) {
     return _then(_$PatientOrderPaymentStateImpl(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      paymentUrl: freezed == paymentUrl
+          ? _value.paymentUrl
+          : paymentUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -97,15 +109,18 @@ class __$$PatientOrderPaymentStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PatientOrderPaymentStateImpl implements _PatientOrderPaymentState {
-  _$PatientOrderPaymentStateImpl({this.counter = 0});
+  _$PatientOrderPaymentStateImpl({this.counter = 0, this.paymentUrl = null});
 
   @override
   @JsonKey()
   int counter;
+  @override
+  @JsonKey()
+  String? paymentUrl;
 
   @override
   String toString() {
-    return 'PatientOrderPaymentState(counter: $counter)';
+    return 'PatientOrderPaymentState(counter: $counter, paymentUrl: $paymentUrl)';
   }
 
   @JsonKey(ignore: true)
@@ -117,12 +132,15 @@ class _$PatientOrderPaymentStateImpl implements _PatientOrderPaymentState {
 }
 
 abstract class _PatientOrderPaymentState implements PatientOrderPaymentState {
-  factory _PatientOrderPaymentState({int counter}) =
+  factory _PatientOrderPaymentState({int counter, String? paymentUrl}) =
       _$PatientOrderPaymentStateImpl;
 
   @override
   int get counter;
   set counter(int value);
+  @override
+  String? get paymentUrl;
+  set paymentUrl(String? value);
   @override
   @JsonKey(ignore: true)
   _$$PatientOrderPaymentStateImplCopyWith<_$PatientOrderPaymentStateImpl>

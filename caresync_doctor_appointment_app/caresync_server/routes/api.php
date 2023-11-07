@@ -28,3 +28,5 @@ Route::apiResource('doctor_schedules', DoctorScheduleController::class);
 Route::apiResource('specializations', SpecializationController::class);
 Route::apiResource('orders', OrderController::class);
 Route::apiResource('hospitals', HospitalController::class);
+
+Route::post('/orders/payment/create', [OrderController::class, 'createPaymentLink']);

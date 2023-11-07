@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -19,10 +20,12 @@ class StepNavigation extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<StepNavigation> createState() => _StepNavigationState();
+  State<StepNavigation> createState() => StepNavigationController();
 }
 
-class _StepNavigationState extends State<StepNavigation> {
+// @singleton
+class StepNavigationController extends State<StepNavigation> {
+  static late StepNavigationController instance;
   int selectedIndex = 0;
   updateIndex(int newIndex) {
     selectedIndex = newIndex;
@@ -36,6 +39,7 @@ class _StepNavigationState extends State<StepNavigation> {
   @override
   void initState() {
     selectedIndex = widget.initialIndex;
+    instance = this;
     super.initState();
   }
 
