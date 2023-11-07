@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/injection.dart';
 import 'package:hyper_ui/model/doctor/doctor.dart';
 import 'package:hyper_ui/module/patient/patient_doctor_detail/model/patient_doctor_detail_schedule_list.dart';
 import 'package:hyper_ui/module/patient/patient_doctor_detail/widget/more_text_example.dart';
@@ -9,6 +11,7 @@ import 'package:hyper_ui/shared/widget/expansion_panel/expansion_panel.dart';
 import '../bloc/patient_doctor_detail_bloc.dart';
 import '../event/patient_doctor_detail_event.dart';
 import '../state/patient_doctor_detail_state.dart';
+import 'package:provider/provider.dart';
 
 class PatientDoctorDetailView extends StatefulWidget {
   final Doctor item;
@@ -23,12 +26,21 @@ class PatientDoctorDetailView extends StatefulWidget {
 }
 
 class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
-  PatientDoctorDetailBloc bloc = PatientDoctorDetailBloc();
+  late PatientDoctorDetailBloc bloc;
 
   @override
   void initState() {
+    bloc = GetIt.I<PatientDoctorDetailBloc>();
     bloc.initState();
     bloc.state.doctor = widget.item;
+    bloc.state.counter = 250;
+
+    print("-----------------------");
+    print(bloc.state.doctor);
+    print(bloc.state.counter);
+    print("-----------------------");
+    // GetIt getIt = GetIt.instance;
+    // getIt.registerSingleton<PatientDoctorDetailBloc>(bloc);
     super.initState();
   }
 
@@ -40,8 +52,13 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => bloc,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<PatientDoctorDetailBloc>(
+          create: (BuildContext context) => bloc,
+        ),
+      ],
+      // create: (BuildContext context) => bloc,
       child: BlocListener<PatientDoctorDetailBloc, PatientDoctorDetailState>(
         listener: (context, state) {},
         child: BlocBuilder<PatientDoctorDetailBloc, PatientDoctorDetailState>(

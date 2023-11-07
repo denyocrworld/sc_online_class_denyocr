@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/model/doctor/doctor.dart';
 import 'package:hyper_ui/service/doctor_service/doctor_service.dart';
 import '../event/patient_doctor_list_event.dart';
@@ -26,7 +27,7 @@ class PatientDoctorListBloc
       //     )
       //     .toList();
 
-      state.doctorList = await DoctorService().getDoctors();
+      state.doctorList = await GetIt.I<DoctorService>().getDoctors();
       emit(state.copyWith());
     });
   }

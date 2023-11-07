@@ -42,6 +42,8 @@ dependencies:
   firebase_auth: ^4.12.0
   firebase_core: ^2.20.0
   google_sign_in: ^6.1.5
+  get_it: ^7.6.4
+  injectable: ^2.3.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -50,6 +52,7 @@ dev_dependencies:
   freezed: ^2.4.2
   json_serializable: ^6.7.1
   flutter_launcher_icons: ^0.13.1
+  injectable_generator: ^2.4.1
 flutter:
   uses-material-design: true
   assets:

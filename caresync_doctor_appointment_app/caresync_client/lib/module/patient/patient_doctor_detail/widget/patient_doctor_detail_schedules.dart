@@ -160,7 +160,9 @@ class PatientDoctorDetaulSchedules extends StatelessWidget {
                               color: primaryColor,
                             ),
                           ),
-                          onPressed: () => Get.to(PatientOrderView()),
+                          onPressed: () async {
+                            await Get.to(PatientOrderView());
+                          },
                           child: Text(
                             "${schedule.startTime} - ${schedule.endTime}",
                             style: TextStyle(
