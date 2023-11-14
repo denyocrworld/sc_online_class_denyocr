@@ -1,0 +1,13 @@
+{
+    "modules": [
+        "login",
+        "user_list",
+        "chat_list",
+        "chat_detail"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": false
+}

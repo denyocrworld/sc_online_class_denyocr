@@ -1,0 +1,80 @@
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+class Doctor extends Model
+{
+    use HasFactory;
+    protected $guarded = ['id'];
+}
+
+
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+class DoctorSchedule extends Model
+{
+    use HasFactory;
+    protected $guarded = ['id'];
+}
+
+
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+class Hospital extends Model
+{
+    use HasFactory;
+    protected $guarded = ['id'];
+}
+
+
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+class Order extends Model
+{
+    use HasFactory;
+    protected $guarded = ['id'];
+}
+
+
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+class Specialization extends Model
+{
+    use HasFactory;
+    protected $guarded = ['id'];
+}
+
+
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+}
+
+
