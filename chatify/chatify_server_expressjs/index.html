@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Chat</title>
+</head>
+
+<body>
+    <h1>WebSocket Chat</h1>
+    <div id="chat"></div>
+    <input type="text" id="receiver" placeholder="Penerima (e.g., 1002)">
+    <input type="text" id="message" placeholder="Ketik pesan...">
+    <input type="text" id="attachment_url" placeholder="URL Lampiran (opsional)">
+    <button onclick="sendMessage()">Kirim</button>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const user = urlParams.get("user");
+
+        // Membuat WebSocket URL dengan format /1001-1002
+        const socket = new WebSocket(`ws://localhost:8080/${user}`);
+        const chatDiv = document.getElementById('chat');
+
+        socket.addEventListener('open', (event) => {
+            console.log('Terhubung ke server');
+        });
+
+        socket.addEventListener('message', (event) => {
+            const parsedMessage = JSON.parse(event.data);
+
+            // Memeriksa apakah pesan ditujukan kepada pengguna saat ini
+            if (parsedMessage.sender_id === user || parsedMessage.receiver_id === user) {
+                chatDiv.innerHTML += `<div><strong>${parsedMessage.sender_id}:</strong> ${parsedMessage.message}</div>`;
+            }
+        });
+
+        function sendMessage() {
+            const receiverInput = document.getElementById('receiver');
+            const receiver = receiverInput.value;
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value;
+            const attachmentUrlInput = document.getElementById('attachment_url');
+            let attachmentUrl = attachmentUrlInput.value;
+
+            // Jika attachmentUrl kosong, atur nilainya menjadi null
+            if (attachmentUrl === '') {
+                attachmentUrl = null;
+            }
+
+            const userMessage = {
+                id: Math.floor(Date.now() / 1000), // Menggunakan integer timestamp sebagai ID
+                message: message,
+                attachment_url: attachmentUrl,
+                sender_id: user,
+                receiver_id: receiver
+            };
+
+            // Menggunakan format ID yang mencakup pengirim dan penerima
+            userMessage.participants = `${userMessage.sender_id}-${userMessage.receiver_id}`;
+
+            socket.send(JSON.stringify(userMessage));
+            messageInput.value = '';
+            attachmentUrlInput.value = '';
+        }
+
+    </script>
+</body>
+
+</html>

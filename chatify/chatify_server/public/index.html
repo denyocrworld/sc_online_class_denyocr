@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatify</title>
+    <script>
+        var socket = new WebSocket("ws://localhost:8080/ws/1001/1002"); // Ganti 1001 dan 1002 dengan ID pengguna yang sesuai.
+
+        socket.onopen = function (event) {
+            console.log("WebSocket is open now.");
+        };
+
+        socket.onmessage = function (event) {
+            var chatArea = document.getElementById("chat-area");
+            chatArea.innerHTML += "<p>" + event.data + "</p>";
+        };
+
+        function sendMessage() {
+            var messageInput = document.getElementById("message-input");
+            var message = messageInput.value;
+            socket.send(message);
+            messageInput.value = "";
+
+            var chatArea = document.getElementById("chat-area");
+            chatArea.innerHTML += "<p>You: " + message + "</p>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Chatify</h1>
+    <div id="chat-area"></div>
+    <div>
+        <input type="text" id="message-input" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</body>
+</html>

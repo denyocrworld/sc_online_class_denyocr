@@ -1,0 +1,21 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "caresync-fee83",
+                    "appId": "1:1050727493090:android:fedc36ac79e370053d9dbb",
+                    "fileOutput": "android\\app\\google-services.json"
+                }
+            },
+            "dart": {
+                "lib\\firebase_options.dart": {
+                    "projectId": "caresync-fee83",
+                    "configurations": {
+                        "android": "1:1050727493090:android:fedc36ac79e370053d9dbb"
+                    }
+                }
+            }
+        }
+    }
+}

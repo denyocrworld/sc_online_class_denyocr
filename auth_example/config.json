@@ -1,0 +1,16 @@
+{
+    "modules": [
+        "auth/login",
+        "auth/register",
+        "auth/phone_verification",
+        "auth/email_login",
+        "main_navigation",
+        "dashboard",
+        "profile"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": false
+}

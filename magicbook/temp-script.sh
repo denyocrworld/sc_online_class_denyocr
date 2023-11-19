@@ -1,0 +1,1 @@
+copy C:\Users\denyo\Documents\FLUTTER_PROJECT\capekngoding\hyper_snippet\.gitignore C:\Users\denyo\Documents\FLUTTER_PROJECT\__hyper_ui_public

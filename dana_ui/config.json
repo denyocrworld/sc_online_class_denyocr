@@ -1,0 +1,22 @@
+{
+    "modules": [
+        "send_money",
+        "transaction_history",
+        "transaction_history_in_progress",
+        "transaction_history_completed",
+        "request_money",
+        "topup",
+        "main_navigation",
+        "dashboard",
+        "wallet",
+        "profile",
+        "profile_personal",
+        "profile_business",
+        "qrscan"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": false
+}

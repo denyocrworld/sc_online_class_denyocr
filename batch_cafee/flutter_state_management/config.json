@@ -1,0 +1,16 @@
+{
+    "modules": [
+        "counter",
+        "timer_example",
+        "tutorial",
+        "valuenotifier_example",
+        "stream_example",
+        "bottom_sheet_example",
+        "http_example"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": false
+}

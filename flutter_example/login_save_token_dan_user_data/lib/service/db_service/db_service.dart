@@ -1,0 +1,23 @@
+import 'package:shared_preferences/shared_preferences.dart';
+
+// shared_preferences
+//  hive  >>  isaar
+// sqflite
+class DBService {
+  static late SharedPreferences prefs;
+  static init() async {
+    prefs = await SharedPreferences.getInstance();
+  }
+
+  static set(String key, String value) async {
+    await prefs.setString(key, value);
+  }
+
+  static String? get(String key) {
+    return prefs.getString(key);
+  }
+
+  static clear(String key) async {
+    prefs.remove(key);
+  }
+}
