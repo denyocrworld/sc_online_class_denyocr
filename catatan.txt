@@ -1,0 +1,112 @@
+Malam ini
+Caresync dan OOP saya reschedule dulu yaa.
+Saya mau bahas GetIt, Injectable, Bloc dan Mobx dulu malam ini.
+Ada kaitannya juga dengan CareSync.
+
+Yuk yang mau ikut:
+19:00 - Selesai
+https://tinyurl.com/link-zoom-391
+
+Yuk ikut,
+Biar makin canggih ngoding Flutter-nya
+Dengan plugin2 terkini :D
+
+---
+
+- Update Snippet
+	BottomNavigationBar1,2,3
+	Snippet BottomSheet dengan StateManagement
+
+----
+
+- Update Generator Bloc (GetIT + Injectable)
+
+- Update Generator Mobx (GetIt + Injectable)
+(!Kurang get_it di ERROR.md)
+
+----
+
+- Service Locator GetIt
+- Injectable
+- Tujuan GetIt
+
+----
+
+- Materi Bloc
+  - State => Freezed
+      > Mendefinisikan State
+      int counter
+  - Bloc
+      > Mengelola State
+      - Harus membuat Event
+  - Cubit
+      > Mengelola State
+      - Gak harus membuat Event
+
+  - Widget/View/Screen/Page    
+      > Menampilkan UI
+      > Menampilkan State
+      > (BLOC) Mengeksekusi kode yang ada di Bloc dengan
+        memanggil Event
+          bloc.add(IncrementEvent());
+      > (Cubit) Memanggil method yang ada di dalam Cubit
+          cubit.increment();
+
+  - Event
+      > Trigger untuk menjalankan logic yang ada di bloc
+        IncrementEvent
+        DecrementEvent
+
+  - BlocProvider
+      > Untuk membuat bloc tersedia di widget2 di bawahnya
+      Saya mau halaman Login bisa menggunakan LoginBloc
+      Bisa, caranya adalah membungkus widget di LoginView dengan BlocProvider
+
+      > BlocProvider main.dart
+        MultiBlocProvider
+          blocA
+          blocB
+          blocC
+
+      > BlocProvider (didalam tiap modul/fitur)
+        LoginView
+          @build
+            BlocProvider
+              Scaffold()
+
+  - BlocBuilder
+      > Membuat Widget bisa di rebuild ketika ada perubahan state
+      > Supaya ketika ada perubahan state widget yang dibungkus
+        BlocBuilder akan di rebuild, ngerefresh / di update, reload data
+
+  - BlocListener
+      > Melisten perubahan state
+      - Navigasi
+        Ketika state A, navigasi ke halaman B
+      - Dialog
+      - BottomSheet
+      - Snackbar
+
+  - Cara Mengubah State Bloc yang ada di Halaman lain
+      - GetIT + Injectable
+        Dashboard
+          int notificationCount
+
+        Cart
+          DashboardBloc dashboardBloc = GetIt.I<DashboardBloc>();
+
+          dashboardBloc.notificationCount
+          dashboardBloc.add(IncrementEvent());
+
+          ! Kalau pake cubit
+          dashobardCubit.increment();
+
+
+----
+
+- Materi Mobx
+  - Store
+  - Observable State
+  - Action
+  - Observer
+  - Cara Mengubah State Mobx yang ada di Halaman lain
