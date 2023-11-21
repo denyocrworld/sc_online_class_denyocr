@@ -2005,7 +2005,7 @@ class Chapter0 {
 
   bool? exercise163() {
     // ? Instruksi: Buatlah variabel List<int> input dengan nilai [10, 20, 30, 40, 50]
-    // ? Instruksi: Buatlah variabel bool? output;
+    // ? Instruksi: Buatlah variabel List<String>? output;
     // ? Instruksi: Konversi input menjadi List<String> dengan mengubah setiap elemen menjadi string
     // TODO: Tulis jawabanmu di bawah ini
 
@@ -2017,7 +2017,7 @@ class Chapter0 {
 
   bool? exercise164() {
     // ? Instruksi: Buatlah variabel Map<String, int> input dengan pasangan nilai "apple" -> 3 dan "banana" -> 2
-    // ? Instruksi: Buatlah variabel bool? output;
+    // ? Instruksi: Buatlah variabel List<String>? output;
     // ? Instruksi: Konversi input menjadi List<String> dengan mengambil semua kunci (keys) dari map
     // TODO: Tulis jawabanmu di bawah ini
 
@@ -2029,7 +2029,7 @@ class Chapter0 {
 
   bool? exercise165() {
     // ? Instruksi: Buatlah variabel Map<int, String> input dengan pasangan nilai 1 -> "one" dan 2 -> "two"
-    // ? Instruksi: Buatlah variabel bool? output;
+    // ? Instruksi: Buatlah variabel List<String>? output;
     // ? Instruksi: Konversi input menjadi List<int> dengan mengambil semua nilai (values) dari map
     // TODO: Tulis jawabanmu di bawah ini
 
@@ -2041,7 +2041,7 @@ class Chapter0 {
 
   bool? exercise166() {
     // ? Instruksi: Buatlah variabel List<Map<String, int>> input dengan nilai [{ "apple": 3 }, { "banana": 2 }]
-    // ? Instruksi: Buatlah variabel bool? output;
+    // ? Instruksi: Buatlah variabel List<String>? output;
     // ? Instruksi: Konversi input menjadi List<int> dengan mengambil semua nilai dari map-map di dalam list
     // TODO: Tulis jawabanmu di bawah ini
 
@@ -2052,7 +2052,7 @@ class Chapter0 {
 
   bool? exercise167() {
     // ? Instruksi: Buatlah variabel Map<String, dynamic> input dengan pasangan nilai "age" -> 25 dan "name" -> "John"
-    // ? Instruksi: Buatlah variabel bool? output;
+    // ? Instruksi: Buatlah variabel List<dynamic>? output;
     // ? Instruksi: Konversi input menjadi List<dynamic> dengan mengambil semua nilai dari map
     // TODO: Tulis jawabanmu di bawah ini
 
@@ -2063,7 +2063,7 @@ class Chapter0 {
 
   bool? exercise168() {
     // ? Instruksi: Buatlah variabel List<int> input dengan nilai [1, 2, 3, 4, 5]
-    // ? Instruksi: Buatlah variabel bool? output;
+    // ? Instruksi: Buatlah variabel Map<String,int>? output;
     // ? Instruksi: Konversi input menjadi Map<String, int> dengan mengubah setiap elemen menjadi pasangan kunci "number" dan nilai elemen
     // TODO: Tulis jawabanmu di bawah ini
 
@@ -2074,7 +2074,7 @@ class Chapter0 {
 
   bool? exercise169() {
     // ? Instruksi: Buatlah variabel List<String> input dengan nilai ["apple", "banana", "cherry"]
-    // ? Instruksi: Buatlah variabel bool? output;
+    // ? Instruksi: Buatlah variabel Map<String,String>? output;
     // ? Instruksi: Konversi input menjadi Map<String, String> dengan mengubah setiap elemen menjadi pasangan kunci dan nilai yang sama
     // TODO: Tulis jawabanmu di bawah ini
 
@@ -2085,7 +2085,7 @@ class Chapter0 {
 
   bool? exercise170() {
     // ? Instruksi: Buatlah variabel List<Map<String, int>> input dengan nilai [{ "apple": 3 }, { "banana": 2 }]
-    // ? Instruksi: Buatlah variabel bool? output;
+    // ? Instruksi: Buatlah variabel Map<String, int>? output;
     // ? Instruksi: Konversi input menjadi Map<String, int> dengan mengambil pasangan kunci "apple" dan nilai dari map pertama dalam list
     // TODO: Tulis jawabanmu di bawah ini
 
