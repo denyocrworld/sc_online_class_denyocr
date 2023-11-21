@@ -1,7 +1,9 @@
-import 'package:hyper_ui/core.dart';
-import 'package:injectable/injectable.dart';
+import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart' as ij;
+import '../../model/order/order.dart';
+import '../api_service/api_service.dart';
 
-@injectable
+@ij.injectable
 class OrderService extends ApiService {
   @override
   String get endpoint => "orders";

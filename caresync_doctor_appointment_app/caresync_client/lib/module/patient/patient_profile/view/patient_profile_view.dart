@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/widget/container/qcontainer.dart';
 import '../bloc/patient_profile_bloc.dart';
@@ -15,11 +16,14 @@ class PatientProfileView extends StatefulWidget {
 }
 
 class _PatientProfileViewState extends State<PatientProfileView> {
-  PatientProfileBloc bloc = PatientProfileBloc();
+  PatientProfileBloc bloc = GetIt.I<PatientProfileBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 

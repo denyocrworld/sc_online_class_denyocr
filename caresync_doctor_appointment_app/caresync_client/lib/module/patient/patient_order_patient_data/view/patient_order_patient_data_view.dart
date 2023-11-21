@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import 'package:hyper_ui/shared/util/validator/validator.dart';
@@ -24,12 +25,15 @@ class PatientOrderPatientDataView extends StatefulWidget {
 
 class _PatientOrderPatientDataViewState
     extends State<PatientOrderPatientDataView> {
-  PatientOrderPatientDataBloc bloc = PatientOrderPatientDataBloc();
+  PatientOrderPatientDataBloc bloc = GetIt.I<PatientOrderPatientDataBloc>();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 
@@ -100,7 +104,7 @@ class _PatientOrderPatientDataViewState
                       QTextField(
                         label: "Full name",
                         validator: Validator.required,
-                        value: null,
+                        value: state.fullName,
                         onChanged: (value) {
                           state.fullName = value;
                         },
@@ -111,7 +115,7 @@ class _PatientOrderPatientDataViewState
                       QDatePicker(
                         label: "Birth date",
                         validator: Validator.required,
-                        value: null,
+                        value: DateTime.tryParse(state.birthDate.toString()),
                         onChanged: (value) {
                           state.birthDate = DateFormat("y-MM-dd").format(value);
                         },
@@ -122,6 +126,7 @@ class _PatientOrderPatientDataViewState
                       QRadioField2(
                         label: "Gender",
                         validator: Validator.atLeastOneitem,
+                        value: state.gender,
                         items: [
                           {
                             "label": "Female",
@@ -142,7 +147,7 @@ class _PatientOrderPatientDataViewState
                       QTextField(
                         label: "ID Card",
                         validator: Validator.required,
-                        value: null,
+                        value: state.idCard,
                         onChanged: (value) {
                           state.idCard = value;
                         },
@@ -153,7 +158,7 @@ class _PatientOrderPatientDataViewState
                       QMemoField(
                         label: "Address",
                         validator: Validator.required,
-                        value: null,
+                        value: state.address,
                         onChanged: (value) {
                           state.address = value;
                         },

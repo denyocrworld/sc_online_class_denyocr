@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import '../bloc/doctor_dashboard_bloc.dart';
 import '../event/doctor_dashboard_event.dart';
 import '../state/doctor_dashboard_state.dart';
@@ -12,11 +13,14 @@ class DoctorDashboardView extends StatefulWidget {
 }
 
 class _DoctorDashboardViewState extends State<DoctorDashboardView> {
-  DoctorDashboardBloc bloc = DoctorDashboardBloc();
+  DoctorDashboardBloc bloc = GetIt.I<DoctorDashboardBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import '../bloc/doctor_main_navigation_bloc.dart';
 import '../event/doctor_main_navigation_event.dart';
 import '../state/doctor_main_navigation_state.dart';
@@ -13,11 +14,14 @@ class DoctorMainNavigationView extends StatefulWidget {
 }
 
 class _DoctorMainNavigationViewState extends State<DoctorMainNavigationView> {
-  DoctorMainNavigationBloc bloc = DoctorMainNavigationBloc();
+  DoctorMainNavigationBloc bloc = GetIt.I<DoctorMainNavigationBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 

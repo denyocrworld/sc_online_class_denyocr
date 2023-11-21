@@ -30,3 +30,4 @@ Route::apiResource('orders', OrderController::class);
 Route::apiResource('hospitals', HospitalController::class);
 
 Route::post('/orders/payment/create', [OrderController::class, 'createPaymentLink']);
+Route::post('/orders/payment/callback', [OrderController::class, 'midtransCallback']);

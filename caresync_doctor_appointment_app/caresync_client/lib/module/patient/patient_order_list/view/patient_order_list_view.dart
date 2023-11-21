@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import '../bloc/patient_order_list_bloc.dart';
 import '../event/patient_order_list_event.dart';
 import '../state/patient_order_list_state.dart';
@@ -13,11 +13,14 @@ class PatientOrderListView extends StatefulWidget {
 }
 
 class _PatientOrderListViewState extends State<PatientOrderListView> {
-  PatientOrderListBloc bloc = PatientOrderListBloc();
+  PatientOrderListBloc bloc = GetIt.I<PatientOrderListBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 
@@ -43,11 +46,11 @@ class _PatientOrderListViewState extends State<PatientOrderListView> {
     );
   }
 
-  Widget buildView( 
-      BuildContext context,
-      PatientOrderListBloc bloc,
-      PatientOrderListState state,
-    ) {
+  Widget buildView(
+    BuildContext context,
+    PatientOrderListBloc bloc,
+    PatientOrderListState state,
+  ) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('PatientOrderList'),
@@ -71,5 +74,4 @@ class _PatientOrderListViewState extends State<PatientOrderListView> {
       ),
     );
   }
-}    
-    
+}

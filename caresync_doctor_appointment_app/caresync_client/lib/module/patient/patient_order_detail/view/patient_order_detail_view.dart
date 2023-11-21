@@ -18,17 +18,20 @@ class PatientOrderDetailView extends StatefulWidget {
 }
 
 class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
-  // PatientOrderDetailBloc bloc = PatientOrderDetailBloc();
+  PatientOrderDetailBloc bloc = GetIt.I<PatientOrderDetailBloc>();
 
   @override
   void initState() {
-    // bloc.initState();
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 
   @override
   void dispose() {
-    // bloc.dispose();
+    bloc.dispose();
     super.dispose();
   }
 
@@ -72,12 +75,8 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
     //     ),
     //   );
     // });
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<PatientOrderDetailBloc>(
-          create: (BuildContext context) => PatientOrderDetailBloc(),
-        ),
-      ],
+    return BlocProvider(
+      create: (BuildContext context) => bloc,
       child: BlocListener<PatientOrderDetailBloc, PatientOrderDetailState>(
         listener: (context, state) {},
         child: BlocBuilder<PatientOrderDetailBloc, PatientOrderDetailState>(
@@ -100,8 +99,7 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
     PatientOrderDetailBloc bloc,
     PatientOrderDetailState state,
   ) {
-    GetIt getIt = GetIt.instance;
-    final patientDoctorDetailBloc = getIt<PatientDoctorDetailBloc>();
+    final patientDoctorDetailBloc = GetIt.I<PatientDoctorDetailBloc>();
     final doctor = patientDoctorDetailBloc.state.doctor!;
     final schedule = patientDoctorDetailBloc.state.schedule!;
 

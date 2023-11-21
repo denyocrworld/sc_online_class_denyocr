@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hyper_ui/core.dart';
 import '../bloc/tutorial_bloc.dart';
 import '../event/tutorial_event.dart';
 import '../state/tutorial_state.dart';
+import 'package:get_it/get_it.dart';
 
 class TutorialView extends StatefulWidget {
   const TutorialView({Key? key}) : super(key: key);
@@ -13,11 +13,14 @@ class TutorialView extends StatefulWidget {
 }
 
 class _TutorialViewState extends State<TutorialView> {
-  TutorialBloc bloc = TutorialBloc();
+  TutorialBloc bloc = GetIt.I<TutorialBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 
@@ -61,10 +64,7 @@ class _TutorialViewState extends State<TutorialView> {
             style: const TextStyle(fontSize: 24),
           ),
           IconButton(
-            // onPressed: () => bloc.add(TutorialIncrementEvent()),
-            onPressed: () {
-              bloc.incrementCounter();
-            },
+            onPressed: () => bloc.add(TutorialIncrementEvent()),
             icon: const Icon(
               Icons.add,
               size: 24.0,

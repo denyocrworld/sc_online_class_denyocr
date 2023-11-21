@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import '../bloc/doctor_profile_bloc.dart';
 import '../event/doctor_profile_event.dart';
 import '../state/doctor_profile_state.dart';
@@ -12,11 +13,14 @@ class DoctorProfileView extends StatefulWidget {
 }
 
 class _DoctorProfileViewState extends State<DoctorProfileView> {
-  DoctorProfileBloc bloc = DoctorProfileBloc();
+  DoctorProfileBloc bloc = GetIt.I<DoctorProfileBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 

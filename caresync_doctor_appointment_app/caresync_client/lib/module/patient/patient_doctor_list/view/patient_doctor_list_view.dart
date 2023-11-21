@@ -23,6 +23,9 @@ class _PatientDoctorListViewState extends State<PatientDoctorListView> {
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 

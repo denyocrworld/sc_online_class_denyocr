@@ -26,21 +26,15 @@ class PatientDoctorDetailView extends StatefulWidget {
 }
 
 class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
-  late PatientDoctorDetailBloc bloc;
+  late PatientDoctorDetailBloc bloc = GetIt.I<PatientDoctorDetailBloc>();
 
   @override
   void initState() {
-    bloc = GetIt.I<PatientDoctorDetailBloc>();
     bloc.initState();
-    bloc.state.doctor = widget.item;
-    bloc.state.counter = 250;
-
-    print("-----------------------");
-    print(bloc.state.doctor);
-    print(bloc.state.counter);
-    print("-----------------------");
-    // GetIt getIt = GetIt.instance;
-    // getIt.registerSingleton<PatientDoctorDetailBloc>(bloc);
+    bloc.add(PatientDoctorDetailSetDoctorEvent(doctor: widget.item));
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 
@@ -52,12 +46,8 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<PatientDoctorDetailBloc>(
-          create: (BuildContext context) => bloc,
-        ),
-      ],
+    return BlocProvider(
+      create: (BuildContext context) => bloc,
       // create: (BuildContext context) => bloc,
       child: BlocListener<PatientDoctorDetailBloc, PatientDoctorDetailState>(
         listener: (context, state) {},

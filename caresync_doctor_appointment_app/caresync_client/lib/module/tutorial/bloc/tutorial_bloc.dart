@@ -1,57 +1,31 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../event/tutorial_event.dart';
 import '../state/tutorial_state.dart';
+import 'package:hyper_ui/bloc_util.dart';
+import 'package:injectable/injectable.dart';
 
-mixin _BlocLifecycle {
-  void initState() {}
-  void dispose() {}
-}
-
+@singleton
 class TutorialBloc extends Bloc<TutorialEvent, TutorialState>
-    with _BlocLifecycle {
+    implements IBlocBase {
   TutorialBloc() : super(TutorialState()) {
-    // on<TutorialIncrementEvent>((event, emit) {
-    //   //1. freezed ata tidak?
-    //   //2. freezed-nya itu mutable atau immutable?
-
-    //   // freezed | immutable
-    //   // Buat rumah baru dari awal tapi dimodif dikit pintunya
-    //   // emit(state.copyWith(
-    //   //   counter: state.counter + 1,
-    //   // ));
-
-    //   //unfreezed | mutable
-    //   // Modifikasi rumah yang ada, kita ubah pintunya
-    //   state.counter++;
-    //   emit(state.copyWith());
-    // });
+    on<TutorialIncrementEvent>((event, emit) {
+      state.counter++;
+      emit(state.copyWith());
+    });
   }
 
   @override
   void initState() {
     //initState event
-    super.initState();
   }
 
   @override
   void dispose() {
     //dispose event
-    super.dispose();
   }
 
   @override
-  Future<void> close() {
-    dispose();
-    return super.close();
-  }
-
-  incrementCounter() {
-    state.counter++;
-    emit(state.copyWith());
-  }
-
-  decrementCounter() {
-    state.counter--;
-    emit(state.copyWith());
+  void ready() {
+    //ready event
   }
 }

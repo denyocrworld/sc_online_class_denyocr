@@ -97,14 +97,8 @@ class EmployeeAttendanceFormView extends StatefulWidget {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
-                          QCameraPicker(
-                            label: "Photo",
-                            validator: Validator.required,
-                            value: null,
-                            onChanged: (value) {
-                              controller.photo = value;
-                            },
-                          ),
+                          //2. Mengurangi Kompleksitas
+                          //3. Reusabilitas
                           Row(
                             children: [
                               Expanded(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import '../bloc/under_maintenance_bloc.dart';
 import '../event/under_maintenance_event.dart';
@@ -13,11 +14,14 @@ class UnderMaintenanceView extends StatefulWidget {
 }
 
 class _UnderMaintenanceViewState extends State<UnderMaintenanceView> {
-  UnderMaintenanceBloc bloc = UnderMaintenanceBloc();
+  UnderMaintenanceBloc bloc = GetIt.I<UnderMaintenanceBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 

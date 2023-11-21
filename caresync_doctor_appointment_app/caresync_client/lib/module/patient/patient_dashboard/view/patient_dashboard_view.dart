@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/widget/form/searchfield/searchfield.dart';
 import 'package:hyper_ui/shared/widget/navigation/custom_tab_navigation/custom_tab_navigation.dart';
@@ -17,11 +18,14 @@ class PatientDashboardView extends StatefulWidget {
 }
 
 class _PatientDashboardViewState extends State<PatientDashboardView> {
-  PatientDashboardBloc bloc = PatientDashboardBloc();
+  PatientDashboardBloc bloc = GetIt.I<PatientDashboardBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 

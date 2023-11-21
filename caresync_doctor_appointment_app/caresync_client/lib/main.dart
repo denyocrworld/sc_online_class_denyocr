@@ -7,6 +7,7 @@ import 'package:hyper_ui/injection.dart';
 import 'package:hyper_ui/service/auth_service/auth_service.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initialize();
   configureDependencies();
   var instance = GetIt.I<PatientDoctorDetailBloc>();

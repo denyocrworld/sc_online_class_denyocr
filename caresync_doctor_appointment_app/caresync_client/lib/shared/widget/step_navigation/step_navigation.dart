@@ -23,7 +23,6 @@ class StepNavigation extends StatefulWidget {
   State<StepNavigation> createState() => StepNavigationController();
 }
 
-// @singleton
 class StepNavigationController extends State<StepNavigation> {
   static late StepNavigationController instance;
   int selectedIndex = 0;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
 import '../bloc/patient_lab_test_list_bloc.dart';
 import '../event/patient_lab_test_list_event.dart';
@@ -13,11 +14,14 @@ class PatientLabTestListView extends StatefulWidget {
 }
 
 class _PatientLabTestListViewState extends State<PatientLabTestListView> {
-  PatientLabTestListBloc bloc = PatientLabTestListBloc();
+  PatientLabTestListBloc bloc = GetIt.I<PatientLabTestListBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 

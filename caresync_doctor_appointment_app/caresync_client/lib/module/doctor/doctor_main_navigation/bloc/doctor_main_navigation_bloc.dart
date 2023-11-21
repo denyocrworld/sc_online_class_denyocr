@@ -1,15 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_ui/bloc_util.dart';
+import 'package:injectable/injectable.dart';
 import '../event/doctor_main_navigation_event.dart';
 import '../state/doctor_main_navigation_state.dart';
 
-mixin _BlocLifecycle {
-  void initState() {}
-  void dispose() {}
-}
-
+@singleton
 class DoctorMainNavigationBloc
     extends Bloc<DoctorMainNavigationEvent, DoctorMainNavigationState>
-    with _BlocLifecycle {
+    implements IBlocBase {
   DoctorMainNavigationBloc() : super(DoctorMainNavigationState()) {
     on<DoctorMainNavigationIncrementEvent>((event, emit) {
       state.counter++;
@@ -20,18 +18,15 @@ class DoctorMainNavigationBloc
   @override
   void initState() {
     //initState event
-    super.initState();
   }
 
   @override
   void dispose() {
     //dispose event
-    super.dispose();
   }
 
   @override
-  Future<void> close() {
-    dispose();
-    return super.close();
+  void ready() {
+    //ready event
   }
 }

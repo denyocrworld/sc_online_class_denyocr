@@ -1,15 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_ui/bloc_util.dart';
+import 'package:injectable/injectable.dart';
 import '../event/patient_lab_test_list_event.dart';
 import '../state/patient_lab_test_list_state.dart';
 
-mixin _BlocLifecycle {
-  void initState() {}
-  void dispose() {}
-}
-
+@singleton
 class PatientLabTestListBloc
     extends Bloc<PatientLabTestListEvent, PatientLabTestListState>
-    with _BlocLifecycle {
+    implements IBlocBase {
   PatientLabTestListBloc() : super(PatientLabTestListState()) {
     on<PatientLabTestListIncrementEvent>((event, emit) {
       state.counter++;
@@ -20,18 +18,15 @@ class PatientLabTestListBloc
   @override
   void initState() {
     //initState event
-    super.initState();
   }
 
   @override
   void dispose() {
     //dispose event
-    super.dispose();
   }
 
   @override
-  Future<void> close() {
-    dispose();
-    return super.close();
+  void ready() {
+    //ready event
   }
 }

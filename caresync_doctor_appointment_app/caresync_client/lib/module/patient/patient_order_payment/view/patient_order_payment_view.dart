@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import '../bloc/patient_order_payment_bloc.dart';
 import '../event/patient_order_payment_event.dart';
@@ -15,11 +17,14 @@ class PatientOrderPaymentView extends StatefulWidget {
 }
 
 class _PatientOrderPaymentViewState extends State<PatientOrderPaymentView> {
-  PatientOrderPaymentBloc bloc = PatientOrderPaymentBloc();
+  PatientOrderPaymentBloc bloc = GetIt.I<PatientOrderPaymentBloc>();
 
   @override
   void initState() {
     bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
     super.initState();
   }
 
@@ -54,9 +59,28 @@ class _PatientOrderPaymentViewState extends State<PatientOrderPaymentView> {
       body: state.paymentUrl == null
           ? Container()
           : InAppWebView(
+              initialOptions: InAppWebViewGroupOptions(
+                crossPlatform: InAppWebViewOptions(
+                  useShouldOverrideUrlLoading: true,
+                ),
+              ),
               initialUrlRequest: URLRequest(
                 url: Uri.parse(state.paymentUrl!),
               ),
+
+              shouldOverrideUrlLoading: (controller, navigationAction) async {
+                final url = navigationAction.request.url.toString();
+
+                if (url.contains("example.com")) {
+                  // This one means do not navigate
+                  Get.offAll(PatientMainNavigationView());
+                  snackbarPrimary(message: "Transaksi berhasil");
+                  return NavigationActionPolicy.CANCEL;
+                }
+
+                // This one means navigate
+                return NavigationActionPolicy.ALLOW;
+              },
               // http payment link success
               // redirect ke dashboard
               // snackbar (Payment berhasil)

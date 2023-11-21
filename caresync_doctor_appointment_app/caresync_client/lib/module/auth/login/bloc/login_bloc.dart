@@ -1,15 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/service/auth_service/auth_service.dart';
+import 'package:injectable/injectable.dart';
 import '../event/login_event.dart';
 import '../state/login_state.dart';
 
-mixin _BlocLifecycle {
-  void initState() {}
-  void dispose() {}
-}
-
-class LoginBloc extends Bloc<LoginEvent, LoginState> with _BlocLifecycle {
+@singleton
+class LoginBloc extends Bloc<LoginEvent, LoginState> implements IBlocBase {
   LoginBloc() : super(LoginState()) {
     on<LoginIncrementEvent>((event, emit) {
       state.counter++;
@@ -28,18 +25,15 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> with _BlocLifecycle {
   @override
   void initState() {
     //initState event
-    super.initState();
   }
 
   @override
   void dispose() {
     //dispose event
-    super.dispose();
   }
 
   @override
-  Future<void> close() {
-    dispose();
-    return super.close();
+  void ready() {
+    //ready event
   }
 }

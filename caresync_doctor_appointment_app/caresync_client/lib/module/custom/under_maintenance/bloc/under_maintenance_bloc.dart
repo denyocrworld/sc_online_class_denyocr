@@ -1,15 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hyper_ui/bloc_util.dart';
+import 'package:injectable/injectable.dart';
 import '../event/under_maintenance_event.dart';
 import '../state/under_maintenance_state.dart';
 
-mixin _BlocLifecycle {
-  void initState() {}
-  void dispose() {}
-}
-
+@singleton
 class UnderMaintenanceBloc
     extends Bloc<UnderMaintenanceEvent, UnderMaintenanceState>
-    with _BlocLifecycle {
+    implements IBlocBase {
   UnderMaintenanceBloc() : super(UnderMaintenanceState()) {
     on<UnderMaintenanceIncrementEvent>((event, emit) {
       state.counter++;
@@ -20,18 +18,15 @@ class UnderMaintenanceBloc
   @override
   void initState() {
     //initState event
-    super.initState();
   }
 
   @override
   void dispose() {
     //dispose event
-    super.dispose();
   }
 
   @override
-  Future<void> close() {
-    dispose();
-    return super.close();
+  void ready() {
+    //ready event
   }
 }
