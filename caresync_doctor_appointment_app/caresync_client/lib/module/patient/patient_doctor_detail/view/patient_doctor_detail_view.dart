@@ -26,10 +26,13 @@ class PatientDoctorDetailView extends StatefulWidget {
 }
 
 class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
-  late PatientDoctorDetailBloc bloc = GetIt.I<PatientDoctorDetailBloc>();
+  PatientDoctorDetailBloc bloc = PatientDoctorDetailBloc();
 
   @override
   void initState() {
+    GetIt.I.unregister<PatientDoctorDetailBloc>();
+    GetIt.I.registerSingleton(bloc);
+    //--------------
     bloc.initState();
     bloc.add(PatientDoctorDetailSetDoctorEvent(doctor: widget.item));
     WidgetsBinding.instance.addPostFrameCallback(

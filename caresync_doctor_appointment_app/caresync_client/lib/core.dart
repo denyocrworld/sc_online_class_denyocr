@@ -157,6 +157,7 @@ export 'package:hyper_ui/shared/widget/navigation/custom_tab_navigation/custom_t
 export 'package:hyper_ui/shared/widget/step_navigation/step_navigation.dart';
 export 'package:hyper_ui/shared/widget/typography/heading.dart';
 export 'package:hyper_ui/shared/widget/widget_demo/widget_demo.dart';
+export 'package:hyper_ui/snippet.dart';
 export 'package:hyper_ui/state_util.dart';
 export 'package:hyper_ui/test.dart';
 export 'core_package.dart';

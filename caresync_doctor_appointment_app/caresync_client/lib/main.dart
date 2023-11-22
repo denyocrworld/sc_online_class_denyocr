@@ -10,9 +10,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialize();
   configureDependencies();
-  var instance = GetIt.I<PatientDoctorDetailBloc>();
-  print(instance.state.counter);
-  print(instance.state.doctor);
+  // var instance = GetIt.I<PatientDoctorDetailBloc>();
+  // print(instance.state.counter);
+  // print(instance.state.doctor);
   runMainApp();
 }
 

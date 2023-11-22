@@ -5,7 +5,6 @@ import 'package:injectable/injectable.dart';
 import '../event/patient_doctor_detail_event.dart';
 import '../state/patient_doctor_detail_state.dart';
 
-@lazySingleton
 class PatientDoctorDetailBloc
     extends Bloc<PatientDoctorDetailEvent, PatientDoctorDetailState>
     implements IBlocBase {
