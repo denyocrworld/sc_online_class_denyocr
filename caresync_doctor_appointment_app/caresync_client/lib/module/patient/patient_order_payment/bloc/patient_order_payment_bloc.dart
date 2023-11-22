@@ -3,11 +3,11 @@ import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/bloc_util.dart';
 import 'package:hyper_ui/module/patient/patient_doctor_detail/bloc/patient_doctor_detail_bloc.dart';
 import 'package:hyper_ui/service/order_service/order_service.dart';
-import 'package:injectable/injectable.dart';
+
 import '../event/patient_order_payment_event.dart';
 import '../state/patient_order_payment_state.dart';
 
-@singleton
+
 class PatientOrderPaymentBloc
     extends Bloc<PatientOrderPaymentEvent, PatientOrderPaymentState>
     implements IBlocBase {

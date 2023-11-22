@@ -1,10 +1,5 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:get_it/get_it.dart';
-import 'package:hyper_ui/firebase_options.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:flutter/material.dart';
-import 'package:hyper_ui/injection.dart';
-import 'package:hyper_ui/service/auth_service/auth_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

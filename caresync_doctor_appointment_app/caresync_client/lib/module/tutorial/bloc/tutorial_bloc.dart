@@ -2,9 +2,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../event/tutorial_event.dart';
 import '../state/tutorial_state.dart';
 import 'package:hyper_ui/bloc_util.dart';
-import 'package:injectable/injectable.dart';
 
-@singleton
+
+
 class TutorialBloc extends Bloc<TutorialEvent, TutorialState>
     implements IBlocBase {
   TutorialBloc() : super(TutorialState()) {

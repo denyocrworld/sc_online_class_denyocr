@@ -13,10 +13,13 @@ class TutorialView extends StatefulWidget {
 }
 
 class _TutorialViewState extends State<TutorialView> {
-  TutorialBloc bloc = GetIt.I<TutorialBloc>();
+  TutorialBloc bloc = TutorialBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<TutorialBloc>())
+      GetIt.I.unregister<TutorialBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

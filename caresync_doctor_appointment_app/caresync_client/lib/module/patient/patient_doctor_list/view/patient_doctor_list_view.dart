@@ -2,13 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/module/patient/patient_doctor_list/widget/patient_doctor_list_category.dart';
-import 'package:hyper_ui/module/patient/patient_doctor_list/widget/patient_doctor_list_item.dart';
-import 'package:hyper_ui/shared/theme/theme_config.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import '../bloc/patient_doctor_list_bloc.dart';
-import '../event/patient_doctor_list_event.dart';
-import '../state/patient_doctor_list_state.dart';
 
 class PatientDoctorListView extends StatefulWidget {
   PatientDoctorListView({Key? key}) : super(key: key);
@@ -18,10 +11,13 @@ class PatientDoctorListView extends StatefulWidget {
 }
 
 class _PatientDoctorListViewState extends State<PatientDoctorListView> {
-  PatientDoctorListBloc bloc = GetIt.I<PatientDoctorListBloc>();
+  PatientDoctorListBloc bloc = PatientDoctorListBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<PatientDoctorListBloc>())
+      GetIt.I.unregister<PatientDoctorListBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

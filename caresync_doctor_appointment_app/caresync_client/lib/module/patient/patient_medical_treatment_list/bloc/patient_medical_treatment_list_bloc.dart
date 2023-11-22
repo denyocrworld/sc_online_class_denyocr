@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/bloc_util.dart';
-import 'package:injectable/injectable.dart';
+
 import '../event/patient_medical_treatment_list_event.dart';
 import '../state/patient_medical_treatment_list_state.dart';
 
-@singleton
+
 class PatientMedicalTreatmentListBloc extends Bloc<
     PatientMedicalTreatmentListEvent,
     PatientMedicalTreatmentListState> implements IBlocBase {

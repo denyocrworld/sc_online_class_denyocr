@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/theme/theme_config.dart';
 
 class PatientDoctorListCategory extends StatefulWidget {
   final List categories;

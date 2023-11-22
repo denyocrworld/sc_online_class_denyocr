@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/bloc_util.dart';
-import 'package:injectable/injectable.dart';
+
 import '../event/under_maintenance_event.dart';
 import '../state/under_maintenance_state.dart';
 
-@singleton
+
 class UnderMaintenanceBloc
     extends Bloc<UnderMaintenanceEvent, UnderMaintenanceState>
     implements IBlocBase {

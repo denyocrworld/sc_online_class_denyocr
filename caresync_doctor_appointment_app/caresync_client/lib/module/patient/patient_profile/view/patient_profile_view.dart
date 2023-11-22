@@ -3,10 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/widget/container/qcontainer.dart';
-import '../bloc/patient_profile_bloc.dart';
-import '../event/patient_profile_event.dart';
-import '../state/patient_profile_state.dart';
 
 class PatientProfileView extends StatefulWidget {
   PatientProfileView({Key? key}) : super(key: key);
@@ -16,10 +12,13 @@ class PatientProfileView extends StatefulWidget {
 }
 
 class _PatientProfileViewState extends State<PatientProfileView> {
-  PatientProfileBloc bloc = GetIt.I<PatientProfileBloc>();
+  PatientProfileBloc bloc = PatientProfileBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<PatientProfileBloc>())
+      GetIt.I.unregister<PatientProfileBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/widget/form/searchfield/searchfield.dart';
-import 'package:hyper_ui/state_util.dart';
-import '../bloc/patient_specialization_list_bloc.dart';
-import '../event/patient_specialization_list_event.dart';
-import '../state/patient_specialization_list_state.dart';
 
 class PatientSpecializationListView extends StatefulWidget {
   const PatientSpecializationListView({Key? key}) : super(key: key);
@@ -18,9 +13,12 @@ class PatientSpecializationListView extends StatefulWidget {
 
 class _PatientSpecializationListViewState
     extends State<PatientSpecializationListView> {
-  PatientSpecializationListBloc bloc = GetIt.I<PatientSpecializationListBloc>();
+  PatientSpecializationListBloc bloc = PatientSpecializationListBloc();
   @override
   void initState() {
+    if (GetIt.I.isRegistered<PatientSpecializationListBloc>())
+      GetIt.I.unregister<PatientSpecializationListBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

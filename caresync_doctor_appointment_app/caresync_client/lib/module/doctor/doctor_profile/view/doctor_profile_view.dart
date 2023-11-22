@@ -13,10 +13,13 @@ class DoctorProfileView extends StatefulWidget {
 }
 
 class _DoctorProfileViewState extends State<DoctorProfileView> {
-  DoctorProfileBloc bloc = GetIt.I<DoctorProfileBloc>();
+  DoctorProfileBloc bloc = DoctorProfileBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<DoctorProfileBloc>())
+      GetIt.I.unregister<DoctorProfileBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

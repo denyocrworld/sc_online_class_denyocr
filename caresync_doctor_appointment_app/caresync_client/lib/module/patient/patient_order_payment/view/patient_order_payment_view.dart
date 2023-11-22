@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/theme/theme_config.dart';
-import '../bloc/patient_order_payment_bloc.dart';
-import '../event/patient_order_payment_event.dart';
-import '../state/patient_order_payment_state.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class PatientOrderPaymentView extends StatefulWidget {
@@ -17,10 +13,13 @@ class PatientOrderPaymentView extends StatefulWidget {
 }
 
 class _PatientOrderPaymentViewState extends State<PatientOrderPaymentView> {
-  PatientOrderPaymentBloc bloc = GetIt.I<PatientOrderPaymentBloc>();
+  PatientOrderPaymentBloc bloc = PatientOrderPaymentBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<PatientOrderPaymentBloc>())
+      GetIt.I.unregister<PatientOrderPaymentBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

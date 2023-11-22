@@ -14,10 +14,13 @@ class DoctorMainNavigationView extends StatefulWidget {
 }
 
 class _DoctorMainNavigationViewState extends State<DoctorMainNavigationView> {
-  DoctorMainNavigationBloc bloc = GetIt.I<DoctorMainNavigationBloc>();
+  DoctorMainNavigationBloc bloc = DoctorMainNavigationBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<DoctorMainNavigationBloc>())
+      GetIt.I.unregister<DoctorMainNavigationBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

@@ -2,16 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/injection.dart';
 import 'package:hyper_ui/model/doctor/doctor.dart';
-import 'package:hyper_ui/module/patient/patient_doctor_detail/model/patient_doctor_detail_schedule_list.dart';
-import 'package:hyper_ui/module/patient/patient_doctor_detail/widget/more_text_example.dart';
-import 'package:hyper_ui/module/patient/patient_doctor_detail/widget/patient_doctor_detail_schedules.dart';
-import 'package:hyper_ui/shared/widget/expansion_panel/expansion_panel.dart';
-import '../bloc/patient_doctor_detail_bloc.dart';
-import '../event/patient_doctor_detail_event.dart';
-import '../state/patient_doctor_detail_state.dart';
-import 'package:provider/provider.dart';
 
 class PatientDoctorDetailView extends StatefulWidget {
   final Doctor item;
@@ -30,9 +21,9 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
 
   @override
   void initState() {
-    GetIt.I.unregister<PatientDoctorDetailBloc>();
+    if (GetIt.I.isRegistered<PatientDoctorDetailBloc>())
+      GetIt.I.unregister<PatientDoctorDetailBloc>();
     GetIt.I.registerSingleton(bloc);
-    //--------------
     bloc.initState();
     bloc.add(PatientDoctorDetailSetDoctorEvent(doctor: widget.item));
     WidgetsBinding.instance.addPostFrameCallback(

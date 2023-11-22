@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/theme/theme_config.dart';
-import 'package:hyper_ui/shared/widget/container/qcontainer.dart';
-import '../bloc/patient_order_detail_bloc.dart';
-import '../event/patient_order_detail_event.dart';
-import '../state/patient_order_detail_state.dart';
 
 class PatientOrderDetailView extends StatefulWidget {
   PatientOrderDetailView({
@@ -18,10 +13,13 @@ class PatientOrderDetailView extends StatefulWidget {
 }
 
 class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
-  PatientOrderDetailBloc bloc = GetIt.I<PatientOrderDetailBloc>();
+  PatientOrderDetailBloc bloc = PatientOrderDetailBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<PatientOrderDetailBloc>())
+      GetIt.I.unregister<PatientOrderDetailBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

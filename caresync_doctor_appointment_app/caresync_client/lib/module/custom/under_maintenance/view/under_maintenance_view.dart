@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import '../bloc/under_maintenance_bloc.dart';
-import '../event/under_maintenance_event.dart';
 import '../state/under_maintenance_state.dart';
 
 class UnderMaintenanceView extends StatefulWidget {
@@ -14,10 +13,13 @@ class UnderMaintenanceView extends StatefulWidget {
 }
 
 class _UnderMaintenanceViewState extends State<UnderMaintenanceView> {
-  UnderMaintenanceBloc bloc = GetIt.I<UnderMaintenanceBloc>();
+  UnderMaintenanceBloc bloc = UnderMaintenanceBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<UnderMaintenanceBloc>())
+      GetIt.I.unregister<UnderMaintenanceBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

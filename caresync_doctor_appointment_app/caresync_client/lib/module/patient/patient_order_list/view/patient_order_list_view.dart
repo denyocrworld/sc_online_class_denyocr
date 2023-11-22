@@ -13,10 +13,13 @@ class PatientOrderListView extends StatefulWidget {
 }
 
 class _PatientOrderListViewState extends State<PatientOrderListView> {
-  PatientOrderListBloc bloc = GetIt.I<PatientOrderListBloc>();
+  PatientOrderListBloc bloc = PatientOrderListBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<PatientOrderListBloc>())
+      GetIt.I.unregister<PatientOrderListBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

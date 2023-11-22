@@ -1,12 +1,8 @@
-import 'package:injectable/injectable.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class StepNavigation extends StatefulWidget {
   final List<String> navigations;

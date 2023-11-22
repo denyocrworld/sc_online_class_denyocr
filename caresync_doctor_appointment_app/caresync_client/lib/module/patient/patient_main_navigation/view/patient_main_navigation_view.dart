@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/module/patient/patient_dashboard/view/patient_dashboard_view.dart';
-import '../bloc/patient_main_navigation_bloc.dart';
-import '../event/patient_main_navigation_event.dart';
-import '../state/patient_main_navigation_state.dart';
 
 class PatientMainNavigationView extends StatefulWidget {
   PatientMainNavigationView({Key? key}) : super(key: key);
@@ -16,10 +12,13 @@ class PatientMainNavigationView extends StatefulWidget {
 }
 
 class _PatientMainNavigationViewState extends State<PatientMainNavigationView> {
-  PatientMainNavigationBloc bloc = GetIt.I<PatientMainNavigationBloc>();
+  PatientMainNavigationBloc bloc = PatientMainNavigationBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<PatientMainNavigationBloc>())
+      GetIt.I.unregister<PatientMainNavigationBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

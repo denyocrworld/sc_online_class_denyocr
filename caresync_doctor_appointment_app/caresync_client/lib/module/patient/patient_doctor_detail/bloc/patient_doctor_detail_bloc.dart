@@ -1,7 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/bloc_util.dart';
-import 'package:hyper_ui/model/order/doctor.dart';
-import 'package:injectable/injectable.dart';
 import '../event/patient_doctor_detail_event.dart';
 import '../state/patient_doctor_detail_state.dart';
 

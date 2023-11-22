@@ -13,10 +13,13 @@ class DoctorDashboardView extends StatefulWidget {
 }
 
 class _DoctorDashboardViewState extends State<DoctorDashboardView> {
-  DoctorDashboardBloc bloc = GetIt.I<DoctorDashboardBloc>();
+  DoctorDashboardBloc bloc = DoctorDashboardBloc();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<DoctorDashboardBloc>())
+      GetIt.I.unregister<DoctorDashboardBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),

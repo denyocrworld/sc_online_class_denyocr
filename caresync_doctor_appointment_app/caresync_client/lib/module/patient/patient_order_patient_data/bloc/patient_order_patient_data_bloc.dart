@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/bloc_util.dart';
-import 'package:injectable/injectable.dart';
+
 import '../event/patient_order_patient_data_event.dart';
 import '../state/patient_order_patient_data_state.dart';
 
-@singleton
+
 class PatientOrderPatientDataBloc
     extends Bloc<PatientOrderPatientDataEvent, PatientOrderPatientDataState>
     implements IBlocBase {

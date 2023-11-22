@@ -2,18 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/theme/theme_config.dart';
-import 'package:hyper_ui/shared/util/validator/validator.dart';
-import 'package:hyper_ui/shared/widget/container/qcontainer.dart';
-import 'package:hyper_ui/shared/widget/form/date_picker/datepicker.dart';
-import 'package:hyper_ui/shared/widget/form/memo_field/memo_field.dart';
-import 'package:hyper_ui/shared/widget/form/radio/radio.dart';
-import 'package:hyper_ui/shared/widget/form/radio/radio2.dart';
-import 'package:hyper_ui/shared/widget/form/switch/switch.dart';
-import 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';
-import '../bloc/patient_order_patient_data_bloc.dart';
-import '../event/patient_order_patient_data_event.dart';
-import '../state/patient_order_patient_data_state.dart';
 
 class PatientOrderPatientDataView extends StatefulWidget {
   const PatientOrderPatientDataView({Key? key}) : super(key: key);
@@ -25,11 +13,14 @@ class PatientOrderPatientDataView extends StatefulWidget {
 
 class _PatientOrderPatientDataViewState
     extends State<PatientOrderPatientDataView> {
-  PatientOrderPatientDataBloc bloc = GetIt.I<PatientOrderPatientDataBloc>();
+  PatientOrderPatientDataBloc bloc = PatientOrderPatientDataBloc();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
+    if (GetIt.I.isRegistered<PatientOrderPatientDataBloc>())
+      GetIt.I.unregister<PatientOrderPatientDataBloc>();
+    GetIt.I.registerSingleton(bloc);
     bloc.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => bloc.ready(),
