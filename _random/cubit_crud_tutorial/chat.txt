@@ -1,0 +1,384 @@
+Allouisius_Jessen:
+generator apaan tu?
+Allouisius_Jessen:
+live di yt juga kah bang? ngapain pakai obs bang buat apa tu?
+Allouisius_Jessen:
+oh Abang pakai ram 16 GB ya bang? record pakai berapa fps bang?
+al:
+apk apa bng
+al:
+bg aku maba infor toi blom paham apa2
+Irvan Achmad Ashari:
+halo bang
+kikuk:
+izin bang, apa itu dart dan flutter bang?
+Irvan Achmad Ashari:
+oke siap bang
+bayu:
+Aku ga ngerti, tapi suka ngekiatnya 🤣
+supardini.official:
+E Rekam medis bang
+supardini.official:
+lupa kata sandi bang
+︎ David:
+face id bang, ntar mukanya di scan trs formnya auto input
+V:
+di flutter make room database bisa ga bg
+Toko Aliaaa:
+keren ngab
+mozzarella:
+Bang di youtube ad tutorial  flutter dan contoh project nya ga?
+V:
+jadi worth it ga kalo make room ?
+supardini.official:
+nilai pasar UI/UX bang
+Bagus.r:
+Bg info web hosting murah
+buttt:
+spil spek laptop mas
+V:
+vercel ae gratis wkwkwkw
+Sagitarius girl:
+bang liat login_view.dart nya
+V:
+hashmap di flutter ada ga bg ?
+Faw:
+token disimpsn dimna bg?
+buttt:
+belajar koding berapa lamaa mas
+Faw:
+kalau di flutter ada localstorage ga bang?
+Bagus.r:
+Pakai visual code versi brp bg?
+Zaini:
+Bang bisa budget pembuatan aplikasi karyawan berapaan, yang apk sederhana aja
+V:
+nah nentuin ratenya gimana wkwkw
+Abd Rahman:
+bang bagaimana cara bikin balingan ganjil genap di java
+Zaini:
+Situ pake native apa laravel
+Fauzan:
+bang kalo mau belajar python kira kira enak nya awal atau referensi nya dari mana ya?
+Rz:
+bang enakan pake dio apa http?
+SiBojis:
+bang ini ini pyhton?
+Gempii:
+@SiBojis dart bang
+popiboyy:
+bang, gw kan pakek vs code, nah pas gw udah masukin codingan-nya, terus suruh download extension
+user128482:
+ngoding dari pagi bang?
+popiboyy:
+gw bingung download yg mana
+Yook Sung-mul.:
+Ada tutor nuxt ga bang?
+user128482:
+ngoding dari pagi bang?
+dendy bukan dendi.:
+bang yang dimaksud local database ini apa ya? semacam redis kah?
+SiBojis:
+coba tes gagal login mas
+inisial_M:
+bg bikin projects real tapi databasenya pake firebase boleh gk sih
+GAMING_AR:
+kok ngebut bang
+NtAeSkuy:
+Java lah bg?
+SiBojis:
+coba dibuat ingat login mass biar gausah isi2 lagi
+Krisna Yoga Tanaya:
+Ini buat program apa?
+sepele03:
+udah pernah ngoding di android studio bang?
+Wira:
+bang bisa bikin apk?
+SiBojis:
+coba di tes bang rember emailnya
+SiBojis:
+ohh udah ada templatenya toh mas buat desain navigasi
+SiBojis:
+kalo nge desain ux nya sendiri bisa ga mas?
+SiBojis:
+bang coba navigation profilenya pindahin ke kiri bisa ga mas?
+unknow:
+styling nya pake apa bang?
+A:
+Ini lgi buat apa? Apl?
+SiBojis:
+kok ga rember email mas??
+SiBojis:
+ini pake bahasa pemrograman apa mas?
+SiBojis:
+pyhton bisa ga mas?
+Wendy Fariansah_51:
+bang mau belajar git ada kelasnya gak ya
+Wendy Fariansah_51:
+bagi pemula gir
+SiBojis:
+kalo codingan buat preview hp itu masih sama ga mas buat codingan di preview pc gitu
+kucing mandiri:
+bang itu cara munculin garis lurus disebelah kiri pake extension apaan?
+SiBojis:
+buat warna gradasi bisa mas? sama coba dibuat transparan si display customernya
+SiBojis:
+background dibuat gradasi sama display2 customer coba mass
+wacik gusti:
+bang itu pake snippet apa biar bisa bikin widget cepet?
+ARIF KEMBIRI 🇲🇾:
+Exstensi apa aja yg abang pake?
+dAmi:
+cepet bet bang
+scaramouche:
+laptop i3 gen 11 ram 4+4gb buat belajar coding beberapa tahun ke dpn cukup kan bang?
+ARIF KEMBIRI 🇲🇾:
+Pake Sandbox
+Julli | Mobile Developer:
+bang supaya responsive di semua layout bagaimana bang
+kaligrafish:
+bikin apa ini bang
+Angga:
+bang gimana cara ngirim wa melalui website ke banyak orang sekaligus
+𝘿𝙚𝙫𝙞𝙭⚡:
+bang ada saran apk coding di hp ga
+Memskuyy.:
+ngodingnya pake apa
+Julli | Mobile Developer:
+berarti gak bikin layout untuk masing" small, large atau apa gituu
+ARIF KEMBIRI 🇲🇾:
+di upload ke github gak bang?
+Good Outfit.:
+bang spill laptopnya
+Good Outfit.:
+pake laptop apa bang
+SalsabilaPH:
+harus hafal struktur nya ya?
+Zan ツ:
+kalo bikin web apa harus pake html?
+Angga:
+bang tutor bikin api_whatsapp ngirim ke banyak orang sekaligus
+wacik gusti:
+bang basic yg wajib paham dari flutter selain dart apa?
+hitam white:
+bang cara buat push notifikasi tapi backend nya pakai asp.net itu algoritma buatnya bagaimana ya??
+hxpqkdvvwk:
+fungsi overide apa bg?
+mach:
+duh tertarik materi malam ini tapi ngelag" jaringan saya, boleh clone ga bg dishare digrup member
+hxpqkdvvwk:
+makasih bg
+Miko is back:
+basic dulu bang
+Angga:
+bang bikin api whatsapp ngirim ke banyak orang gimana?
+X11ZI:
+bang saya kan di kampus beru sampe pembuatan database dan cara memasukannya di flutter itu ada cara
+ARIF KEMBIRI 🇲🇾:
+Jadilah ahli maka kalian akan terlihat keren
+X11ZI:
+ada cara simpel buat masukin databasenya gak
+pengg:
+perbedaan on init dengan on ready apaan bg ?
+HR Story:
+bang mau nnya tentang orang yg ktipu pke tele
+HR Story:
+bisa di kasih plajarn gk si penipunya wk
+Iman Nurmansyah:
+go go flutter
+Khoirul amin:
+bahasa pemrograman termudah itu apa bg, java kah?
+PapaKilo:
+bang device permission dong...access ke external storage
+Cozzy Collection:
+coba upload bang dan styling
+Iman Nurmansyah:
+bro punya basic java ya kayanya?
+Cozzy Collection:
+styling tipis tupis bang
+AZI 889#:
+bang itu pake javascript
+Cozzy Collection:
+bang knp string g pake tanda tanya?
+peliguguk:
+foto ny selfi gmn implementasi ny bang?
+Cozzy Collection:
+bang pas view valuenya di styling coba bang
+Nekad70:
+bg kalo pemula web programing fundamental dulu atau gimana kalo mau belajar?
+Cozzy Collection:
+bang pernah nyoba react native g?
+Hansen Jonatan Coder Indonesia:
+@Nekad70 fundamental dl
+imamgaming936:
+pake vb kan ini?
+Cozzy Collection:
+susahan react native atau flutter bang?
+Hansen Jonatan Coder Indonesia:
+@Cozzy Collection flutter karena bahasa baru bukan js kalau react kan js
+Nekad70:
+web programing fundamental itu bisa buat aplikasi ga sih BG soalnya lagi ada niatan mau belajar
+orafu_:
+yang record dari awal plis bagi
+Cozzy Collection:
+cara ngawalin bljr flutter gmn bang?
+Hansen Jonatan Coder Indonesia:
+@Cozzy Collection belajar dart dl lalu coba coba widget flutter
+Nekad70:
+ini lagi buat POS bukan?
+hanya kata kata:
+bang kalo kita udah banyak belajar bahasa pemrograman apakah akan lupa dan gimana biar ga lupa
+Gak tau:
+Pakai vscode ?
+Cozzy Collection:
+@Hansen Jonatan Coder Indonesia ada saran sumber tutorialnya g bang?
+sudut_perang:
+pak, coding web dan coding game itu sama gak sih?
+sudut_perang:
+pak, coding web dan coding game itu sama gak sih?
+sudut_perang:
+pak, coding web dan coding game itu sama gak sih?
+sudut_perang:
+pak, coding web dan coding game itu sama gak sih?
+sudut_perang:
+pak, coding web dan coding game itu sama gak sih?
+Cozzy Collection:
+@sudut_perang beda bang.. bahasa yg dipakenya juga beda
+ayodophoto:
+beda lah bro
+T.B.M.ID:
+bang temen gua kata nya kerja jagain situs situs gituan itu sama aja coding apa beda
+Badut:
+ini pake paradigma ap ya
+sudut_perang:
+pak, coding web dan coding game itu sama gak sih?
+sudut_perang:
+pak, coding web dan coding game itu sama gak sih?
+sudut_perang:
+pak, coding web dan coding game itu sama gak sih?
+rfahlevih:
+bang project flutter yang mudah dibuat dan bisa di upload di playstore apa ya?
+AFerr9:
+apk kodingnya apa bang
+Cozzy Collection:
+bang itu value data nya k DB kah?
+arkham asylum:
+Bang pernah bikin headless task ga?
+DWASPro:
+kok bisa hafal bahasanya wkwk
+AFerr9:
+saya masuk teknik informatika apa selalu ngoding kek gini bang ?
+jonaya:
+kak kamu pakai mouse kah ko cepet banget pindah nya
+suiT:
+itu pake web runnya mas?
+jonaya:
+kakak belajar gini dari mana kak
+Cozzy Collection:
+bang setiap update method harus restart bukan bang?
+Whatsitooya:
+bang tutor konek database nya
+ayampop:
+udah lupa perkodingan 😭😭
+Akiru:
+bang tau odoo programming gak
+Nielz:
+bang itu pake database apaa
+rendydevs:
+bang kamu kuliah gak
+Alipp:
+bahasa coding sama program apakah sama?
+rendydevs:
+bang kamu kuliah gak
+Nekad70:
+ini mau buat posm
+Cozzy Collection:
+bang setiap update method harus restart bukan bang?
+Nekad70:
+POS?
+suiT:
+itu runnya di web mas?
+Nielz:
+tadi lagi coba ngotak ngatik dart agak pusing yaa bang lagi ngerjain projek money tracker
+rendydevs:
+pinter banget coding nya kamu kuliah gak bang
+yav:
+waduh mau tdr aja liat kodingan 😂
+byy:
+belajar dari 0 ada saran Channel yt ga bg
+Xe:
+bang kerja fulltime atau freelance
+Whatsitooya:
+info github bang
+rendydevs:
+bang kamu kuliah gak
+suiT:
+mas runnya pake web?
+Cozzy Collection:
+bang setiap update method harus restart bukan bang?
+ShanDay:
+semi colon nya kurang
+Azhar Rivaldi:
+kalo text overflowed di row, lebih baik pake expanded apa flexible bang?
+cwAquarius:
+bloc ya?
+ShanDay:
+ini metode mvc bang?
+cwAquarius:
+ada recordnya ga ya?
+Cozzy Collection:
+bang setiap update method harus restart bukan bang?
+Nekad70:
+itu grup2 wa masih aktif ga kak atau sudah habis ?
+DWASPro:
+api service pake apa bang?
+sourncream:
+ni vs code ataupun android studio?
+Hansen Jonatan Coder Indonesia:
+@sourncream vs code
+suiT:
+ini run aplikasi di web?
+son:
+dart
+jhondanielsitumor:
+cara join kelasnya gimana bg?
+rangshar:
+html ka bang?
+reynaldilorenzo:
+better freeze or equatable?
+suiT:
+ini run aplikasi di web?
+unidentifyy:
+buat apa ya bang dipindahkan ke state
+Salah Kirim:
+bg bahasa c++ bh
+Salah Kirim:
+bg
+cwAquarius:
+ada recordnya ga?
+Tharz:
+python mudah gak kak?
+ini_siyi 🤙:
+boleh minta sc nya ga bg?
+DWASPro:
+itu bisa realtime bang?
+joisv:
+kasi confirm bang
+User23461178954789:
+ada recordnya bang?
+mach:
+kasi percabangan bang sebelum delete all
+aar:
+bang lu bkin tutorial di yt ga
+reynaldilorenzo:
+kapan harus pake freeze dan equatable? apakah tidak "over feature" kalau butuhnya simple cukup eq?
+Nekad70:
+cuma bikin gt doang berapa lama?
+Nekad70:
+itu POS?
+Makhluk Bumi°^:
+ko Abang hapal semua koddingnya heheh
+Mahvsltt○°:
+bang buka les private gitu gak? lagi butuh referensi belajar cepet
+mach:
+@Mahvsltt○° join kls
