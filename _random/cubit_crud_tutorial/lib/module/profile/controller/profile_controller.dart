@@ -27,6 +27,7 @@ class ProfileController extends Cubit<ProfileState> implements IBlocBase {
   logout() async {
     showLoading();
     await AuthService().logout();
+    Get.offAll(LoginView());
     hideLoading();
   }
 }

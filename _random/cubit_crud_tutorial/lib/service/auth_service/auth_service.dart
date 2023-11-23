@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/login/view/login_view.dart';
 import 'package:hyper_ui/service/db_service/db_service.dart';
+import 'package:hyper_ui/state_util.dart';
 
 class AuthService {
   static String? token;
@@ -40,6 +41,5 @@ class AuthService {
 
   Future logout() async {
     await DBService.clear("token");
-    Get.offAll(LoginView());
   }
 }
