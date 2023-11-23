@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
 
-class QSearchField extends StatefulWidget {
+class QSearchField2 extends StatefulWidget {
   final String? hintText;
   final Function(String value) onChanged;
   final Function(FocusNode focusNode)? onFocus;
   final bool requestFocusOnReady;
-  const QSearchField({
+  const QSearchField2({
     Key? key,
     required this.onChanged,
     this.onFocus,
@@ -17,10 +17,10 @@ class QSearchField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<QSearchField> createState() => _QSearchFieldState();
+  State<QSearchField2> createState() => _QSearchField2State();
 }
 
-class _QSearchFieldState extends State<QSearchField> {
+class _QSearchField2State extends State<QSearchField2> {
   FocusNode focusNode = FocusNode();
 
   @override
@@ -46,7 +46,7 @@ class _QSearchFieldState extends State<QSearchField> {
     return Container(
       height: 50,
       decoration: BoxDecoration(
-        color: Color(0xff313131),
+        color: Colors.grey[300],
         borderRadius: BorderRadius.circular(16.0),
       ),
       padding: EdgeInsets.symmetric(horizontal: 12.0),
@@ -54,18 +54,18 @@ class _QSearchFieldState extends State<QSearchField> {
         children: [
           Icon(
             Icons.search,
-            color: Colors.white,
+            color: Colors.grey,
           ),
           Expanded(
             child: TextField(
               focusNode: focusNode,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.grey,
               ),
               decoration: InputDecoration(
                 hintText: widget.hintText,
                 hintStyle: TextStyle(
-                  color: Colors.white.withOpacity(0.4),
+                  color: Colors.grey,
                 ),
                 fillColor: Colors.transparent,
                 border: InputBorder.none,
@@ -78,7 +78,7 @@ class _QSearchFieldState extends State<QSearchField> {
           ClipRRect(
             borderRadius: BorderRadius.circular(8.0),
             child: Material(
-              color: primaryColor,
+              color: secondaryColor,
               child: InkWell(
                 onTap: () {
                   // TODO: Add action here

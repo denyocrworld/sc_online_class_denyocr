@@ -73,7 +73,7 @@ class _QRatingFieldState extends State<QRatingField> {
                   key: widgetKey,
                   child: TextFormField(
                     initialValue: " ",
-                    decoration: InputDecoration(
+                    decoration: InputDecoration(fillColor: Colors.grey[300],
                       labelText: widget.label,
                       helperText: widget.helper,
                       hintText: widget.hint,

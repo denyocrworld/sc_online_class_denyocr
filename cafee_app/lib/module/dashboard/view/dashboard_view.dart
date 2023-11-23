@@ -158,7 +158,7 @@ class _DashboardViewState extends State<DashboardView> {
                                 SizedBox(
                                   height: 12.0,
                                 ),
-                                SearchField(
+                                QSearchField(
                                   hintText: "Search",
                                   onChanged: (value) {},
                                   onFocus: (focusNode) {

@@ -65,7 +65,7 @@ class _ProductListViewState extends State<ProductListView> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: SearchField(
+            child: QSearchField(
               onChanged: (value) {},
               requestFocusOnReady: true,
             ),

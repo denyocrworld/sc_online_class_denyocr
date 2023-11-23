@@ -92,6 +92,7 @@ class _QTimePickerState extends State<QTimePicker> {
             },
             readOnly: true,
             decoration: InputDecoration(
+              fillColor: Colors.grey[300],
               labelText: widget.label,
               labelStyle: const TextStyle(
                 color: Colors.blueGrey,

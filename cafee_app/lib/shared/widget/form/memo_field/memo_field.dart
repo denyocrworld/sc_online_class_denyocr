@@ -69,7 +69,7 @@ class _QMemoFieldState extends State<QMemoField> {
         validator: widget.validator,
         maxLength: widget.maxLength,
         maxLines: widget.maxLines ?? 6,
-        decoration: InputDecoration(
+        decoration: InputDecoration(fillColor: Colors.grey[300],
           labelText: widget.label,
           suffixIcon: const Icon(
             Icons.text_format,

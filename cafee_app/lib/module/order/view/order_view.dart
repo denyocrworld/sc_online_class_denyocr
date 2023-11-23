@@ -1,6 +1,11 @@
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/order/widget/order_item.dart';
+import 'package:hyper_ui/shared/widget/form/searchfield/searchfield2.dart';
 import '../controller/order_controller.dart';
 import '../state/order_state.dart';
 
@@ -16,6 +21,10 @@ class _OrderViewState extends State<OrderView> {
 
   @override
   void initState() {
+    if(GetIt.I.isRegistered<OrderController>()){
+      GetIt.I.unregister<OrderController>();
+    }
+    GetIt.I.registerSingleton(controller);
     controller.initState();
     super.initState();
   }
@@ -51,25 +60,34 @@ class _OrderViewState extends State<OrderView> {
       appBar: AppBar(
         title: const Text('Order'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            'Counter: ${state.counter}',
-            style: const TextStyle(fontSize: 24),
-          ),
-          IconButton(
-            onPressed: () => controller.increment(),
-            icon: const Icon(
-              Icons.add,
-              size: 24.0,
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            QSearchField2(
+              onChanged: (value) {},
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 8.0,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: state.items.length,
+                physics: const ScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  Map item = state.items[index];
+                  return OrderItem(
+                    index: index,
+                    item: item,
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-    
-    

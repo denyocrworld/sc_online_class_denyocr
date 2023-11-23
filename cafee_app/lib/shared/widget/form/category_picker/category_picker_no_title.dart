@@ -91,13 +91,12 @@ class _QCategoryPickerNoTitleState extends State<QCategoryPickerNoTitle> {
         enabled: true,
         builder: (FormFieldState<bool> field) {
           return InputDecorator(
-            decoration: InputDecoration(
+            decoration: InputDecoration(fillColor: Colors.grey[300],
               labelText: widget.label,
               errorText: field.errorText,
               border: InputBorder.none,
               focusedBorder: InputBorder.none,
               filled: false,
-              fillColor: Colors.transparent,
               enabledBorder: InputBorder.none,
               errorBorder: InputBorder.none,
               helperText: widget.helper,

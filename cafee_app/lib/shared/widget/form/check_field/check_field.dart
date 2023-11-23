@@ -71,7 +71,7 @@ class _QCheckFieldState extends State<QCheckField> {
         enabled: true,
         builder: (FormFieldState<bool> field) {
           return InputDecorator(
-            decoration: InputDecoration(
+            decoration: InputDecoration(fillColor: Colors.grey[300],
               labelText: widget.label,
               errorText: field.errorText,
               border: InputBorder.none,

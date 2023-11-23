@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../state/profile_state.dart';
 
@@ -32,7 +31,6 @@ class ProfileController extends Cubit<ProfileState> with _CubitLifecycle {
     state.counter++;
     emit(state.copyWith());
   }
+
+  logout() async {}
 }
-    
-      
-    

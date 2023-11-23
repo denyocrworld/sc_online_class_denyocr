@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 ThemeData getDefaultTheme() {
   return ThemeData().copyWith(
     primaryColor: primaryColor,
-    scaffoldBackgroundColor: Colors.grey[300],
+    scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
-      elevation: 0.6,
+      elevation: 0.0,
       titleTextStyle: GoogleFonts.lato(
         color: Colors.blueGrey[700],
         fontWeight: FontWeight.bold,

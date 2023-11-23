@@ -11,7 +11,8 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'module/login/controller/login_controller.dart' as _i3;
+import 'module/edit_profile/controller/edit_profile_controller.dart' as _i3;
+import 'module/login/controller/login_controller.dart' as _i4;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -24,7 +25,8 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.singleton<_i3.LoginController>(_i3.LoginController());
+    gh.singleton<_i3.EditProfileController>(_i3.EditProfileController());
+    gh.singleton<_i4.LoginController>(_i4.LoginController());
     return this;
   }
 }

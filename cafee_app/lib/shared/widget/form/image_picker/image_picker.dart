@@ -223,7 +223,7 @@ class _QImagePickerState extends State<QImagePicker> {
                     controller: controller,
                     obscureText: widget.obscure,
                     readOnly: true,
-                    decoration: InputDecoration(
+                    decoration: InputDecoration(fillColor: Colors.grey[300],
                       labelText: widget.label,
                       labelStyle: TextStyle(
                         color: Colors.blueGrey,

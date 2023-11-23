@@ -72,7 +72,7 @@ class _QAutoCompleteState extends State<QAutoComplete> {
                       focusNode: focusNode,
                       onFieldSubmitted: (text) => onFieldSubmitted(),
                       validator: widget.validator,
-                      decoration: InputDecoration(
+                      decoration: InputDecoration(fillColor: Colors.grey[300],
                         labelText: widget.label,
                         errorText: field.errorText,
                         suffixIcon: const Icon(Icons.search),
