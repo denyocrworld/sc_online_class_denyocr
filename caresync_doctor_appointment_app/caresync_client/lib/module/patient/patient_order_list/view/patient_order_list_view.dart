@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/module/patient/patient_order_list/widget/patient_order_list_item.dart';
+import '../../../../model/doctor/doctor.dart';
+import '../../../../model/doctor/specialization.dart';
 import '../bloc/patient_order_list_bloc.dart';
 import '../event/patient_order_list_event.dart';
 import '../state/patient_order_list_state.dart';
@@ -58,22 +62,38 @@ class _PatientOrderListViewState extends State<PatientOrderListView> {
       appBar: AppBar(
         title: const Text('PatientOrderList'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            'Counter: ${state.counter}',
-            style: const TextStyle(fontSize: 24),
-          ),
-          IconButton(
-            onPressed: () => bloc.add(PatientOrderListIncrementEvent()),
-            icon: const Icon(
-              Icons.add,
-              size: 24.0,
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SearchField(
+              onSubmitted: (search) {},
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 20.0,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 30,
+                physics: const ScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  return PatientOrderListItem(
+                    item: Doctor(
+                      id: 1,
+                      photo: "https://i.ibb.co/PGv8ZzG/me.jpg",
+                      doctorName: "Andre",
+                      specialization: Specialization(
+                        specializationName: "Dokter Mata",
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

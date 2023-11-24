@@ -54,30 +54,29 @@ class _UnderMaintenanceViewState extends State<UnderMaintenanceView> {
     UnderMaintenanceBloc bloc,
     UnderMaintenanceState state,
   ) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 100.0,
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      color: Colors.white,
+      height: MediaQuery.of(context).size.height,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 100.0,
+          ),
+          Icon(Icons.construction, size: 64.0, color: warningColor),
+          const SizedBox(
+            height: 8.0,
+          ),
+          Text(
+            "Under Maintenance",
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: warningColor,
             ),
-            Icon(Icons.construction, size: 64.0, color: warningColor),
-            const SizedBox(
-              height: 8.0,
-            ),
-            Text(
-              "Under Maintenance",
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                color: warningColor,
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

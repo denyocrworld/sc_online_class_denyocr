@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class ApiService {
   String endpoint = "samples";
-  String baseUrl = "http://192.168.1.10:8000/api";
+  String baseUrl = "http://192.168.1.4:8000/api";
   // String baseUrl = "http://localhost:8000/api";
 
   Future<List<Map<String, dynamic>>> get({

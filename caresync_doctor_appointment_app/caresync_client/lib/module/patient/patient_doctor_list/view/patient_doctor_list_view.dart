@@ -52,9 +52,9 @@ class _PatientDoctorListViewState extends State<PatientDoctorListView> {
     PatientDoctorListBloc bloc,
     PatientDoctorListState state,
   ) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
+    return Container(
+      color: Colors.white,
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -64,16 +64,15 @@ class _PatientDoctorListViewState extends State<PatientDoctorListView> {
           SizedBox(
             height: 20.0,
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: state.doctorList.length,
-              physics: ScrollPhysics(),
-              padding: EdgeInsets.zero,
-              itemBuilder: (BuildContext context, int index) {
-                var item = state.doctorList[index];
-                return PatientDoctorListItem(item: item);
-              },
-            ),
+          ListView.builder(
+            itemCount: state.doctorList.length,
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            shrinkWrap: true,
+            physics: ScrollPhysics(),
+            itemBuilder: (BuildContext context, int index) {
+              var item = state.doctorList[index];
+              return PatientDoctorListItem(item: item);
+            },
           ),
         ],
       ),

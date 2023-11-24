@@ -8,14 +8,14 @@ ThemeData getDefaultTheme() {
     scaffoldBackgroundColor: Colors.grey[300],
     colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xff0450bd),
       elevation: 0.6,
       titleTextStyle: GoogleFonts.lato(
-        color: Colors.blueGrey[700],
+        color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
       iconTheme: IconThemeData(
-        color: Colors.blueGrey[700],
+        color: Colors.white,
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

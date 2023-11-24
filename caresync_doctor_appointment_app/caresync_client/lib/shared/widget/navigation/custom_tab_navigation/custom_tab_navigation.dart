@@ -29,52 +29,18 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
       children: [
         Container(
           width: MediaQuery.of(context).size.width,
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            clipBehavior: Clip.antiAlias,
-            child: Row(
-                children: List.generate(widget.headers.length, (index) {
-              var header = widget.headers[index];
-              bool selected = selectedIndex == index;
+          child: Row(
+              children: List.generate(widget.headers.length, (index) {
+            var header = widget.headers[index];
+            bool selected = selectedIndex == index;
 
-              if (selected)
-                return InkWell(
-                  onTap: () => updateIndex(index),
-                  child: Container(
-                    padding: const EdgeInsets.all(12.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(
-                          4.0,
-                        ),
-                        topRight: Radius.circular(
-                          4.0,
-                        ),
-                      ),
-                      border: Border.all(
-                        width: 1.0,
-                        color: Colors.grey[300]!,
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "$header",
-                        style: TextStyle(
-                          color: infoColor,
-                          fontSize: 12.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-
+            if (selected)
               return InkWell(
                 onTap: () => updateIndex(index),
                 child: Container(
                   padding: const EdgeInsets.all(12.0),
                   decoration: BoxDecoration(
-                    color: Color(0xfff3f3f3),
+                    color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(
                         4.0,
@@ -92,22 +58,47 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
                     child: Text(
                       "$header",
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: infoColor,
                         fontSize: 12.0,
                       ),
                     ),
                   ),
                 ),
               );
-            })),
-          ),
+
+            return InkWell(
+              onTap: () => updateIndex(index),
+              child: Container(
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                  color: Color(0xfff3f3f3),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(
+                      4.0,
+                    ),
+                    topRight: Radius.circular(
+                      4.0,
+                    ),
+                  ),
+                  border: Border.all(
+                    width: 1.0,
+                    color: Colors.grey[300]!,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    "$header",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12.0,
+                    ),
+                  ),
+                ),
+              ),
+            );
+          })),
         ),
-        Expanded(
-          child: IndexedStack(
-            index: selectedIndex,
-            children: widget.children,
-          ),
-        ),
+        widget.children[selectedIndex],
       ],
     );
   }
