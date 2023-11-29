@@ -1,0 +1,19 @@
+[
+    // Uncomment this to test and run builder with Shift + Ctrl + Alt + B
+    {	
+        // To add enhancemed name to all generated files add new name after dot.
+        // Example: user_post.model. Result: user_post.model.dart
+        "__className": "product", // <- The base class name of the object.
+        // It's possible to override the default path with a new one by adding "__path" key.
+        // - it's useful if you want split your models to different workspace directories.
+        "__path": "/lib/model/product", // <- this is not required.
+        "id": "",
+        "photo": "",
+        "product_name": "",
+        "product_category": "",
+        "description": "",
+        "price": 25.31,
+        "stock": 10.20,
+        "qty": 1
+    }
+]

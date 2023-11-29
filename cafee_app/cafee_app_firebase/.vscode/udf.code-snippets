@@ -1,0 +1,6 @@
+{
+  "firestream": {
+    "prefix": "firestream",
+    "body": "FireStream(\nstream: ProductService().getSnapshots(),\nitemBuilder: (context, item, index) {\nProduct product = Product.fromJson(item);\nreturn Card(\nchild: ListTile(\nleading: CircleAvatar(\nbackgroundColor: Colors.grey[200],\nbackgroundImage: NetworkImage(\nproduct.photo ??\n\"https://i.ibb.co/S32HNjD/no-image.jpg\",\n),\n),\ntitle: Text(product.productName ?? \"-\"),\nsubtitle: Text(product.productCategory ?? \"-\"),\ntrailing: Text(\n\"${product.price}\",\nstyle: TextStyle(\nfontWeight: FontWeight.bold,\nfontSize: 16.0,\n),\n),\n),\n);\n},\n),"
+  }
+}
