@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/model/user_profile/user_profile.dart';
 import 'package:hyper_ui/service/auth_service/auth_service.dart';
 
 class ProfileView extends StatefulWidget {
@@ -67,48 +69,65 @@ class _ProfileViewState extends State<ProfileView> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 32.0,
-                  backgroundImage: NetworkImage(
-                    user?.photoURL ?? "https://i.ibb.co/S32HNjD/no-image.jpg",
-                  ),
-                ),
-                SizedBox(
-                  width: 8.0,
-                ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        user?.displayName ?? "-",
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+            StreamBuilder<DocumentSnapshot<Object?>>(
+              stream: UserProfileService().myDocument.snapshots(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) return const Text("Error");
+                if (!snapshot.hasData) return const Text("No Data");
+                if (snapshot.data == null) return Container();
+
+                var data = snapshot.data?.data();
+
+                UserProfile? item;
+                if (data != null) {
+                  item = UserProfile.fromJson(
+                      snapshot.data?.data() as Map<String, dynamic>);
+                }
+
+                return Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 32.0,
+                      backgroundImage: NetworkImage(
+                        item?.photo ?? "https://i.ibb.co/S32HNjD/no-image.jpg",
                       ),
-                      SizedBox(
-                        height: 4.0,
+                    ),
+                    SizedBox(
+                      width: 8.0,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            item?.name ?? "-",
+                            style: TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 4.0,
+                          ),
+                          Text(
+                           item?.email ?? "-",
+                            style: TextStyle(
+                              fontSize: 16.0,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        user?.email ?? "-",
-                        style: TextStyle(
-                          fontSize: 16.0,
-                        ),
+                    ),
+                    IconButton(
+                      onPressed: () => Get.to(EditProfileView()),
+                      icon: Icon(
+                        Icons.edit,
+                        size: 24.0,
                       ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  onPressed: () => Get.to(EditProfileView()),
-                  icon: Icon(
-                    Icons.edit,
-                    size: 24.0,
-                  ),
-                ),
-              ],
+                    ),
+                  ],
+                );
+              },
             ),
             SizedBox(
               height: 32.0,

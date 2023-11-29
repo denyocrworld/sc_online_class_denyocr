@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$EditProfileState {
   int get counter => throw _privateConstructorUsedError;
   set counter(int value) => throw _privateConstructorUsedError;
+  UserProfile? get userProfile => throw _privateConstructorUsedError;
+  set userProfile(UserProfile? value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $EditProfileStateCopyWith<EditProfileState> get copyWith =>
@@ -30,7 +32,9 @@ abstract class $EditProfileStateCopyWith<$Res> {
           EditProfileState value, $Res Function(EditProfileState) then) =
       _$EditProfileStateCopyWithImpl<$Res, EditProfileState>;
   @useResult
-  $Res call({int counter});
+  $Res call({int counter, UserProfile? userProfile});
+
+  $UserProfileCopyWith<$Res>? get userProfile;
 }
 
 /// @nodoc
@@ -47,13 +51,30 @@ class _$EditProfileStateCopyWithImpl<$Res, $Val extends EditProfileState>
   @override
   $Res call({
     Object? counter = null,
+    Object? userProfile = freezed,
   }) {
     return _then(_value.copyWith(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      userProfile: freezed == userProfile
+          ? _value.userProfile
+          : userProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfile?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserProfileCopyWith<$Res>? get userProfile {
+    if (_value.userProfile == null) {
+      return null;
+    }
+
+    return $UserProfileCopyWith<$Res>(_value.userProfile!, (value) {
+      return _then(_value.copyWith(userProfile: value) as $Val);
+    });
   }
 }
 
@@ -65,7 +86,10 @@ abstract class _$$EditProfileStateImplCopyWith<$Res>
       __$$EditProfileStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter});
+  $Res call({int counter, UserProfile? userProfile});
+
+  @override
+  $UserProfileCopyWith<$Res>? get userProfile;
 }
 
 /// @nodoc
@@ -80,12 +104,17 @@ class __$$EditProfileStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = null,
+    Object? userProfile = freezed,
   }) {
     return _then(_$EditProfileStateImpl(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      userProfile: freezed == userProfile
+          ? _value.userProfile
+          : userProfile // ignore: cast_nullable_to_non_nullable
+              as UserProfile?,
     ));
   }
 }
@@ -93,15 +122,18 @@ class __$$EditProfileStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$EditProfileStateImpl implements _EditProfileState {
-  _$EditProfileStateImpl({this.counter = 0});
+  _$EditProfileStateImpl({this.counter = 0, this.userProfile = null});
 
   @override
   @JsonKey()
   int counter;
+  @override
+  @JsonKey()
+  UserProfile? userProfile;
 
   @override
   String toString() {
-    return 'EditProfileState(counter: $counter)';
+    return 'EditProfileState(counter: $counter, userProfile: $userProfile)';
   }
 
   @JsonKey(ignore: true)
@@ -113,11 +145,15 @@ class _$EditProfileStateImpl implements _EditProfileState {
 }
 
 abstract class _EditProfileState implements EditProfileState {
-  factory _EditProfileState({int counter}) = _$EditProfileStateImpl;
+  factory _EditProfileState({int counter, UserProfile? userProfile}) =
+      _$EditProfileStateImpl;
 
   @override
   int get counter;
   set counter(int value);
+  @override
+  UserProfile? get userProfile;
+  set userProfile(UserProfile? value);
   @override
   @JsonKey(ignore: true)
   _$$EditProfileStateImplCopyWith<_$EditProfileStateImpl> get copyWith =>

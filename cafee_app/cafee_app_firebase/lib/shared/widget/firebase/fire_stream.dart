@@ -45,7 +45,6 @@ class FireStream extends StatelessWidget {
   }
 }
 
-
 /*
 //#TEMPLATE firestream
 FireStream(

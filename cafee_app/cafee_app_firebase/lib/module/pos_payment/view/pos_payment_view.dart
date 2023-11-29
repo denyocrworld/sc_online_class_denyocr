@@ -73,7 +73,8 @@ class _PosPaymentViewState extends State<PosPaymentView> {
               initialUrlRequest: URLRequest(
                 url: Uri.parse(state.paymentUrl!),
               ),
-              shouldOverrideUrlLoading: (webViewController, navigationAction) async {
+              shouldOverrideUrlLoading:
+                  (webViewController, navigationAction) async {
                 final url = navigationAction.request.url.toString();
 
                 if (url.contains("example.com")) {

@@ -41,6 +41,7 @@ class ProductCrudFormController extends Cubit<ProductCrudFormState>
   Future<bool> save() async {
     if (state.isEditMode) {
       return await ProductService().update(
+        state.id!,
         Product(
           id: state.id,
           photo: state.photo,

@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/model/user_profile/user_profile.dart';
 
 User? get user {
   return FirebaseAuth.instance.currentUser;
@@ -18,6 +20,7 @@ class AuthService {
         email: email,
         password: password,
       );
+      initializeUserData();
       return true;
     } on Exception catch (_) {
       return false;
@@ -27,6 +30,7 @@ class AuthService {
   Future<bool> loginAnonymously() async {
     try {
       await FirebaseAuth.instance.signInAnonymously();
+      initializeUserData();
       return true;
     } on Exception catch (_) {
       return false;
@@ -54,6 +58,7 @@ class AuthService {
       );
       var userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
+      initializeUserData();
       return true;
     } catch (_) {
       return false;
@@ -69,6 +74,7 @@ class AuthService {
         email: email,
         password: password,
       );
+      initializeUserData();
       return true;
     } on Exception catch (_) {
       return false;
@@ -81,6 +87,23 @@ class AuthService {
       return true;
     } on Exception catch (_) {
       return false;
+    }
+  }
+
+  Future initializeUserData() async {
+    var isNotExists = await UserProfileService().isNotExists(user!.uid);
+    if (isNotExists) {
+      UserProfileService().set(
+        user!.uid,
+        UserProfile(
+          name: user?.displayName,
+          email: user?.email,
+          photo: user?.photoURL,
+          storeName: "-",
+          storeAddress: "-",
+          storePhoneNumber: "-",
+        ),
+      );
     }
   }
 }

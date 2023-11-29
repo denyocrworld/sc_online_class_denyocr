@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'pos_payment_state.freezed.dart';
 
@@ -9,5 +8,3 @@ class PosPaymentState with _$PosPaymentState {
     @Default(null) String? paymentUrl,
   }) = _PosPaymentState;
 }
-    
-    
