@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:barber_app/core.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 var defaultTheme = ThemeData(
   primaryColor: primaryColor,

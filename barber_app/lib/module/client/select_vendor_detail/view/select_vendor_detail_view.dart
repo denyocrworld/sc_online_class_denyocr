@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:barber_app/core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class SelectVendorDetailView extends StatelessWidget {
   final dynamic item;

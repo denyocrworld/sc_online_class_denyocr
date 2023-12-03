@@ -1,6 +1,5 @@
 import 'package:barber_app/core.dart';
 import 'package:flutter/material.dart';
-import 'package:maps_launcher/maps_launcher.dart';
 
 class IconsMenu extends StatelessWidget {
   final Map<String, dynamic> item;

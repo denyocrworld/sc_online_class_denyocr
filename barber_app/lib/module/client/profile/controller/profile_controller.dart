@@ -1,5 +1,4 @@
 import 'package:barber_app/core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileController extends GetxController {
   ProfileView? view;

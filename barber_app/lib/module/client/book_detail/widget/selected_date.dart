@@ -1,6 +1,5 @@
 import 'package:barber_app/core.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class SelectedDate extends StatelessWidget {
   const SelectedDate({super.key});

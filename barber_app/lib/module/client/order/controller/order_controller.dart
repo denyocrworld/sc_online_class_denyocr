@@ -1,5 +1,4 @@
 import 'package:barber_app/core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class OrderController extends GetxController {
   OrderView? view;

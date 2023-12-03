@@ -1,6 +1,5 @@
 import 'package:barber_app/core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class VmHeader extends StatelessWidget {
   final Map<String, dynamic> item;

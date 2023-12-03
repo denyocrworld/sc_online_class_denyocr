@@ -1,7 +1,5 @@
 import 'package:barber_app/core.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:intl/intl.dart';
 
 class VmOrderListView extends StatelessWidget {
   final controller = Get.put(VmOrderListController());

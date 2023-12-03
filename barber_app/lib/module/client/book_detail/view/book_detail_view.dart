@@ -1,6 +1,5 @@
 import 'package:barber_app/core.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class BookDetailView extends StatelessWidget {
   final controller = Get.put(BookDetailController());
