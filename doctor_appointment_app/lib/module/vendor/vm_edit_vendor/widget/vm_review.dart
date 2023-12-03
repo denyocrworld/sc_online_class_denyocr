@@ -1,7 +1,5 @@
 import 'package:doctor_appointment_app/core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class VmReviewView extends StatelessWidget {
   const VmReviewView({super.key});

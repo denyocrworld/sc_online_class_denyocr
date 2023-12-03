@@ -1,6 +1,9 @@
-export './core_package.dart';
+/*
+We believe, the class name must be unique. 
+If there is a conflicting class name in this file,
+it means you have to rename it to something more unique.
+*/
 export 'package:doctor_appointment_app/config/main_dummy_api.dart';
-export 'package:doctor_appointment_app/core.dart';
 export 'package:doctor_appointment_app/core_package.dart';
 export 'package:doctor_appointment_app/data/api/admin_api.dart';
 export 'package:doctor_appointment_app/data/api/admin_setting_api.dart';
@@ -11,7 +14,6 @@ export 'package:doctor_appointment_app/data/api/notification_api.dart';
 export 'package:doctor_appointment_app/data/api/user_api.dart';
 export 'package:doctor_appointment_app/data/api/vendor_api.dart';
 export 'package:doctor_appointment_app/firebase_options.dart';
-export 'package:doctor_appointment_app/main.dart';
 export 'package:doctor_appointment_app/main.debug.dart';
 export 'package:doctor_appointment_app/main.prod.dart';
 export 'package:doctor_appointment_app/main_setup.dart';
@@ -126,7 +128,6 @@ export 'package:doctor_appointment_app/shared/util/focus_helper/focus_helper.dar
 export 'package:doctor_appointment_app/shared/util/format/format.dart';
 export 'package:doctor_appointment_app/shared/util/format_extension/format_extension.dart';
 export 'package:doctor_appointment_app/shared/util/get_extension/get_extension.dart';
-export 'package:doctor_appointment_app/shared/util/https/https.dart';
 export 'package:doctor_appointment_app/shared/util/input/input.dart';
 export 'package:doctor_appointment_app/shared/util/launch_url/launch_url.dart';
 export 'package:doctor_appointment_app/shared/util/localdb/localdb.dart';
@@ -172,5 +173,3 @@ export 'package:doctor_appointment_app/shared/widget/textfield/chatfield.dart';
 export 'package:doctor_appointment_app/shared/widget/textfield/searchfield.dart';
 export 'package:doctor_appointment_app/shared/widget/textfield/textarea.dart';
 export 'package:doctor_appointment_app/shared/widget/textfield/textfield.dart';
-
-export 'package:get/get.dart';

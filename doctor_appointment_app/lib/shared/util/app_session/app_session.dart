@@ -1,6 +1,4 @@
 import 'package:doctor_appointment_app/core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class AppSession {
   static late DummyApi dummyApi;

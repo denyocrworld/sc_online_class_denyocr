@@ -1,5 +1,4 @@
 import 'package:doctor_appointment_app/core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SelectVendorDetailController extends GetxController {
   SelectVendorDetailView? view;

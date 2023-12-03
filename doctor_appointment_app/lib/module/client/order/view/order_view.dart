@@ -1,8 +1,6 @@
 import 'package:doctor_appointment_app/core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import 'package:intl/intl.dart';
 
 class OrderView extends StatelessWidget {
   final controller = Get.put(OrderController());

@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:doctor_appointment_app/core.dart';
-import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 
 class IndexGenerator extends StatelessWidget {

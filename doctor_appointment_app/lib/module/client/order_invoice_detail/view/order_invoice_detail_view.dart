@@ -1,7 +1,6 @@
 import 'package:doctor_appointment_app/core.dart';
 import 'package:flutter/material.dart';
 
-import 'package:intl/intl.dart';
 
 class OrderInvoiceDetailView extends StatelessWidget {
   final dynamic item;

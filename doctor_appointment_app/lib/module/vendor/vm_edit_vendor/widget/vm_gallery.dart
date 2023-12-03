@@ -1,5 +1,4 @@
 import 'package:doctor_appointment_app/core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class VmGaleryView extends StatelessWidget {

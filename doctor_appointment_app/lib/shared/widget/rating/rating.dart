@@ -1,4 +1,3 @@
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:doctor_appointment_app/core.dart';
 import 'package:flutter/material.dart';
 
