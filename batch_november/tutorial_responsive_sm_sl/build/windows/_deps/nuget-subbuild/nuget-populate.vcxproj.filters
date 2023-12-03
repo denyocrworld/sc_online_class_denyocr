@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-copyfile.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\5483aaa7fa8922f2e32f0e4ed165a4ee\nuget-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\408030627d22c610c6b639803fe6dc24\nuget-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\a10e4051991754bc941edd4a49d7e912\nuget-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\_deps\nuget-subbuild\CMakeFiles\nuget-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{BC709DC1-8294-3F29-8D3D-7C96631ADF57}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
