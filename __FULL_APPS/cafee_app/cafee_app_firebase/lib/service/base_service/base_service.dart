@@ -17,13 +17,17 @@ class BaseService<T> {
       List<T> items = [];
       for (var doc in snapshot.docs) {
         Map<String, dynamic> data = doc.data();
-        T item = (T as dynamic).fromJson(data);
+        T item = fromJson(data);
         items.add(item);
       }
       return items;
     } on Exception catch (_) {
       return [];
     }
+  }
+
+  T fromJson(Map<String, dynamic> data) {
+    throw UnimplementedError("fromJson not implemented for type $T");
   }
 
   //fromJson error
@@ -36,7 +40,7 @@ class BaseService<T> {
 
       if (!snapshot.exists) return null;
       Map<String, dynamic> data = snapshot.data() as Map<String, dynamic>;
-      return (T as dynamic).fromJson(data);
+      return fromJson(data);
     } on Exception catch (_) {
       return null;
     }
@@ -68,12 +72,11 @@ class BaseService<T> {
     }
   }
 
-  Future<bool> create(T item) async {
-    String uid = Uuid().v4();
+  Future<bool> create(String id, T item) async {
     try {
       await FirebaseFirestore.instance
           .collection(collectionName)
-          .doc(uid)
+          .doc(id)
           .set((item as dynamic).toJson());
       return true;
     } on Exception catch (_) {

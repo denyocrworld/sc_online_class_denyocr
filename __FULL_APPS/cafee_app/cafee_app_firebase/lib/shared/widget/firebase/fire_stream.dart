@@ -2,8 +2,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hyper_ui/model/product/product.dart';
-import 'package:hyper_ui/service/product_service/product_service.dart';
 
 class FireStream extends StatelessWidget {
   final Stream<QuerySnapshot<Object?>>? stream;

@@ -5,23 +5,24 @@ Edit Profile
 - Store Address
 - Store Number
 
-Checkout
+Product
 ---
-- Terapkan Sistem Voucher   
-- Terapkan Metode Pembayaran
-- Terapkan Status Transaksi
-> Cash
-> Credit/Debit/EMoney
-- Save data order
-- Checkout: Check apakah pembayaran success
-
-List order
-- Filter Order by Date
+Search Product
+Tampilkan Stock
+Improve Card Product
 
 PosView
 - Search
-- Filter by Groups
+- Filter by Category
 - ListView/GridView mode
+- Payment (Cash or Credit/Debit atau EMoney)
+- Save data orders ke firestore
+    > Alur pembayaran Cash
+    > Alur pembayaran Debit/Credit atau EMoney
+
+
+List order
+- Filter Order by Date
 
 Dashboard
 - Today Orders
@@ -33,3 +34,9 @@ Cetak Bon
 (ada opsi Cetak Bon)
 - Di Order List
 (bisa Cetak Bon)
+
+
+
+
+Next Update
+- Terapkan Sistem Voucher   

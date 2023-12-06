@@ -1,13 +1,9 @@
-import 'package:hyper_ui/module/dashboard/widget/dashboard_order_statistic.dart';
-import 'package:hyper_ui/module/dashboard/widget/dashboard_sales_statistic.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'dart:math';
 
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 
 class DashboardView extends StatefulWidget {
   DashboardView({Key? key}) : super(key: key);
@@ -59,7 +55,7 @@ class _DashboardViewState extends State<DashboardView> {
       },
       {
         "label": "Product Categories",
-        "view": ProductCrudListView(),
+        "view": ProductCategoryCrudListView(),
       },
       {
         "label": "Sales Report",
@@ -68,6 +64,10 @@ class _DashboardViewState extends State<DashboardView> {
       {
         "label": "POS",
         "view": PosView(),
+      },
+      {
+        "label": "Data Manager",
+        "view": DataManagerView(),
       }
     ];
     return QSCaffold(

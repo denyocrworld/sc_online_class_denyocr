@@ -6,4 +6,9 @@ class ProductService extends BaseService<Product> {
   String get collectionName {
     return "products_${user!.uid}";
   }
+
+  @override
+  Product fromJson(Map<String, dynamic> data) {
+    return Product.fromJson(data);
+  }
 }

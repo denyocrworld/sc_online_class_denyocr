@@ -32,4 +32,9 @@ class ProductCrudListController extends Cubit<ProductCrudListState>
   delete(String docId) async {
     await ProductService().delete(docId);
   }
+
+  updateSearch(String value) {
+    state.search = value;
+    emit(state.copyWith());
+  }
 }

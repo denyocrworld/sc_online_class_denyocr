@@ -48,6 +48,10 @@ ThemeData getDefaultTheme() {
     ),
     inputDecorationTheme: InputDecorationTheme(
       hoverColor: Colors.transparent,
+      contentPadding: EdgeInsets.symmetric(
+        vertical: 8.0,
+        horizontal: 12.0,
+      ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16.0),
         borderSide: BorderSide(
@@ -87,6 +91,11 @@ ThemeData getDefaultTheme() {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.0),
         ),
+      ),
+    ),
+    cardTheme: CardTheme(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
       ),
     ),
   );

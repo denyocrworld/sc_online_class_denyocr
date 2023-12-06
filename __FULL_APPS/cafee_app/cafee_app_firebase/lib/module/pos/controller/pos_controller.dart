@@ -60,4 +60,9 @@ class PosController extends Cubit<PosState> implements IBlocBase {
     }
     return itemTotal;
   }
+
+  updateSearch(String value) {
+    state.search = value;
+    emit(state.copyWith());
+  }
 }

@@ -1,17 +1,7 @@
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/service/db_service/db_service.dart';
-import 'package:hyper_ui/shared/util/validator/validator.dart';
-import 'package:hyper_ui/shared/widget/form/button/button.dart';
-import 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
-import '../controller/login_controller.dart';
-import '../state/login_state.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);

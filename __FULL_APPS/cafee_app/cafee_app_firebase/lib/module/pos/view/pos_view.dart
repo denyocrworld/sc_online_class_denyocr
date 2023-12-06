@@ -1,9 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/shared/widget/form/button/button.dart';
-import '../controller/pos_controller.dart';
-import '../state/pos_state.dart';
 import 'package:get_it/get_it.dart';
 
 class PosView extends StatefulWidget {
@@ -64,6 +62,70 @@ class _PosViewState extends State<PosView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          Padding(
+            padding: EdgeInsets.all(12.0),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Search',
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide: BorderSide(
+                    color: Colors.grey[300]!,
+                  ),
+                ),
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Colors.blueGrey[900],
+                ),
+                suffixIcon: Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(
+                    Icons.sort,
+                    color: Colors.blueGrey[900],
+                  ),
+                ),
+              ),
+              onSubmitted: (value) => controller.updateSearch(value),
+            ),
+          ),
+          StreamBuilder<QuerySnapshot>(
+            stream:
+                FirebaseFirestore.instance.collection("products").snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) return const Text("Error");
+              if (snapshot.data == null) return Container();
+              if (snapshot.data!.docs.isEmpty) {
+                return const Text("No Data");
+              }
+              final data = snapshot.data!;
+              return ListView.builder(
+                itemCount: data.docs.length,
+                padding: EdgeInsets.zero,
+                clipBehavior: Clip.none,
+                itemBuilder: (context, index) {
+                  Map<String, dynamic> item =
+                      (data.docs[index].data() as Map<String, dynamic>);
+                  item["id"] = data.docs[index].id;
+                  return QDropdownField(
+                    label: "Roles",
+                    validator: Validator.required,
+                    items: [
+                      {
+                        "label": "Admin",
+                        "value": "Admin",
+                      },
+                      {
+                        "label": "Staff",
+                        "value": "Staff",
+                      }
+                    ],
+                    value: "Admin",
+                    onChanged: (value, label) {},
+                  );
+                },
+              );
+            },
+          ),
           //ALT+SHIFT+V
           Expanded(
             child: ListView.builder(
@@ -72,6 +134,12 @@ class _PosViewState extends State<PosView> {
               clipBehavior: Clip.none,
               itemBuilder: (context, index) {
                 var item = state.products[index];
+
+                if (state.search.isNotEmpty) {
+                  if (!item.productName!
+                      .toLowerCase()
+                      .contains(state.search.toLowerCase())) return Container();
+                }
                 return Container(
                   padding: const EdgeInsets.all(12.0),
                   decoration: const BoxDecoration(

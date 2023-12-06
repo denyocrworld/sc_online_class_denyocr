@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/model/product/product.dart';
 import 'package:hyper_ui/service/product_service/product_service.dart';
+import 'package:uuid/uuid.dart';
 import '../state/product_crud_form_state.dart';
 import 'package:hyper_ui/bloc_util.dart';
 import 'package:injectable/injectable.dart';
@@ -53,14 +54,19 @@ class ProductCrudFormController extends Cubit<ProductCrudFormState>
         ),
       );
     } else {
-      return await ProductService().create(Product(
-        photo: state.photo,
-        productName: state.productName,
-        productCategory: state.productCategory,
-        price: state.price,
-        stock: state.stock,
-        description: state.description,
-      ));
+      var id = Uuid().v4();
+      return await ProductService().create(
+        id,
+        Product(
+          id: id,
+          photo: state.photo,
+          productName: state.productName,
+          productCategory: state.productCategory,
+          price: state.price,
+          stock: state.stock,
+          description: state.description,
+        ),
+      );
     }
   }
 }

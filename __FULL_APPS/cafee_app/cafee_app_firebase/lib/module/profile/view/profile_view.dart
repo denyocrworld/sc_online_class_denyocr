@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/model/user_profile/user_profile.dart';
-import 'package:hyper_ui/service/auth_service/auth_service.dart';
 
 class ProfileView extends StatefulWidget {
   ProfileView({Key? key}) : super(key: key);
@@ -110,7 +109,7 @@ class _ProfileViewState extends State<ProfileView> {
                             height: 4.0,
                           ),
                           Text(
-                           item?.email ?? "-",
+                            item?.email ?? "-",
                             style: TextStyle(
                               fontSize: 16.0,
                             ),

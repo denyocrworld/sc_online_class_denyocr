@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProductCrudListState {
   int get counter => throw _privateConstructorUsedError;
   set counter(int value) => throw _privateConstructorUsedError;
+  String get search => throw _privateConstructorUsedError;
+  set search(String value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductCrudListStateCopyWith<ProductCrudListState> get copyWith =>
@@ -30,7 +32,7 @@ abstract class $ProductCrudListStateCopyWith<$Res> {
           $Res Function(ProductCrudListState) then) =
       _$ProductCrudListStateCopyWithImpl<$Res, ProductCrudListState>;
   @useResult
-  $Res call({int counter});
+  $Res call({int counter, String search});
 }
 
 /// @nodoc
@@ -48,12 +50,17 @@ class _$ProductCrudListStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? counter = null,
+    Object? search = null,
   }) {
     return _then(_value.copyWith(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      search: null == search
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -66,7 +73,7 @@ abstract class _$$ProductCrudListStateImplCopyWith<$Res>
       __$$ProductCrudListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter});
+  $Res call({int counter, String search});
 }
 
 /// @nodoc
@@ -81,12 +88,17 @@ class __$$ProductCrudListStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = null,
+    Object? search = null,
   }) {
     return _then(_$ProductCrudListStateImpl(
       counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      search: null == search
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -94,15 +106,18 @@ class __$$ProductCrudListStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProductCrudListStateImpl implements _ProductCrudListState {
-  _$ProductCrudListStateImpl({this.counter = 0});
+  _$ProductCrudListStateImpl({this.counter = 0, this.search = ""});
 
   @override
   @JsonKey()
   int counter;
+  @override
+  @JsonKey()
+  String search;
 
   @override
   String toString() {
-    return 'ProductCrudListState(counter: $counter)';
+    return 'ProductCrudListState(counter: $counter, search: $search)';
   }
 
   @JsonKey(ignore: true)
@@ -115,11 +130,15 @@ class _$ProductCrudListStateImpl implements _ProductCrudListState {
 }
 
 abstract class _ProductCrudListState implements ProductCrudListState {
-  factory _ProductCrudListState({int counter}) = _$ProductCrudListStateImpl;
+  factory _ProductCrudListState({int counter, String search}) =
+      _$ProductCrudListStateImpl;
 
   @override
   int get counter;
   set counter(int value);
+  @override
+  String get search;
+  set search(String value);
   @override
   @JsonKey(ignore: true)
   _$$ProductCrudListStateImplCopyWith<_$ProductCrudListStateImpl>

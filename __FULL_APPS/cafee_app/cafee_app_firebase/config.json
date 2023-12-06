@@ -13,8 +13,11 @@
         "cart",
         "product_crud_list",
         "product_crud_form",
+        "product_category_crud_list",
+        "product_category_crud_form",
         "pos",
-        "pos_payment"
+        "pos_payment",
+        "data_manager"
     ],
     "module_directory_name": "module",
     "experimental_mode": false,

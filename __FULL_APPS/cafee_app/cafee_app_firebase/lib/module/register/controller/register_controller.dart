@@ -1,8 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/service/auth_service/auth_service.dart';
-import '../state/register_state.dart';
-import 'package:hyper_ui/bloc_util.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton

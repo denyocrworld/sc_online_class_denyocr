@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
-import '../controller/register_controller.dart';
-import '../state/register_state.dart';
 import 'package:get_it/get_it.dart';
 
 class RegisterView extends StatefulWidget {

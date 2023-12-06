@@ -65,7 +65,7 @@ class PaymentService {
       );
 
       return response.data["payment_url"];
-    } on Exception catch (err) {
+    } on Exception {
       return null;
     }
   }

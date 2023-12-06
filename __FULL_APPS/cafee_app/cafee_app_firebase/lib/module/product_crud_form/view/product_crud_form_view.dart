@@ -1,13 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/model/product/product.dart';
-import 'package:hyper_ui/shared/util/validator/validator.dart';
-import 'package:hyper_ui/shared/widget/form/number_field/numberfield.dart';
-import 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';
-import '../controller/product_crud_form_controller.dart';
-import '../state/product_crud_form_state.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hyper_ui/module/product_crud_form/widget/product_category_field.dart';
 
 class ProductCrudFormView extends StatefulWidget {
   final Product? product;
@@ -95,21 +92,8 @@ class _ProductCrudFormViewState extends State<ProductCrudFormView> {
                     state.productName = value;
                   },
                 ),
-                QDropdownField(
-                  label: "Product category",
-                  validator: Validator.required,
-                  items: [
-                    {
-                      "label": "Food",
-                      "value": "Food",
-                    },
-                    {
-                      "label": "Drink",
-                      "value": "Drink",
-                    }
-                  ],
-                  value: state.productCategory,
-                  onChanged: (value, label) {
+                ProductCategoryField(
+                  onChanged: (value) {
                     state.productCategory = value;
                   },
                 ),

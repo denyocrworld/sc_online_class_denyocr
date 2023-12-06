@@ -7,5 +7,6 @@ class PosState with _$PosState {
   factory PosState({
     @Default(0) int counter,
     @Default([]) List<Product> products,
+    @Default("") String search,
   }) = _PosState;
 }

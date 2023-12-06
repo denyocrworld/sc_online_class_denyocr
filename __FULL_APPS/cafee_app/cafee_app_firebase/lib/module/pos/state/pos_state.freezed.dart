@@ -20,6 +20,8 @@ mixin _$PosState {
   set counter(int value) => throw _privateConstructorUsedError;
   List<Product> get products => throw _privateConstructorUsedError;
   set products(List<Product> value) => throw _privateConstructorUsedError;
+  String get search => throw _privateConstructorUsedError;
+  set search(String value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PosStateCopyWith<PosState> get copyWith =>
@@ -31,7 +33,7 @@ abstract class $PosStateCopyWith<$Res> {
   factory $PosStateCopyWith(PosState value, $Res Function(PosState) then) =
       _$PosStateCopyWithImpl<$Res, PosState>;
   @useResult
-  $Res call({int counter, List<Product> products});
+  $Res call({int counter, List<Product> products, String search});
 }
 
 /// @nodoc
@@ -49,6 +51,7 @@ class _$PosStateCopyWithImpl<$Res, $Val extends PosState>
   $Res call({
     Object? counter = null,
     Object? products = null,
+    Object? search = null,
   }) {
     return _then(_value.copyWith(
       counter: null == counter
@@ -59,6 +62,10 @@ class _$PosStateCopyWithImpl<$Res, $Val extends PosState>
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
+      search: null == search
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -71,7 +78,7 @@ abstract class _$$PosStateImplCopyWith<$Res>
       __$$PosStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int counter, List<Product> products});
+  $Res call({int counter, List<Product> products, String search});
 }
 
 /// @nodoc
@@ -87,6 +94,7 @@ class __$$PosStateImplCopyWithImpl<$Res>
   $Res call({
     Object? counter = null,
     Object? products = null,
+    Object? search = null,
   }) {
     return _then(_$PosStateImpl(
       counter: null == counter
@@ -97,6 +105,10 @@ class __$$PosStateImplCopyWithImpl<$Res>
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
+      search: null == search
+          ? _value.search
+          : search // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -104,7 +116,8 @@ class __$$PosStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PosStateImpl implements _PosState {
-  _$PosStateImpl({this.counter = 0, this.products = const []});
+  _$PosStateImpl(
+      {this.counter = 0, this.products = const [], this.search = ""});
 
   @override
   @JsonKey()
@@ -112,10 +125,13 @@ class _$PosStateImpl implements _PosState {
   @override
   @JsonKey()
   List<Product> products;
+  @override
+  @JsonKey()
+  String search;
 
   @override
   String toString() {
-    return 'PosState(counter: $counter, products: $products)';
+    return 'PosState(counter: $counter, products: $products, search: $search)';
   }
 
   @JsonKey(ignore: true)
@@ -126,7 +142,8 @@ class _$PosStateImpl implements _PosState {
 }
 
 abstract class _PosState implements PosState {
-  factory _PosState({int counter, List<Product> products}) = _$PosStateImpl;
+  factory _PosState({int counter, List<Product> products, String search}) =
+      _$PosStateImpl;
 
   @override
   int get counter;
@@ -134,6 +151,9 @@ abstract class _PosState implements PosState {
   @override
   List<Product> get products;
   set products(List<Product> value);
+  @override
+  String get search;
+  set search(String value);
   @override
   @JsonKey(ignore: true)
   _$$PosStateImplCopyWith<_$PosStateImpl> get copyWith =>
