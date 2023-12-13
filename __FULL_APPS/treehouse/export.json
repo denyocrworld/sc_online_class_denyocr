@@ -1,0 +1,63 @@
+[
+    {
+        "table_name": "users",
+        "show_fields": true,
+        "fields": [
+            {
+                "field_name": "username",
+                "type": "string",
+                "nullable": "no",
+                "form_type": "textfield"
+            },
+            {
+                "field_name": "email",
+                "type": "string",
+                "nullable": "no",
+                "form_type": "textfield"
+            },
+            {
+                "field_name": "password",
+                "type": "string",
+                "form_type": "textfield",
+                "nullable": "no"
+            },
+            {
+                "field_name": "address",
+                "type": "string",
+                "nullable": "no",
+                "form_type": "textfield"
+            }
+        ],
+        "relations": []
+    },
+    {
+        "table_name": "order",
+        "show_fields": true,
+        "fields": [
+            {
+                "field_name": "user_id",
+                "type": "int",
+                "nullable": "no"
+            },
+            {
+                "field_name": "total",
+                "type": "double",
+                "nullable": "no"
+            },
+            {
+                "field_name": "date",
+                "type": "datetime"
+            }
+        ],
+        "relations": [
+            {
+                "relation_name": "user",
+                "type": "one_to_one",
+                "source_field": "user_id",
+                "target_table": "user",
+                "target_field": "id",
+                "field": "id"
+            }
+        ]
+    }
+]
