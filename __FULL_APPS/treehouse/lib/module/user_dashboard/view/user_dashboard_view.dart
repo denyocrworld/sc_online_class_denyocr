@@ -12,7 +12,6 @@ class UserDashboardView extends StatefulWidget {
     controller.view = this;
     return Scaffold(
       body: SafeArea(
-        key: Key("${Random().nextInt(1000)}"),
         child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(20.0),
