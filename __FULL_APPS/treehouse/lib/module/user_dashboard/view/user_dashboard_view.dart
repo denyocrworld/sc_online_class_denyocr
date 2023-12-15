@@ -202,12 +202,13 @@ class UserDashboardView extends StatefulWidget {
                 SizedBox(
                   height: 20.0,
                 ),
-                H6(title: "Browse by category")
-                    .animate()
-                    .moveX(begin: -100)
-                    .fadeIn(),
+                H6(
+                  title: "Browse by category",
+                  subtitle: "View all",
+                  onPressed: () => Get.to(UserSearchCategoryListView()),
+                ).animate().moveX(begin: -100).fadeIn(),
                 const SizedBox(
-                  height: 8.0,
+                  height: 12.0,
                 ),
                 Builder(builder: (context) {
                   List categories = [
@@ -255,38 +256,44 @@ class UserDashboardView extends StatefulWidget {
                     physics: ScrollPhysics(),
                     itemBuilder: (BuildContext context, int index) {
                       var item = categories[index];
-                      return Container(
-                        child: Column(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: NetworkImage(
-                                      item["cover_image"],
+                      return InkWell(
+                        onTap: () {
+                          //  Get.to(UserCourseListView())
+                          UserMainNavigationController.instance.updateIndex(1);
+                        },
+                        child: Container(
+                          child: Column(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        item["cover_image"],
+                                      ),
+                                      fit: BoxFit.cover,
                                     ),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(
-                                      8.0,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(
+                                        8.0,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 6.0,
-                            ),
-                            Text(
-                              item["label"],
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
+                              const SizedBox(
+                                height: 6.0,
                               ),
-                            ),
-                          ],
+                              Text(
+                                item["label"],
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     },

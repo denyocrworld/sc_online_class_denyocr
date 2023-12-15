@@ -12,6 +12,7 @@ ThemeData getDefaultTheme() {
       titleTextStyle: GoogleFonts.ibmPlexSans(
         color: Color(0xff495057),
         fontWeight: FontWeight.bold,
+        fontSize: 18.0,
       ),
       backgroundColor: Color(0xffffffff),
       iconTheme: IconThemeData(color: Color(0xff495057)),
