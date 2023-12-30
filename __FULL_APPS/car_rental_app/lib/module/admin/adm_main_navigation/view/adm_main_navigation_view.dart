@@ -16,9 +16,9 @@ class AdmMainNavigationView extends StatelessWidget {
         double padding = 20.0;
         double gridWidth = ((Get.width - (padding * 2) - 32)) / 4;
 
-        return WillPopScope(
-          onWillPop: () {
-            return Future.value(false);
+        return PopScope(
+          onPopInvoked: (onPopInvoked) {
+            return;
           },
           child: Scaffold(
             appBar: AppBar(

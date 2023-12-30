@@ -13,10 +13,9 @@ class AdmSettingView extends StatelessWidget {
 
     return GetBuilder<AdmSettingController>(
       builder: (_) {
-        return WillPopScope(
-          onWillPop: () async {
-            await AdminSettingApi.loadAppSetting();
-            return Future.value(true);
+        return PopScope(
+          onPopInvoked: (onPopInvoked) {
+            return;
           },
           child: Scaffold(
             appBar: AppBar(
