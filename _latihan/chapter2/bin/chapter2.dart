@@ -4,8 +4,9 @@ class Chapter2 {
     List output = [];
     // ? Instruksi:Gunakan looping for untuk menambahkan semua item dari numbers ke output
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      output.add(number);
+    }
     // --- End of Answer ---
     return output.toString() == "[10, 20, 30, 40]";
   }
@@ -13,26 +14,24 @@ class Chapter2 {
   bool? exercise2() {
     List<String> fruits = ["apple", "banana", "orange"];
     List<String> output = [];
-
     // ? Instruksi: Gunakan looping for untuk menambahkan semua item dari fruits ke output
     // TODO: Tulis kode for loop di sini
-
-
+    for (String buah in fruits) {
+      output.add(buah);
+    }
     // --- End of Answer ---
-
     return output.toString() == "[apple, banana, orange]";
   }
 
   bool? exercise3() {
     List<int> numbers = [5, 10, 15, 20];
     List<int> output = [];
-
     // ? Instruksi: Gunakan looping for untuk menambahkan semua item dari numbers ke output
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      output.add(number);
+    }
     // --- End of Answer ---
-
     return output.toString() == "[5, 10, 15, 20]";
   }
 
@@ -40,13 +39,20 @@ class Chapter2 {
   bool? exercise4() {
     List<String> fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi'];
     bool output = false;
-
     // ? Instruksi: Gunakan looping for untuk mencari apakah terdapat 'kiwi' dalam list fruits
     // TODO: Tulis kode for loop di sini
-
-
+    for (String buah in fruits) {
+      if (buah == 'kiwi') {
+        output = true;
+        break;
+      }
+    }
+    if (output) {
+      print('ada kiwi');
+    } else {
+      print('tidak ada kiwi');
+    }
     // --- End of Answer ---
-
     return output == true;
   }
 
@@ -54,13 +60,12 @@ class Chapter2 {
   bool? exercise5() {
     int n = 5;
     List<int> multiplesOfN = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list multiplesOfN dengan kelipatan n dari 1 hingga 5
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 1; i <= 5; i++) {
+      multiplesOfN.add(n * i);
+    }
     // --- End of Answer ---
-
     return multiplesOfN.toString() == "[5, 10, 15, 20, 25]";
   }
 
@@ -68,13 +73,12 @@ class Chapter2 {
   bool? exercise6() {
     List<String> colors = ["red", "green", "blue"];
     String result = "";
-
     // ? Instruksi: Gunakan looping for untuk menggabungkan semua item dari colors menjadi satu string result
     // TODO: Tulis kode for loop di sini
-
-
+    for (String warna in colors) {
+      result += warna;
+    }
     // --- End of Answer ---
-
     return result == "redgreenblue";
   }
 
@@ -82,13 +86,12 @@ class Chapter2 {
   bool? exercise7() {
     List<int> numbers = [1, 2, 3, 4, 5];
     int sum = 0;
-
     // ? Instruksi: Gunakan looping for untuk menjumlahkan semua item dari numbers ke dalam variabel sum
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      sum += number;
+    }
     // --- End of Answer ---
-
     return sum == 15;
   }
 
@@ -96,13 +99,12 @@ class Chapter2 {
   bool? exercise8() {
     List<int> numbers = [1, 2, 3, 4, 5];
     int product = 1;
-
     // ? Instruksi: Gunakan looping for untuk mengalikan semua item dari numbers ke dalam variabel product
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      product *= number;
+    }
     // --- End of Answer ---
-
     return product == 120;
   }
 
@@ -110,13 +112,12 @@ class Chapter2 {
   bool? exercise9() {
     List<int> numbers = [1, 2, 3, 4, 5];
     List<int> reversedNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list reversedNumbers dengan item dari numbers secara terbalik
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = numbers.length - 1; i >= 0; i--) {
+      reversedNumbers.add(numbers[i]);
+    }
     // --- End of Answer ---
-
     return reversedNumbers.toString() == "[5, 4, 3, 2, 1]";
   }
 
@@ -124,13 +125,14 @@ class Chapter2 {
   bool? exercise10() {
     List<int> numbers = [1, 2, 3, 4, 5];
     List<int> oddNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list oddNumbers dengan item dari numbers yang merupakan bilangan ganjil
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number.isOdd) {
+        oddNumbers.add(number);
+      }
+    }
     // --- End of Answer ---
-
     return oddNumbers.toString() == "[1, 3, 5]";
   }
 
@@ -139,13 +141,20 @@ class Chapter2 {
     List<int> numbers = [1, 2, 3, 4, 5];
     int target = 3;
     bool exists = false;
-
     // ? Instruksi: Gunakan looping for untuk mencari apakah target ada di dalam list numbers
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number == target) {
+        exists = true;
+        break;
+      }
+    }
+    if (exists) {
+      print('ada target');
+    } else {
+      print('tidak ada target');
+    }
     // --- End of Answer ---
-
     return exists;
   }
 
@@ -154,13 +163,20 @@ class Chapter2 {
     List<String> fruits = ["apple", "banana", "orange"];
     String target = "pear";
     bool exists = false;
-
     // ? Instruksi: Gunakan looping for untuk mencari apakah target ada di dalam list fruits
     // TODO: Tulis kode for loop di sini
-
-
+    for (String buah in fruits) {
+      if (buah == target) {
+        exists = true;
+        break;
+      }
+    }
+    if (exists) {
+      print('ada target');
+    } else {
+      print('tidak ada target');
+    }
     // --- End of Answer ---
-
     return !exists;
   }
 
@@ -168,13 +184,19 @@ class Chapter2 {
   bool? exercise13() {
     List<int> numbers = [2, 4, 6, 8, 10];
     bool allEven = true;
-
     // ? Instruksi: Gunakan looping for untuk mengecek apakah semua angka dalam list numbers adalah bilangan genap
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number.isEven) {
+        allEven = true;
+      }
+    }
+    if (allEven) {
+      print('ya semua angka adalah genap');
+    } else {
+      print('tidak semua angka genap');
+    }
     // --- End of Answer ---
-
     return allEven;
   }
 
@@ -182,11 +204,19 @@ class Chapter2 {
   bool? exercise14() {
     List<int> numbers = [3, 6, 9, 12, 15];
     bool allDivisibleBy3 = true;
-
     // ? Instruksi: Gunakan looping for untuk mengecek apakah semua angka dalam list numbers dapat dibagi dengan 3 (hasil bagi = 0)
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number % 3 != 0) {
+        allDivisibleBy3 = false;
+        break;
+      }
+    }
+    if (allDivisibleBy3) {
+      print('ya semua number dapat dibagi 3');
+    } else {
+      print('tidak semua number dapat dibagi 3');
+    }
     // --- End of Answer ---
     return allDivisibleBy3;
   }
@@ -196,13 +226,20 @@ class Chapter2 {
     List<String> fruits = ["apple", "banana", "kiwi", "orange"];
     String target = "kiwi";
     bool found = false;
-
     // ? Instruksi: Gunakan looping for untuk mencari apakah target ada di dalam list fruits
     // TODO: Tulis kode for loop di sini
-
-
+    for (String fruit in fruits) {
+      if (fruit == target) {
+        found = true;
+        break;
+      }
+    }
+    if (found) {
+      print('ada target');
+    } else {
+      print('tidak ada target');
+    }
     // --- End of Answer ---
-
     return found;
   }
 
@@ -210,13 +247,12 @@ class Chapter2 {
   bool? exercise16() {
     List<int> numbers = [1, 2, 3, 4, 5];
     int sum = 0;
-
     // ? Instruksi: Gunakan looping for untuk menjumlahkan semua angka dalam list numbers
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      sum += number;
+    }
     // --- End of Answer ---
-
     return sum == 15;
   }
 
@@ -224,13 +260,12 @@ class Chapter2 {
   bool? exercise17() {
     List<String> fruits = ["apple", "banana", "orange"];
     String joinedFruits = "";
-
     // ? Instruksi: Gunakan looping for untuk menggabungkan semua item dari list fruits menjadi satu string joinedFruits
     // TODO: Tulis kode for loop di sini
-
-
+    for (String fruit in fruits) {
+      joinedFruits += fruit;
+    }
     // --- End of Answer ---
-
     return joinedFruits == "applebananaorange";
   }
 
@@ -238,13 +273,12 @@ class Chapter2 {
   bool? exercise18() {
     List<int> numbers = [2, 4, 6, 8, 10];
     int product = 1;
-
     // ? Instruksi: Gunakan looping for untuk mengalikan semua angka dalam list numbers
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      product *= number;
+    }
     // --- End of Answer ---
-
     return product == 3840;
   }
 
@@ -252,13 +286,12 @@ class Chapter2 {
   bool? exercise19() {
     List<int> numbers = [1, 3, 5, 7, 9];
     List<int> reversedNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list reversedNumbers dengan item dari list numbers secara terbalik
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = numbers.length - 1; i >= 0; i--) {
+      reversedNumbers.add(numbers[i]);
+    }
     // --- End of Answer ---
-
     return reversedNumbers.toString() == "[9, 7, 5, 3, 1]";
   }
 
@@ -266,13 +299,14 @@ class Chapter2 {
   bool? exercise20() {
     List<int> numbers = [1, 2, 3, 4, 5];
     List<int> oddNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list oddNumbers dengan item dari list numbers yang merupakan bilangan ganjil
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number.isOdd) {
+        oddNumbers.add(number);
+      }
+    }
     // --- End of Answer ---
-
     return oddNumbers.toString() == "[1, 3, 5]";
   }
 
@@ -280,13 +314,12 @@ class Chapter2 {
   bool? exercise21() {
     List<int> sales = [100, 200, 300, 400, 500];
     int salesTotal = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total penjualan (salesTotal) dari list sales
     // TODO: Tulis kode for loop di sini
-
-
+    for (int sale in sales) {
+      salesTotal += sale;
+    }
     // --- End of Answer ---
-
     return salesTotal == 1500;
   }
 
@@ -294,41 +327,42 @@ class Chapter2 {
   bool? exercise22() {
     List<int> sales = [100, 200, 300, 400, 500];
     double salesAverage = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung rata-rata penjualan (salesAverage) dari list sales
     // TODO: Tulis kode for loop di sini
-
-
+    for (int sale in sales) {
+      salesAverage += sale / sales.length;
+    }
     // --- End of Answer ---
-
     return salesAverage == 300;
   }
 
   // Exercise 23
   bool? exercise23() {
     List<int> productPrices = [1000, 2000, 1500, 3000, 500];
-    int cheapestProduct = 0;
-
+    int cheapestProduct = productPrices[0];
     // ? Instruksi: Gunakan looping for untuk mencari harga produk termurah (cheapestProduct) dari list productPrices
     // TODO: Tulis kode for loop di sini
-
-
+    for (int price in productPrices) {
+      if (price < cheapestProduct) {
+        cheapestProduct = price;
+      }
+    }
     // --- End of Answer ---
-
     return cheapestProduct == 500;
   }
 
   // Exercise 24
   bool? exercise24() {
     List<int> productPrices = [1000, 2000, 1500, 3000, 500];
-    int expensiveProduct = 0;
-
+    int expensiveProduct = productPrices[0];
     // ? Instruksi: Gunakan looping for untuk mencari harga produk termahal (expensiveProduct) dari list productPrices
     // TODO: Tulis kode for loop di sini
-
-
+    for (int price in productPrices) {
+      if (price > expensiveProduct) {
+        expensiveProduct = price;
+      }
+    }
     // --- End of Answer ---
-
     return expensiveProduct == 3000;
   }
 
@@ -342,14 +376,22 @@ class Chapter2 {
       "apple",
       "banana"
     ];
-    String favoriteProduct = "";
-
+    Map<String, int> productFrequency = {};
     // ? Instruksi: Gunakan looping for untuk mencari produk favorit (favoriteProduct) yang paling sering muncul dalam list products
     // TODO: Tulis kode for loop di sini
+    for (String product in products) {
+      productFrequency[product] = (productFrequency[product] ?? 0) + 1;
+    }
+    String favoriteProduct = "";
+    int maxFrequency = 0;
 
-
+    productFrequency.forEach((product, frequency) {
+      if (frequency > maxFrequency) {
+        favoriteProduct = product;
+        maxFrequency = frequency;
+      }
+    });
     // --- End of Answer ---
-
     return favoriteProduct == "banana";
   }
 
@@ -357,13 +399,12 @@ class Chapter2 {
   bool? exercise26() {
     List<int> numbers = [1, 2, 3, 4, 5];
     List<int> squaredNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list squaredNumbers dengan nilai kuadrat dari setiap angka dalam list numbers
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      squaredNumbers.add(number * number);
+    }
     // --- End of Answer ---
-
     return squaredNumbers.toString() == "[1, 4, 9, 16, 25]";
   }
 
@@ -371,13 +412,14 @@ class Chapter2 {
   bool? exercise27() {
     List<int> numbers = [1, 2, 3, 4, 5];
     List<int> evenNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list evenNumbers dengan angka genap dari list numbers
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number.isEven) {
+        evenNumbers.add(number);
+      }
+    }
     // --- End of Answer ---
-
     return evenNumbers.toString() == "[2, 4]";
   }
 
@@ -385,13 +427,14 @@ class Chapter2 {
   bool? exercise28() {
     List<int> numbers = [1, 2, 3, 4, 5];
     List<int> oddNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list oddNumbers dengan angka ganjil dari list numbers
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number.isOdd) {
+        oddNumbers.add(number);
+      }
+    }
     // --- End of Answer ---
-
     return oddNumbers.toString() == "[1, 3, 5]";
   }
 
@@ -399,13 +442,12 @@ class Chapter2 {
   bool? exercise29() {
     List<String> fruits = ["apple", "banana", "orange"];
     List<String> capitalizedFruits = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list capitalizedFruits dengan semua item dari list fruits yang telah dijadikan huruf kapital
     // TODO: Tulis kode for loop di sini
-
-
+    for (String fruit in fruits) {
+      capitalizedFruits.add(fruit.toUpperCase());
+    }
     // --- End of Answer ---
-
     return capitalizedFruits.toString() == "[APPLE, BANANA, ORANGE]";
   }
 
@@ -413,11 +455,14 @@ class Chapter2 {
   bool? exercise30() {
     List<String> names = ["Alice", "Bob", "Charlie", "David"];
     String concatenatedNames = "";
-
     // ? Instruksi: Gunakan looping for untuk menggabungkan semua item dari list names menjadi satu string concatenatedNames, dipisahkan oleh koma
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < names.length; i++) {
+      concatenatedNames += names[i];
+      if (i < names.length - 1) {
+        concatenatedNames += ',';
+      }
+    }
     // --- End of Answer ---
     return concatenatedNames == "Alice,Bob,Charlie,David";
   }
@@ -426,13 +471,13 @@ class Chapter2 {
   bool? exercise31() {
     List<int> numbers = [5, 2, 7, 3, 1];
     List<int> sortedNumbers = [];
-
     // ? Isi list 'sortedNumbers' dengan angka-angka yang telah diurutkan secara descending.
     // TODO: Tulis kode for loop di sini
-
-
+    numbers.sort((a, b) => b.compareTo(a));
+    for (int number in numbers) {
+      sortedNumbers.add(number);
+    }
     // --- End of Answer ---
-
     return sortedNumbers.toString() == "[7, 5, 3, 2, 1]";
   }
 
@@ -440,13 +485,14 @@ class Chapter2 {
   bool? exercise32() {
     List<String> fruits = ["apple", "orange", "banana", "kiwi", "mango"];
     List<String> filteredFruits = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list filteredFruits dengan nama-nama buah yang memiliki huruf 'a' di dalamnya.
     // TODO: Tulis kode for loop di sini
-
-
+    for (String fruit in fruits) {
+      if (fruit.contains('a')) {
+        filteredFruits.add(fruit);
+      }
+    }
     // --- End of Answer ---
-
     return filteredFruits.toString() == "[apple, orange, banana, mango]";
   }
 
@@ -454,13 +500,15 @@ class Chapter2 {
   bool? exercise33() {
     List<int> numbers = [7, 2, 5, 3, 1];
     int sum = 0;
-
     // ? Instruksi: Gunakan looping for untuk menjumlahkan semua item dari numbers ke dalam variabel sum, tetapi berhenti jika jumlahnya mencapai 10.
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      sum += number;
+      if (sum >= 9) {
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return sum == 9;
   }
 
@@ -468,13 +516,12 @@ class Chapter2 {
   bool? exercise34() {
     List<int> numbers = [5, 2, 7, 3, 1];
     List<int> reversedNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list reversedNumbers dengan item dari numbers secara terbalik
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = numbers.length - 1; i >= 0; i--) {
+      reversedNumbers.add(numbers[i]);
+    }
     // --- End of Answer ---
-
     return reversedNumbers.toString() == "[1, 3, 7, 2, 5]";
   }
 
@@ -482,13 +529,12 @@ class Chapter2 {
   bool? exercise35() {
     List<String> words = ["apple", "orange", "banana", "kiwi", "mango"];
     String concatenatedWords = "";
-
     // ? Instruksi: Gunakan looping for untuk menggabungkan semua item dari list words menjadi satu string concatenatedWords, dipisahkan oleh spasi.
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < words.length; i++) {
+      concatenatedWords += words[i] += ' ';
+    }
     // --- End of Answer ---
-
     return concatenatedWords == "apple orange banana kiwi mango ";
   }
 
@@ -496,13 +542,12 @@ class Chapter2 {
   bool? exercise36() {
     List<int> numbers = [5, 2, 7, 3, 1];
     List<int> squaredNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list squaredNumbers dengan hasil kuadrat dari setiap angka dalam list numbers.
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      squaredNumbers.add(number * number);
+    }
     // --- End of Answer ---
-
     return squaredNumbers.toString() == "[25, 4, 49, 9, 1]";
   }
 
@@ -510,13 +555,14 @@ class Chapter2 {
   bool? exercise37() {
     List<int> numbers = [5, 2, 7, 3, 1];
     int minValue = numbers[0];
-
     // ? Instruksi: Gunakan looping for untuk mencari nilai terkecil (minimum) dalam list numbers dan simpan dalam variabel minValue.
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number < minValue) {
+        minValue = number;
+      }
+    }
     // --- End of Answer ---
-
     return minValue == 1;
   }
 
@@ -524,13 +570,14 @@ class Chapter2 {
   bool? exercise38() {
     List<int> numbers = [5, 2, 7, 3, 1];
     int maxValue = numbers[0];
-
     // ? Instruksi: Gunakan looping for untuk mencari nilai terbesar (maximum) dalam list numbers dan simpan dalam variabel maxValue.
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number > maxValue) {
+        maxValue = number;
+      }
+    }
     // --- End of Answer ---
-
     return maxValue == 7;
   }
 
@@ -538,13 +585,14 @@ class Chapter2 {
   bool? exercise39() {
     List<int> numbers = [5, 2, 7, 3, 1];
     List<int> evenNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list evenNumbers dengan angka-angka genap dari list numbers.
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number.isEven) {
+        evenNumbers.add(number);
+      }
+    }
     // --- End of Answer ---
-
     return evenNumbers.toString() == "[2]";
   }
 
@@ -552,15 +600,16 @@ class Chapter2 {
   bool? exercise40() {
     List<int> numbers = [5, 2, 7, 3, 1];
     List<int> evenNumbers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list evenNumbers
     // dengan angka-angka genap dari list numbers.
     // Kalikan angka genap itu dengan 9
     // TODO: Tulis kode for loop di sini
-
-
+    for (int number in numbers) {
+      if (number.isEven) {
+        evenNumbers.add(number * 9);
+      }
+    }
     // --- End of Answer ---
-
     return evenNumbers.toString() == "[18]";
   }
 
@@ -584,13 +633,15 @@ class Chapter2 {
       }
     ];
     List<Map> filteredUsers = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list filteredUsers dengan ketentuan User yang huruf depannya adalah A
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map user in users) {
+      String name = user['name'];
+      if (name.isNotEmpty && name[0].toUpperCase() == 'A') {
+        filteredUsers.add(user);
+      }
+    }
     // --- End of Answer ---
-
     return filteredUsers.isNotEmpty && filteredUsers[0]["id"] == 1;
   }
 
@@ -613,14 +664,16 @@ class Chapter2 {
         "age": 28,
       }
     ];
-
     List<Map<String, dynamic>> filteredUsers = [];
     // Instruksi: Gunakan looping for untuk mengisi list filteredUsers dengan ketentuan User yang huruf depannya adalah "D"
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      String name = user['name'];
+      if (name.isNotEmpty && name[0].toUpperCase() == 'D') {
+        filteredUsers.add(user);
+      }
+    }
     // --- End of Answer ---
-
     return filteredUsers.isNotEmpty && filteredUsers[0]["id"] == 2;
   }
 
@@ -644,13 +697,15 @@ class Chapter2 {
       }
     ];
     List<Map<String, dynamic>> filteredUsers = [];
-
     // Instruksi: Gunakan looping for untuk mengisi list filteredUsers dengan ketentuan User yang usianya di atas 30 tahun
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      int age = user['age'];
+      if (age != null && age > 30) {
+        filteredUsers.add(user);
+      }
+    }
     // --- End of Answer ---
-
     return filteredUsers.isNotEmpty && filteredUsers[0]["id"] == 2;
   }
 
@@ -674,13 +729,13 @@ class Chapter2 {
       }
     ];
     List<String> names = [];
-
     // Instruksi: Gunakan looping for untuk mengisi list names dengan semua nama dari users
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      String name = user['name'];
+      names.add(name);
+    }
     // --- End of Answer ---
-
     return names.isNotEmpty && names.length == 3;
   }
 
@@ -704,13 +759,15 @@ class Chapter2 {
       }
     ];
     int age = -1;
-
     // Instruksi: Gunakan looping for untuk mencari user dengan id = 2 dan kembalikan nilai usianya
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      if (user['id'] == 2) {
+        age = user['age'];
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return age == 31;
   }
 
@@ -734,13 +791,15 @@ class Chapter2 {
       }
     ];
     bool containsId3 = false;
-
     // Instruksi: Gunakan looping for untuk mengecek apakah users mengandung user dengan id = 3
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      if (user['id'] == 3) {
+        containsId3 = true;
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return containsId3;
   }
 
@@ -764,13 +823,14 @@ class Chapter2 {
       }
     ];
     List<Map<String, dynamic>> updatedUsers = [];
-
     // Instruksi: Gunakan looping for untuk mengupdate usia setiap user menjadi usia + 1 dan masukkan ke dalam list updatedUsers
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      Map<String, dynamic> updatedUser = Map.from(user);
+      updatedUser['age'] = user['age'] + 1;
+      updatedUsers.add(updatedUser);
+    }
     // --- End of Answer ---
-
     return updatedUsers.isNotEmpty && updatedUsers[0]["age"] == 30;
   }
 
@@ -795,13 +855,14 @@ class Chapter2 {
       }
     ];
     List<Map<String, dynamic>> filteredUsers = [];
-
     // Instruksi: Gunakan looping for untuk mengisi list filteredUsers dengan user yang memiliki properti "address"
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      if (user.containsKey('address')) {
+        filteredUsers.add(user);
+      }
+    }
     // --- End of Answer ---
-
     return filteredUsers.isNotEmpty && filteredUsers[0]["id"] == 3;
   }
 
@@ -825,13 +886,14 @@ class Chapter2 {
       }
     ];
     List<String> names = [];
-
     // Instruksi: Gunakan looping for untuk mengisi list names dengan nama-nama user yang usianya kurang dari 30 tahun
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      if (user['age'] < 30) {
+        names.add(user['name']);
+      }
+    }
     // --- End of Answer ---
-
     return names.isNotEmpty && names.length == 2;
   }
 
@@ -854,13 +916,15 @@ class Chapter2 {
         "age": 28,
       }
     ];
-
     // Instruksi: Gunakan looping for untuk mencari user dengan id = 3 dan hapus user tersebut dari list users
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < users.length; i++) {
+      if (users[i]['id'] == 3) {
+        users.removeAt(i);
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return users.length == 2 && users[1]["name"] == "David";
   }
 
@@ -873,13 +937,15 @@ class Chapter2 {
       {"transaction": "Sale", "amount": 800},
     ];
     int totalSales = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total penjualan (amount positif) dari data transaksi
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaction in data) {
+      int amount = transaction['amount'];
+      if (amount > 0) {
+        totalSales += amount;
+      }
+    }
     // --- End of Answer ---
-
     return totalSales == 2300;
   }
 
@@ -892,13 +958,15 @@ class Chapter2 {
       {"transaction": "Sale", "amount": 800},
     ];
     int totalRefunds = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total refund (amount negatif) dari data transaksi
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaction in data) {
+      int amount = transaction['amount'];
+      if (amount < 0) {
+        totalRefunds += amount.abs();
+      }
+    }
     // --- End of Answer ---
-
     return totalRefunds == 200;
   }
 
@@ -911,13 +979,15 @@ class Chapter2 {
       {"transaction": "Sale", "amount": 800, "isPromo": false},
     ];
     int totalPromoSales = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total penjualan dengan isPromo true dari data transaksi
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaction in data) {
+      bool isPromo = transaction['isPromo'];
+      if (isPromo) {
+        totalPromoSales += (transaction['amount'] as num).toInt();
+      }
+    }
     // --- End of Answer ---
-
     return totalPromoSales == 500;
   }
 
@@ -930,13 +1000,15 @@ class Chapter2 {
       {"transaction": "Sale", "amount": 800, "category": "Fashion"},
     ];
     int totalElectronicsSales = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total penjualan kategori "Electronics" dari data transaksi
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaction in data) {
+      String category = transaction['category'];
+      if (category == 'Electronics') {
+        totalElectronicsSales += (transaction['amount'] as num).toInt();
+      }
+    }
     // --- End of Answer ---
-
     return totalElectronicsSales == 1500;
   }
 
@@ -949,13 +1021,15 @@ class Chapter2 {
       {"transaction": "Sale", "amount": 800, "category": "Fashion"},
     ];
     int totalFashionRefunds = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total refund kategori "Fashion" dari data transaksi
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaction in data) {
+      String category = transaction['category'];
+      if (category == 'Fashion' && transaction['transaction'] == 'Refund') {
+        totalFashionRefunds += (transaction['amount'] as num).toInt().abs();
+      }
+    }
     // --- End of Answer ---
-
     return totalFashionRefunds == 200;
   }
 
@@ -968,13 +1042,15 @@ class Chapter2 {
       {"transaction": "Sale", "amount": 800, "category": "Fashion"},
     ];
     int totalSalesInElectronics = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total penjualan kategori "Electronics" dari data transaksi
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaction in data) {
+      String category = transaction['category'];
+      if (category == 'Electronics') {
+        totalSalesInElectronics += (transaction['amount'] as num).toInt();
+      }
+    }
     // --- End of Answer ---
-
     return totalSalesInElectronics == 1500;
   }
 
@@ -987,13 +1063,15 @@ class Chapter2 {
       {"transaction": "Sale", "amount": 800, "category": "Fashion"},
     ];
     int totalRefundsInElectronics = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total refund kategori "Electronics" dari data transaksi
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaction in data) {
+      String category = transaction['category'];
+      if (category == 'Electronics' && transaction['transaction'] == 'Refund') {
+        totalRefundsInElectronics += (transaction['amount'] as num).toInt();
+      }
+    }
     // --- End of Answer ---
-
     return totalRefundsInElectronics == 0;
   }
 
@@ -1007,13 +1085,18 @@ class Chapter2 {
     ];
     int totalSales = 0;
     int totalRefunds = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total penjualan dan refund dari data transaksi
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaksi in data) {
+      String transaction = transaksi['transaction'];
+      int amount = transaksi['amount'];
+      if (transaction == 'Sale') {
+        totalSales += amount;
+      } else {
+        totalRefunds += amount.abs();
+      }
+    }
     // --- End of Answer ---
-
     return totalSales == 2300 && totalRefunds == 200;
   }
 
@@ -1025,11 +1108,13 @@ class Chapter2 {
       {"name": "Bob", "hoursWorked": 20, "hourlyRate": 30},
     ];
     int totalSalary = 0;
-
     // Instruksi: Gunakan looping for untuk menghitung total gaji (hoursWorked * hourlyRate) dari data karyawan
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> karyawan in data) {
+      int hoursWorked = karyawan['hoursWorked'];
+      int hourlyRate = karyawan['hourlyRate'];
+      totalSalary += hoursWorked * hourlyRate;
+    }
     // --- End of Answer ---
     return totalSalary == 2150;
   }
@@ -1042,13 +1127,15 @@ class Chapter2 {
       {"name": "Bob", "hoursWorked": 20, "hourlyRate": 30},
     ];
     int maxHourlyRate = 0;
-
     // Instruksi: Gunakan looping for untuk mencari nilai maksimum dari "hourlyRate" pada data karyawan
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> karyawan in data) {
+      int hourlyRate = karyawan['hourlyRate'];
+      if (hourlyRate > maxHourlyRate) {
+        maxHourlyRate = hourlyRate;
+      }
+    }
     // --- End of Answer ---
-
     return maxHourlyRate == 30;
   }
 
@@ -1060,13 +1147,12 @@ class Chapter2 {
       {"id": 3, "name": "Headphones", "price": 350000},
     ];
     double totalHarga = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total harga dari semua produk di dalam list products
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      totalHarga += product['price'];
+    }
     // --- End of Answer ---
-
     return totalHarga == 750000;
   }
 
@@ -1078,13 +1164,12 @@ class Chapter2 {
       {"id": 3, "amount": 5, "price": 30000},
     ];
     double totalPendapatan = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total pendapatan dari semua transaksi di dalam list transactions
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> transaction in transactions) {
+      totalPendapatan += transaction['amount'] * transaction['price'];
+    }
     // --- End of Answer ---
-
     return totalPendapatan == 375000;
   }
 
@@ -1096,13 +1181,12 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "salary": 4500000},
     ];
     double totalGaji = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total gaji dari semua karyawan di dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      totalGaji += employee['salary'];
+    }
     // --- End of Answer ---
-
     double rataRataGaji = totalGaji / employees.length;
 
     return rataRataGaji == 5166666.666666667;
@@ -1116,13 +1200,12 @@ class Chapter2 {
       {"id": 3, "product": "Headphones", "quantity": 1, "price": 350000},
     ];
     double totalNilaiPemesanan = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total nilai pemesanan dari semua orders di dalam list orders
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> order in orders) {
+      totalNilaiPemesanan += order['quantity'] * order['price'];
+    }
     // --- End of Answer ---
-
     return totalNilaiPemesanan == 1300000.0;
   }
 
@@ -1134,13 +1217,15 @@ class Chapter2 {
       {"id": 3, "product": "Headphones", "quantity": 1, "shippingCost": 25000},
     ];
     int maxBiayaPengiriman = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari nilai tertinggi dari shippingCost di dalam list shipments
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> shipment in shipments) {
+      int shippingCost = shipment['shippingCost'];
+      if (shippingCost > maxBiayaPengiriman) {
+        maxBiayaPengiriman = shippingCost;
+      }
+    }
     // --- End of Answer ---
-
     return maxBiayaPengiriman == 25000;
   }
 
@@ -1153,13 +1238,14 @@ class Chapter2 {
       {"id": 4, "name": "Eve", "isPresent": false},
     ];
     int jumlahHadir = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung jumlah kehadiran (isPresent = true) di dalam list attendance
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> data in attendance) {
+      if (data['isPresent'] == true) {
+        jumlahHadir++;
+      }
+    }
     // --- End of Answer ---
-
     return jumlahHadir == 2;
   }
 
@@ -1171,13 +1257,15 @@ class Chapter2 {
       {"id": 3, "product": "Headphones", "stock": 20},
     ];
     int maxStok = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari nilai tertinggi dari stock di dalam list warehouse
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> data in warehouse) {
+      int stock = data['stock'];
+      if (stock > maxStok) {
+        maxStok = stock;
+      }
+    }
     // --- End of Answer ---
-
     return maxStok == 50;
   }
 
@@ -1189,13 +1277,14 @@ class Chapter2 {
       {"id": 3, "task": "Testing", "progress": 50},
     ];
     int jumlahSelesai = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung jumlah tugas yang telah selesai (progress = 100) di dalam list projectTasks
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> project in projectTasks) {
+      if (project['progress'] == 100) {
+        jumlahSelesai++;
+      }
+    }
     // --- End of Answer ---
-
     return jumlahSelesai == 1;
   }
 
@@ -1208,13 +1297,14 @@ class Chapter2 {
       {"id": 4, "name": "Eve", "isPresent": false},
     ];
     List<Map<String, dynamic>> hadirOnly = [];
-
     // ? Instruksi: Gunakan looping for untuk mengisi list hadirOnly dengan data karyawan yang hadir (isPresent = true)
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> data in employeeAttendance) {
+      if (data['isPresent']) {
+        hadirOnly.add(data);
+      }
+    }
     // --- End of Answer ---
-
     return hadirOnly.length == 2;
   }
 
@@ -1227,13 +1317,12 @@ class Chapter2 {
       {"id": 4, "name": "Eve", "score": 88},
     ];
     double totalScore = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total nilai dari semua siswa di dalam list studentScores
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> data in studentScores) {
+      totalScore += data['score'];
+    }
     // --- End of Answer ---
-
     double averageScore = totalScore / studentScores.length;
 
     return averageScore == 85.75;
@@ -1247,13 +1336,12 @@ class Chapter2 {
       {"id": 3, "product": "Monitor", "quantitySold": 30, "price": 1000000},
     ];
     double totalSales = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total penjualan (quantitySold) dari semua produk di dalam list sales
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> data in sales) {
+      totalSales += data['quantitySold'];
+    }
     // --- End of Answer ---
-
     return totalSales == 180;
   }
 
@@ -1265,13 +1353,12 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "age": 35, "salary": 4500000},
     ];
     double totalSalary = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total gaji (salary) dari semua karyawan di dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> data in employees) {
+      totalSalary += data['salary'];
+    }
     // --- End of Answer ---
-
     return totalSalary == 15500000;
   }
 
@@ -1282,14 +1369,15 @@ class Chapter2 {
       {"id": 2, "name": "Alice", "age": 25, "salary": 6000000},
       {"id": 3, "name": "Bob", "age": 35, "salary": 4500000},
     ];
+    double totalAge = 0;
     double averageAge = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung rata-rata usia (age) dari semua karyawan di dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      totalAge += employee['age'];
+    }
+    averageAge = totalAge / employees.length;
     // --- End of Answer ---
-
     return averageAge == 30.0;
   }
 
@@ -1302,13 +1390,18 @@ class Chapter2 {
     ];
     int maxPrice = 0;
     int minPrice = products[0]["price"];
-
     // ? Instruksi: Gunakan looping for untuk mencari harga termahal dan harga termurah dari semua produk di dalam list products
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      if (price > maxPrice) {
+        maxPrice = price;
+      }
+      if (price < minPrice) {
+        minPrice = price;
+      }
+    }
     // --- End of Answer ---
-
     return maxPrice == 350000 && minPrice == 150000;
   }
 
@@ -1321,13 +1414,16 @@ class Chapter2 {
     ];
     String bestProduct = "";
     int maxQuantitySold = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari produk terlaris (dengan quantitySold terbanyak) di dalam list products
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int quantitySold = product['quantitySold'];
+      if (quantitySold > maxQuantitySold) {
+        maxQuantitySold = quantitySold;
+        bestProduct = product['name'];
+      }
+    }
     // --- End of Answer ---
-
     return bestProduct == "Keyboard";
   }
 
@@ -1340,13 +1436,16 @@ class Chapter2 {
     ];
     String bestEmployee = "";
     int maxKpi = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan terbaik (dengan KPI tertinggi) di dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int kpi = employee['kpi'];
+      if (kpi > maxKpi) {
+        maxKpi = kpi;
+        bestEmployee = employee['name'];
+      }
+    }
     // --- End of Answer ---
-
     return bestEmployee == "John";
   }
 
@@ -1358,13 +1457,15 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "kpi": 70},
     ];
     List<String> lowPerformers = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan KPI rendah (kurang dari 80) di dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int kpi = employee['kpi'];
+      if (kpi < 80) {
+        lowPerformers.add(employee['name']);
+      }
+    }
     // --- End of Answer ---
-
     return lowPerformers.contains("Bob");
   }
 
@@ -1376,13 +1477,12 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "kpi": 70},
     ];
     double totalKpi = 0;
-
     // ? Instruksi: Gunakan looping for untuk menghitung total KPI dari semua karyawan di dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      totalKpi += employee['kpi'];
+    }
     // --- End of Answer ---
-
     double averageKpi = totalKpi / employees.length;
     return averageKpi == 80.0;
   }
@@ -1396,14 +1496,20 @@ class Chapter2 {
     ];
 
     int maxPrice = 0;
-    int minPrice = 0;
-
+    int minPrice = products[0]['price'];
     // ? Instruksi: Gunakan looping for untuk mencari harga termahal dan harga termurah dari semua produk di dalam list products
     // TODO: Tulis kode for loop di sini
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      if (price > maxPrice) {
+        maxPrice = price;
+      }
+      if (price < minPrice) {
+        minPrice = price;
+      }
+    }
 
     // --- End of Answer ---
-
     return maxPrice == 350000 && minPrice == 150000;
   }
 
@@ -1416,13 +1522,16 @@ class Chapter2 {
     ];
     String bestProduct = "";
     int maxQuantitySold = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari produk terlaris (dengan quantitySold terbanyak) di dalam list products
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int quantitySold = product['quantitySold'];
+      if (quantitySold > maxQuantitySold) {
+        maxQuantitySold = quantitySold;
+        bestProduct = product['name'];
+      }
+    }
     // --- End of Answer ---
-
     return bestProduct == "Keyboard";
   }
 
@@ -1435,13 +1544,16 @@ class Chapter2 {
     ];
     String bestEmployee = "";
     int minAbsentDays = employees[0]["absentDays"];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan absensi bagus (sedikit absentDays) di dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int absentDays = employee['absentDays'];
+      if (absentDays < minAbsentDays) {
+        minAbsentDays = absentDays;
+        bestEmployee = employee['name'];
+      }
+    }
     // --- End of Answer ---
-
     return bestEmployee == "Bob";
   }
 
@@ -1454,13 +1566,16 @@ class Chapter2 {
     ];
     String bestProduct = "";
     int maxSoldInDays = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan penjualan tercepat (dengan soldInDays terbanyak) di dalam list products
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int soldInDays = product['soldInDays'];
+      if (soldInDays > maxSoldInDays) {
+        maxSoldInDays = soldInDays;
+        bestProduct = product['name'];
+      }
+    }
     // --- End of Answer ---
-
     return bestProduct == "Headphones";
   }
 
@@ -1472,13 +1587,15 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "kpi": 70, "absentDays": 1},
     ];
     List<String> highPerformers = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan KPI tinggi (lebih dari 80) di dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int kpi = employee['kpi'];
+      if (kpi > 80) {
+        highPerformers.add(employee['name']);
+      }
+    }
     // --- End of Answer ---
-
     return highPerformers.contains("John");
   }
 
@@ -1491,13 +1608,19 @@ class Chapter2 {
     ];
     List<String> bestProducts = [];
     int maxSoldInDays = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan penjualan tercepat (dengan soldInDays terbanyak) di dalam list products
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int soldInDays = product['soldInDays'];
+      if (soldInDays > maxSoldInDays) {
+        bestProducts.clear();
+        bestProducts.add(product['name']);
+        maxSoldInDays = soldInDays;
+      } else if (soldInDays == maxSoldInDays) {
+        bestProducts.add(product['name']);
+      }
+    }
     // --- End of Answer ---
-
     return bestProducts.length == 1 && bestProducts.contains("Headphones");
   }
 
@@ -1509,14 +1632,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "kpi": 120, "absentDays": 1},
     ];
     List<Map<String, dynamic>> highPerformers = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan KPI tinggi (lebih dari 80) di dalam list employees
     // Kemudian masukkan data karyawan tersebut ke dalam list highPerformers
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int kpi = employee['kpi'];
+      if (kpi > 80) {
+        highPerformers.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return highPerformers.length == 2 &&
         highPerformers[0]["name"] == "John" &&
         highPerformers[1]["name"] == "Bob";
@@ -1530,14 +1655,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "kpi": 70, "absentDays": 1},
     ];
     List<Map<String, dynamic>> lowPerformers = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan KPI rendah (kurang dari 80) di dalam list employees
     // Kemudian masukkan data karyawan tersebut ke dalam list lowPerformers
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int kpi = employee['kpi'];
+      if (kpi < 80) {
+        lowPerformers.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return lowPerformers.length == 1 && lowPerformers[0]["name"] == "Bob";
   }
 
@@ -1550,14 +1677,20 @@ class Chapter2 {
     ];
     List<Map<String, dynamic>> bestProducts = [];
     int maxSoldInDays = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan penjualan tercepat (dengan soldInDays terbanyak) di dalam list products
     // Kemudian masukkan data produk tersebut ke dalam list bestProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int soldInDays = product['soldInDays'];
+      if (soldInDays > maxSoldInDays) {
+        maxSoldInDays = soldInDays;
+        bestProducts.clear();
+        bestProducts.add(product);
+      } else if (soldInDays == maxSoldInDays) {
+        bestProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return bestProducts.length == 1 && bestProducts[0]["name"] == "Headphones";
   }
 
@@ -1569,14 +1702,22 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "kpi": 70, "absentDays": 1},
     ];
     List<Map<String, dynamic>> goodPerformers = [];
-
+    int minAbsentDays = employees[0]['absentDays'];
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan absensi bagus (sedikit absentDays) di dalam list employees
     // Kemudian masukkan data karyawan tersebut ke dalam list goodPerformers
     // TODO: Tulis kode for loop di sini
-
+    for (Map<String, dynamic> employee in employees) {
+      int absentDays = employee['absentDays'];
+      if (absentDays < minAbsentDays) {
+        minAbsentDays = absentDays;
+        goodPerformers.clear();
+        goodPerformers.add(employee);
+      } else if (absentDays == minAbsentDays) {
+        goodPerformers.add(employee);
+      }
+    }
 
     // --- End of Answer ---
-
     return goodPerformers.length == 1 && goodPerformers[0]["name"] == "Bob";
   }
 
@@ -1589,14 +1730,20 @@ class Chapter2 {
     ];
     List<Map<String, dynamic>> bestProducts = [];
     int maxSoldInDays = 0;
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan penjualan tercepat (dengan soldInDays terbanyak) di dalam list products
     // Kemudian masukkan data produk tersebut ke dalam list bestProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int soldInDays = product['soldInDays'];
+      if (soldInDays > maxSoldInDays) {
+        maxSoldInDays = soldInDays;
+        bestProducts.clear();
+        bestProducts.add(product);
+      } else if (soldInDays == maxSoldInDays) {
+        bestProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return bestProducts.length == 1 && bestProducts[0]["name"] == "Headphones";
   }
 
@@ -1608,14 +1755,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "kpi": 70, "absentDays": 1},
     ];
     List<Map<String, dynamic>> badPerformers = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan absensi buruk (lebih dari 3 hari absentDays) di dalam list employees
     // Kemudian masukkan data karyawan tersebut ke dalam list badPerformers
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int absentDays = employee['absentDays'];
+      if (absentDays > 3) {
+        badPerformers.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return badPerformers.length == 1 && badPerformers[0]["name"] == "Alice";
   }
 
@@ -1627,14 +1776,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "age": 25, "department": "IT"},
     ];
     List<String> hrEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan yang bekerja di departemen "HR"
     // Kemudian masukkan nama karyawan tersebut ke dalam list hrEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      String department = employee['department'];
+      if (department == 'HR') {
+        hrEmployees.add(employee['name']);
+      }
+    }
     // --- End of Answer ---
-
     return hrEmployees.length == 1 && hrEmployees.contains("John");
   }
 
@@ -1646,14 +1797,16 @@ class Chapter2 {
       {"id": 3, "name": "Headphones", "price": 350000, "quantity": 75},
     ];
     List<String> expensiveProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga lebih dari 200000
     // Kemudian masukkan nama produk tersebut ke dalam list expensiveProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      if (price > 200000) {
+        expensiveProducts.add(product['name']);
+      }
+    }
     // --- End of Answer ---
-
     return expensiveProducts.length == 2 &&
         expensiveProducts.contains("Keyboard") &&
         expensiveProducts.contains("Headphones");
@@ -1667,14 +1820,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "age": 25, "department": "IT"},
     ];
     List<String> financeEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan yang bekerja di departemen "Finance"
     // Kemudian masukkan nama karyawan tersebut ke dalam list financeEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      String department = employee['department'];
+      if (department == 'Finance') {
+        financeEmployees.add(employee['name']);
+      }
+    }
     // --- End of Answer ---
-
     return financeEmployees.length == 1 && financeEmployees.contains("Alice");
   }
 
@@ -1686,14 +1841,16 @@ class Chapter2 {
       {"id": 3, "name": "Headphones", "price": 350000, "quantity": 75},
     ];
     List<String> affordableProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga kurang dari 300000
     // Kemudian masukkan nama produk tersebut ke dalam list affordableProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      if (price < 300000) {
+        affordableProducts.add(product['name']);
+      }
+    }
     // --- End of Answer ---
-
     return affordableProducts.length == 2 &&
         affordableProducts.contains("Keyboard") &&
         affordableProducts.contains("Mouse");
@@ -1707,14 +1864,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "age": 25, "department": "IT"},
     ];
     String hrEmployee = "";
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan yang bekerja di departemen "HR"
     // Jika ditemukan, simpan nama karyawan tersebut pada variabel hrEmployee
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      String department = employee['department'];
+      if (department == 'HR') {
+        hrEmployee = employee['name'];
+      }
+    }
     // --- End of Answer ---
-
     return hrEmployee == "John";
   }
 
@@ -1726,14 +1885,16 @@ class Chapter2 {
       {"id": 3, "name": "Headphones", "price": 350000, "quantity": 75},
     ];
     String expensiveProduct = "";
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga lebih dari 300000
     // Jika ditemukan, simpan nama produk tersebut pada variabel expensiveProduct
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      if (price > 300000) {
+        expensiveProduct = product['name'];
+      }
+    }
     // --- End of Answer ---
-
     return expensiveProduct == "Headphones";
   }
 
@@ -1745,14 +1906,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob", "age": 25, "department": "IT"},
     ];
     List<String> itEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan yang bekerja di departemen "IT"
     // Kemudian masukkan nama karyawan tersebut ke dalam list itEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      String department = employee['department'];
+      if (department == 'IT') {
+        itEmployees.add(employee['name']);
+      }
+    }
     // --- End of Answer ---
-
     return itEmployees.length == 1 && itEmployees.contains("Bob");
   }
 
@@ -1764,14 +1927,16 @@ class Chapter2 {
       {"id": 3, "name": "Headphones", "price": 350000, "quantity": 75},
     ];
     List<String> affordableProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga kurang dari 200000
     // Kemudian masukkan nama produk tersebut ke dalam list affordableProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      if (price < 200000) {
+        affordableProducts.add(product['name']);
+      }
+    }
     // --- End of Answer ---
-
     return affordableProducts.length == 1 &&
         affordableProducts.contains("Mouse");
   }
@@ -1786,14 +1951,17 @@ class Chapter2 {
     String name = "";
     int age = 0;
     String gender = "";
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan usia lebih dari 30 tahun atau berjenis kelamin "Female"
     // Jika ditemukan, simpan nama, usia, dan jenis kelaminnya pada variabel yang telah disediakan
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      if (employee['age'] > 30 || employee['gender'] == 'Female') {
+        name = employee['name'];
+        age = employee['age'];
+        gender = employee['gender'];
+      }
+    }
     // --- End of Answer ---
-
     return name == "Alice" && age == 32 && gender == "Female";
   }
 
@@ -1805,14 +1973,17 @@ class Chapter2 {
       {"id": 3, "name": "Headphones", "price": 350000, "quantitySold": 30},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga lebih dari 200000 dan terjual kurang dari 60
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      int quantitySold = product['quantitySold'];
+      if (price > 200000 && quantitySold < 60) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.isNotEmpty && matchedProducts.first["id"] == 1;
   }
 
@@ -1824,14 +1995,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan nama mengandung huruf "Do"
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      String name = employee['name'];
+      if (name.contains('Do')) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 1 &&
         matchedEmployees[0]["name"] == "John Doe";
   }
@@ -1844,14 +2017,16 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan nama mengandung huruf "Sony"
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      String name = product['name'];
+      if (name.contains('Sony')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 1 &&
         matchedProducts[0]["name"] == "Headphones Sony";
   }
@@ -1864,14 +2039,16 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan nama depan mengandung huruf "Jo"
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      String firstName = employee['name'].split(' ')[0];
+      if (firstName.contains('Jo')) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 1 &&
         matchedEmployees[0]["name"] == "John Doe";
   }
@@ -1884,14 +2061,16 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan nama mengandung huruf "Logi"
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      String name = product['name'];
+      if (name.contains('Logi')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 2 &&
         matchedProducts[0]["name"] == "Keyboard Logitech" &&
         matchedProducts[1]["name"] == "Mouse Logitech";
@@ -1905,14 +2084,17 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan nama belakang mengandung huruf "son"
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      List<String> nameParts = employee['name'].split(" ");
+      String lastName = nameParts.last;
+      if (lastName.contains('son')) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 1 &&
         matchedEmployees[0]["name"] == "Bob Johnson";
   }
@@ -1925,15 +2107,17 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan nama mengandung huruf "Sony"
     // atau mengandung huruf "Logi"
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      String name = product['name'];
+      if (name.contains('Sony') || name.contains('Logi')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 3;
   }
 
@@ -1945,15 +2129,18 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan nama depan mengandung huruf "Jo"
     // dan usia kurang dari 30 tahun
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      String firstName = employee['name'].split(' ')[0];
+      int age = employee['age'];
+      if (firstName.contains('Jo') && age < 30) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 1 &&
         matchedEmployees[0]["name"] == "John Doe";
   }
@@ -1966,15 +2153,18 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga kurang dari 200000
     // atau mengandung huruf "Sony" dalam nama produk
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      String name = product['name'];
+      if (price < 200000 || name.contains('Sony')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 2;
   }
 
@@ -1986,15 +2176,18 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan nama depan mengandung huruf "Jo"
     // dan usia lebih dari 30 tahun
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      String firstName = employee['name'].split(' ')[0];
+      int age = employee['age'];
+      if (firstName.contains('Jo') && age > 30) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 0;
   }
 
@@ -2006,15 +2199,18 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga kurang dari 100000
     // atau mengandung huruf "Samsung" dalam nama produk
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      String name = product['name'];
+      if (price < 100000 || name.contains('Samsung')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 0;
   }
 
@@ -2026,15 +2222,18 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan usia lebih dari 35 tahun
     // atau nama mengandung huruf "Smith"
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int age = employee['age'];
+      String name = employee['name'];
+      if (age > 35 || name.contains('Smith')) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 1 &&
         matchedEmployees[0]["name"] == "Alice Smith";
   }
@@ -2047,15 +2246,18 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga lebih dari 300000
     // atau nama mengandung huruf "Sony" dalam produk
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      String name = product['name'];
+      if (price > 300000 || name.contains('Sony')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 1 &&
         matchedProducts[0]["name"] == "Headphones Sony";
   }
@@ -2068,15 +2270,18 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan usia di antara 25 dan 30 tahun (inklusif)
     // atau nama depan mengandung huruf "Bob"
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int age = employee['age'];
+      String firstName = employee['name'].split(' ')[0];
+      if ((age >= 25 && age <= 30) || firstName.contains('Bob')) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 2 &&
         matchedEmployees[0]["name"] == "John Doe" &&
         matchedEmployees[1]["name"] == "Bob Johnson";
@@ -2090,15 +2295,18 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga kurang dari 200000
     // dan nama produk mengandung huruf "og"
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      String name = product['name'];
+      if (price < 200000 && name.contains('og')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 1 &&
         matchedProducts[0]["name"] == "Mouse Logitech";
   }
@@ -2111,15 +2319,19 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan usia kurang dari 30 tahun
     // dan nama belakang mengandung huruf "son"
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int age = employee['age'];
+      List<String> nameParts = employee['name'].split(' ');
+      String lastName = nameParts.last;
+      if (age < 30 && lastName.contains('son')) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 1 &&
         matchedEmployees[0]["name"] == "Bob Johnson";
   }
@@ -2132,15 +2344,18 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga kurang dari 100000
     // dan nama mengandung huruf "Samsung" dalam produk
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      String name = product['name'];
+      if (price < 100000 && name.contains('Samsung')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 0;
   }
 
@@ -2152,15 +2367,18 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan usia lebih dari 35 tahun
     // dan nama mengandung huruf "Smith"
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int age = employee['age'];
+      String name = employee['name'];
+      if (age > 35 && name.contains('Smith')) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.isNotEmpty && matchedEmployees.first["id"] == 2;
   }
 
@@ -2172,15 +2390,18 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga lebih dari 300000
     // dan nama mengandung huruf "Sony" dalam produk
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      String name = product['name'];
+      if (price > 300000 && name.contains('Sony')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 1 &&
         matchedProducts[0]["name"] == "Headphones Sony";
   }
@@ -2193,15 +2414,18 @@ class Chapter2 {
       {"id": 3, "name": "Bob Johnson", "age": 25},
     ];
     List<Map<String, dynamic>> matchedEmployees = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari karyawan dengan usia di antara 25 dan 30 tahun (inklusif)
     // dan nama depan mengandung huruf "Bob"
     // Kemudian masukkan data karyawan tersebut ke dalam list matchedEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      int age = employee['age'];
+      String firstName = employee['name'].split(' ')[0];
+      if ((age >= 25 && age <= 30) && firstName.contains('Bob')) {
+        matchedEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return matchedEmployees.length == 1 &&
         matchedEmployees[0]["name"] == "Bob Johnson";
   }
@@ -2214,15 +2438,18 @@ class Chapter2 {
       {"id": 3, "name": "Headphones Sony", "price": 350000},
     ];
     List<Map<String, dynamic>> matchedProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari produk dengan harga kurang dari 200000
     // dan nama produk mengandung huruf "og"
     // Kemudian masukkan data produk tersebut ke dalam list matchedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      int price = product['price'];
+      String name = product['name'];
+      if (price < 200000 && name.contains('og')) {
+        matchedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return matchedProducts.length == 1 &&
         matchedProducts[0]["name"] == "Mouse Logitech";
   }
@@ -2236,13 +2463,15 @@ class Chapter2 {
       {"id": 4, "product": "TV", "quantity": 1, "total": 800},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari order dengan id 3 dalam list orders
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < orders.length; i++) {
+      if (orders[i]['id'] == 3) {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return index == 2;
   }
 
@@ -2255,11 +2484,14 @@ class Chapter2 {
       {"name": "Eva", "age": 40, "department": "Finance", "salary": 7000},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari employee dengan name "Eva" dan salary lebih dari 6000 dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < employees.length; i++) {
+      if (employees[i]['name'] == 'Eva' && employees[i]['salary'] > 6000) {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
     return index == 3;
   }
@@ -2274,13 +2506,15 @@ class Chapter2 {
       {"id": 5, "type": "Purchase", "amount": 30, "status": "Pending"},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari transaction dengan id 5 dan type "Purchase" dalam list transactions
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < transactions.length; i++) {
+      if (transactions[i]['id'] == 5 && transactions[i]['type'] == 'Purchase') {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return index == 4;
   }
 
@@ -2293,13 +2527,15 @@ class Chapter2 {
       {"id": 4, "name": "TV", "price": 800},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari product dengan id 2 dan price 1200 dalam list products
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < products.length; i++) {
+      if (products[i]['id'] == 2 && products[i]['price'] == 1200) {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return index == 1;
   }
 
@@ -2312,13 +2548,15 @@ class Chapter2 {
       {"name": "Eva", "age": 40, "department": "Finance", "salary": 7000},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari employee dengan name "Bob" dan age lebih dari 30 dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < employees.length; i++) {
+      if (employees[i]['name'] == 'Bob' && employees[i]['age'] > 30) {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return index == 2;
   }
 
@@ -2332,13 +2570,16 @@ class Chapter2 {
       {"id": 5, "type": "Purchase", "amount": 30, "status": "Pending"},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari transaction dengan type "Refund" dan status "Pending" dalam list transactions
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < transactions.length; i++) {
+      if (transactions[i]['type'] == 'Refund' &&
+          transactions[i]['status'] == 'Pending') {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return index == 2;
   }
 
@@ -2351,11 +2592,14 @@ class Chapter2 {
       {"id": 4, "name": "TV", "price": 800, "stock": 15},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari product dengan name "Headphones" dan stock lebih dari 15 dalam list products
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < products.length; i++) {
+      if (products[i]['name'] == 'Headphones' && products[i]['stock'] > 15) {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
     return index == 2;
   }
@@ -2369,13 +2613,17 @@ class Chapter2 {
       {"name": "Eva", "age": 40, "department": "Finance", "salary": 7000},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari employee dengan name "John", age 30, dan department "Sales" dalam list employees
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < employees.length; i++) {
+      if (employees[i]['name'] == 'John' &&
+          employees[i]['age'] == 30 &&
+          employees[i]['department'] == 'Sales') {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return index == 0;
   }
 
@@ -2389,13 +2637,16 @@ class Chapter2 {
       {"id": 5, "type": "Purchase", "amount": 30, "status": "Pending"},
     ];
     int index = -1;
-
     // ? Instruksi: Gunakan looping for untuk mencari index dari transaction dengan amount 75 dan status "Completed" dalam list transactions
     // TODO: Tulis kode for loop di sini
-
-
+    for (int i = 0; i < transactions.length; i++) {
+      if (transactions[i]['amount'] == 75 &&
+          transactions[i]['status'] == 'Completed') {
+        index = i;
+        break;
+      }
+    }
     // --- End of Answer ---
-
     return index == 3;
   }
 
@@ -2408,13 +2659,14 @@ class Chapter2 {
       {"id": 4, "name": "TV", "price": 800, "stock": 15},
     ];
     List<Map<String, dynamic>> filteredProducts = [];
-
     // ? Instruksi: Gunakan looping for untuk mencari product dengan stock kurang dari 10 dan masukkan ke dalam list filteredProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      if (product['stock'] < 10) {
+        filteredProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return filteredProducts.isNotEmpty &&
         filteredProducts[0]["name"] == "Laptop";
   }
@@ -2472,13 +2724,19 @@ class Chapter2 {
       },
     ];
     List<Map<String, dynamic>> subscribedUsers = [];
-
     // Instruksi: Gunakan looping for untuk mencari user yang berlangganan (isSubscribed = true), telah diverifikasi (isVerified = true),
     // memiliki gender "Female", berusia di atas 25 tahun, dan tinggal di kota "Los Angeles" atau "New York"
     // Masukkan user yang memenuhi kriteria tersebut ke dalam list subscribedUsers
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> user in users) {
+      if (user['isSubscribed'] == true &&
+          user['isVerified'] == true &&
+          user['gender'] == 'Female' &&
+          user['age'] > 25 &&
+          (user['city'] == 'Los Angeles' || user['city'] == 'New York')) {
+        subscribedUsers.add(user);
+      }
+    }
     // --- End of Answer ---
     return subscribedUsers.isNotEmpty && subscribedUsers.first["id"] == 4;
   }
@@ -2536,15 +2794,19 @@ class Chapter2 {
       },
     ];
     List<Map<String, dynamic>> featuredProducts = [];
-
     // Instruksi: Gunakan looping for untuk mencari product yang merupakan produk unggulan (isFeatured = true),
     // memiliki rating di atas 4.5, tersedia (isAvailable = true), dan memiliki lebih dari 100 ulasan (reviews > 100)
     // Masukkan product yang memenuhi kriteria tersebut ke dalam list featuredProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      if (product['isFeatured'] == true &&
+          product['rating'] > 4.5 &&
+          product['isAvailable'] == true &&
+          product['reviews'] > 100) {
+        featuredProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return featuredProducts.length == 2 &&
         featuredProducts[0]["name"] == "Headphones" &&
         featuredProducts[1]["name"] == "TV";
@@ -2603,16 +2865,21 @@ class Chapter2 {
       },
     ];
     List<Map<String, dynamic>> highPaidEmployees = [];
-
     // Instruksi: Gunakan looping for untuk mencari karyawan dengan gaji tinggi (salary > 5000),
     // berusia di atas 25 tahun, memiliki pengalaman kerja lebih dari 3 tahun (yearsOfExperience > 3),
     // dan bekerja di departemen "IT" atau "Finance"
     // Masukkan karyawan yang memenuhi kriteria tersebut ke dalam list highPaidEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      if (employee['salary'] > 5000 &&
+          employee['age'] > 25 &&
+          employee['yearsOfExperience'] > 3 &&
+          (employee['department'] == 'IT' ||
+              employee['department'] == 'Finance')) {
+        highPaidEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return highPaidEmployees.isNotEmpty && highPaidEmployees.first["id"] == 4;
   }
 
@@ -2669,15 +2936,16 @@ class Chapter2 {
       },
     ];
     List<Map<String, dynamic>> lowRatedProducts = [];
-
     // Instruksi: Gunakan looping for untuk mencari product dengan rating rendah (rating < 4.0),
     // dan stok produk kurang dari 10 (stock < 10)
     // Masukkan product yang memenuhi kriteria tersebut ke dalam list lowRatedProducts
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> product in products) {
+      if (product['rating'] < 4.0 && product['stock'] < 10) {
+        lowRatedProducts.add(product);
+      }
+    }
     // --- End of Answer ---
-
     return lowRatedProducts.length == 0;
   }
 
@@ -2734,16 +3002,19 @@ class Chapter2 {
       },
     ];
     List<Map<String, dynamic>> partTimeEmployees = [];
-
     // Instruksi: Gunakan looping for untuk mencari karyawan dengan status paruh waktu (isFullTime = false),
     // tidak memiliki asuransi kesehatan (hasHealthInsurance = false),
     // dan berusia di bawah 25 tahun (age < 25)
     // Masukkan karyawan yang memenuhi kriteria tersebut ke dalam list partTimeEmployees
     // TODO: Tulis kode for loop di sini
-
-
+    for (Map<String, dynamic> employee in employees) {
+      if (employee['isFullTime'] == false &&
+          employee['hasHealthInsurance'] == false &&
+          employee['age'] < 25) {
+        partTimeEmployees.add(employee);
+      }
+    }
     // --- End of Answer ---
-
     return partTimeEmployees.isNotEmpty && partTimeEmployees.first["id"] == 4;
   }
 }
