@@ -1,0 +1,42 @@
+[
+    // Uncomment this to test and run builder with Shift + Ctrl + Alt + B
+    {	
+        "__className": "product", // <- The base class name of the object.
+        "__path": "/lib/model/product", // <- this is not required.
+        "id": "",
+        "photo": "",
+        "product_name": "",
+        "product_category": "",
+        "description": "",
+        "price": 25.31,
+        "stock": 10.20,
+        "qty": 1
+    },
+    {	
+        "__className": "user_profile", // <- The base class name of the object.
+        "__path": "/lib/model/user_profile", // <- this is not required.
+        "id": "",
+        "photo": "",
+        "email": "",
+        "name": "",
+        "store_name": "",
+        "store_address": "",
+        "store_phone_number": ""
+    },
+    {	
+        "__className": "product_category", // <- The base class name of the object.
+        "__path": "/lib/model/product_category", // <- this is not required.
+        "id": "",
+        "product_category_name": ""
+    },
+    {	
+        "__className": "order", // <- The base class name of the object.
+        "__path": "/lib/model/order", // <- this is not required.
+        "id": "",
+        "created_at": "",
+        "payment_method": "",
+        "status": "",
+        "items": [],
+        "total": ""
+    }
+]

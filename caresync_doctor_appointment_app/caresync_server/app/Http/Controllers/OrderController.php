@@ -10,13 +10,21 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+<<<<<<< HEAD
 
+=======
+use Illuminate\Support\Facades\File;
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 class OrderController extends Controller
 {
     public function index(Request $request)
     {
         // $query = Order::query();
+<<<<<<< HEAD
         $query = Order::with(['doctor','schedule.hospital']);
+=======
+        $query = Order::with(['doctor', 'schedule.hospital']);
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
         // Filter data jika ada parameter 'sort_by' dan 'sort_type'
         if ($request->has('sort_by') && $request->has('sort_type')) {
@@ -113,4 +121,31 @@ class OrderController extends Controller
             "data" => $responseData
         ]);
     }
+<<<<<<< HEAD
+=======
+
+    public function midtransCallback(Request $request)
+    {
+        // Validate the request if needed
+
+        // Get the JSON data from the request body
+        $jsonData = $request->getContent();
+
+        // Convert the JSON data to an array
+        $data = json_decode($jsonData, true);
+
+        if ($data === null) {
+            return response()->json(['error' => 'Invalid JSON'], 400);
+        }
+
+        // Define the file path where you want to save the JSON file
+        $filePath = storage_path('app/json_data.json');
+
+        // Save the JSON data to the file
+        File::put($filePath, $jsonData);
+        return response()->json([
+            "message" => "OK"
+        ]);
+    }
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 }

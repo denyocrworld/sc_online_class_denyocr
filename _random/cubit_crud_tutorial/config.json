@@ -1,0 +1,23 @@
+{
+    "modules": [
+        "login",
+        "main_navigation",
+        "dashboard",
+        "profile",
+        "product_list",
+        "product_form",
+        "customer_list",
+        "customer_form",
+        "order_list",
+        "pos"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": true,
+    "ignore_core_generator_for_directories": [
+        "lib/model",
+        "lib/models"
+    ]
+}

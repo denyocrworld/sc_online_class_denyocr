@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/injection.dart';
 import 'package:hyper_ui/model/doctor/doctor.dart';
 import 'package:hyper_ui/module/patient/patient_doctor_detail/model/patient_doctor_detail_schedule_list.dart';
@@ -12,6 +13,9 @@ import '../bloc/patient_doctor_detail_bloc.dart';
 import '../event/patient_doctor_detail_event.dart';
 import '../state/patient_doctor_detail_state.dart';
 import 'package:provider/provider.dart';
+=======
+import 'package:hyper_ui/model/doctor/doctor.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class PatientDoctorDetailView extends StatefulWidget {
   final Doctor item;
@@ -26,6 +30,7 @@ class PatientDoctorDetailView extends StatefulWidget {
 }
 
 class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
+<<<<<<< HEAD
   late PatientDoctorDetailBloc bloc;
 
   @override
@@ -41,6 +46,20 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
     print("-----------------------");
     // GetIt getIt = GetIt.instance;
     // getIt.registerSingleton<PatientDoctorDetailBloc>(bloc);
+=======
+  PatientDoctorDetailBloc bloc = PatientDoctorDetailBloc();
+
+  @override
+  void initState() {
+    if (GetIt.I.isRegistered<PatientDoctorDetailBloc>())
+      GetIt.I.unregister<PatientDoctorDetailBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    bloc.add(PatientDoctorDetailSetDoctorEvent(doctor: widget.item));
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 
@@ -52,12 +71,17 @@ class _PatientDoctorDetailViewState extends State<PatientDoctorDetailView> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return MultiBlocProvider(
       providers: [
         BlocProvider<PatientDoctorDetailBloc>(
           create: (BuildContext context) => bloc,
         ),
       ],
+=======
+    return BlocProvider(
+      create: (BuildContext context) => bloc,
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
       // create: (BuildContext context) => bloc,
       child: BlocListener<PatientDoctorDetailBloc, PatientDoctorDetailState>(
         listener: (context, state) {},

@@ -2,7 +2,12 @@
     <application
         android:label="hyper_ui"
         android:name="${applicationName}"
+<<<<<<< HEAD
         android:icon="@mipmap/launcher_icon">
+=======
+        android:icon="@mipmap/launcher_icon"
+        android:usesCleartextTraffic="true">
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
         <activity
             android:name=".MainActivity"
             android:exported="true"

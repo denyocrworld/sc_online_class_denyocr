@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/firebase_options.dart';
@@ -12,6 +13,18 @@ void main() async {
   var instance = GetIt.I<PatientDoctorDetailBloc>();
   print(instance.state.counter);
   print(instance.state.doctor);
+=======
+import 'package:hyper_ui/core.dart';
+import 'package:flutter/material.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialize();
+  configureDependencies();
+  // var instance = GetIt.I<PatientDoctorDetailBloc>();
+  // print(instance.state.counter);
+  // print(instance.state.doctor);
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
   runMainApp();
 }
 

@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/core.dart';
 import '../bloc/tutorial_bloc.dart';
 import '../event/tutorial_event.dart';
 import '../state/tutorial_state.dart';
+=======
+import '../bloc/tutorial_bloc.dart';
+import '../event/tutorial_event.dart';
+import '../state/tutorial_state.dart';
+import 'package:get_it/get_it.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class TutorialView extends StatefulWidget {
   const TutorialView({Key? key}) : super(key: key);
@@ -17,7 +24,17 @@ class _TutorialViewState extends State<TutorialView> {
 
   @override
   void initState() {
+<<<<<<< HEAD
     bloc.initState();
+=======
+    if (GetIt.I.isRegistered<TutorialBloc>())
+      GetIt.I.unregister<TutorialBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 
@@ -61,10 +78,14 @@ class _TutorialViewState extends State<TutorialView> {
             style: const TextStyle(fontSize: 24),
           ),
           IconButton(
+<<<<<<< HEAD
             // onPressed: () => bloc.add(TutorialIncrementEvent()),
             onPressed: () {
               bloc.incrementCounter();
             },
+=======
+            onPressed: () => bloc.add(TutorialIncrementEvent()),
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
             icon: const Icon(
               Icons.add,
               size: 24.0,

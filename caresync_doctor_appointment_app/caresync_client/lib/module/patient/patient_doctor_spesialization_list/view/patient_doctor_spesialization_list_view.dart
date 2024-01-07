@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/module/patient/patient_doctor_list/widget/patient_doctor_list_item.dart';
 import 'package:hyper_ui/module/patient/patient_doctor_spesialization_list/widget/patient_doctor_spesialization_item.dart';
 import '../bloc/patient_doctor_spesialization_list_bloc.dart';
 import '../event/patient_doctor_spesialization_list_event.dart';
+=======
+import 'package:get_it/get_it.dart';
+import 'package:hyper_ui/module/patient/patient_doctor_spesialization_list/widget/patient_doctor_spesialization_item.dart';
+import '../bloc/patient_doctor_spesialization_list_bloc.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 import '../state/patient_doctor_spesialization_list_state.dart';
 
 class PatientDoctorSpesializationListView extends StatefulWidget {
@@ -21,7 +27,17 @@ class _PatientDoctorSpesializationListViewState
 
   @override
   void initState() {
+<<<<<<< HEAD
     bloc.initState();
+=======
+    if (GetIt.I.isRegistered<PatientDoctorSpesializationListBloc>())
+      GetIt.I.unregister<PatientDoctorSpesializationListBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 

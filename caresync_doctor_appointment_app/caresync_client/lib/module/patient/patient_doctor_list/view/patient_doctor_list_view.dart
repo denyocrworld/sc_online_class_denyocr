@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/module/patient/patient_doctor_list/widget/patient_doctor_list_category.dart';
 import 'package:hyper_ui/module/patient/patient_doctor_list/widget/patient_doctor_list_item.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
@@ -9,6 +10,8 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import '../bloc/patient_doctor_list_bloc.dart';
 import '../event/patient_doctor_list_event.dart';
 import '../state/patient_doctor_list_state.dart';
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class PatientDoctorListView extends StatefulWidget {
   PatientDoctorListView({Key? key}) : super(key: key);
@@ -18,11 +21,25 @@ class PatientDoctorListView extends StatefulWidget {
 }
 
 class _PatientDoctorListViewState extends State<PatientDoctorListView> {
+<<<<<<< HEAD
   PatientDoctorListBloc bloc = GetIt.I<PatientDoctorListBloc>();
 
   @override
   void initState() {
     bloc.initState();
+=======
+  PatientDoctorListBloc bloc = PatientDoctorListBloc();
+
+  @override
+  void initState() {
+    if (GetIt.I.isRegistered<PatientDoctorListBloc>())
+      GetIt.I.unregister<PatientDoctorListBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 
@@ -53,9 +70,15 @@ class _PatientDoctorListViewState extends State<PatientDoctorListView> {
     PatientDoctorListBloc bloc,
     PatientDoctorListState state,
   ) {
+<<<<<<< HEAD
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
+=======
+    return Container(
+      color: Colors.white,
+      child: Column(
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -65,6 +88,7 @@ class _PatientDoctorListViewState extends State<PatientDoctorListView> {
           SizedBox(
             height: 20.0,
           ),
+<<<<<<< HEAD
           Expanded(
             child: ListView.builder(
               itemCount: state.doctorList.length,
@@ -75,6 +99,17 @@ class _PatientDoctorListViewState extends State<PatientDoctorListView> {
                 return PatientDoctorListItem(item: item);
               },
             ),
+=======
+          ListView.builder(
+            itemCount: state.doctorList.length,
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            shrinkWrap: true,
+            physics: ScrollPhysics(),
+            itemBuilder: (BuildContext context, int index) {
+              var item = state.doctorList[index];
+              return PatientDoctorListItem(item: item);
+            },
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
           ),
         ],
       ),

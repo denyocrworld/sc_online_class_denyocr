@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\build\windows\CMakeFiles\f9add7db8bc28990356d3b1df0d0c268\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2ED362AC-6B87-37EB-BC98-65E57A42F3AF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

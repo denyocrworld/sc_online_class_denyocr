@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+
+### Link Daftar Nomor Akun Rekening untuk Coba2
+https://docs.midtrans.com/docs/testing-payment-on-sandbox
+
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 - Bikin Database Migrations
 - Buat API-nya di Laravel
 - Buat Dokumentasi-nya di Postman

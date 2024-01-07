@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/module/patient/patient_doctor_detail/bloc/patient_doctor_detail_bloc.dart';
 import 'package:hyper_ui/service/order_service/order_service.dart';
 import '../event/patient_order_payment_event.dart';
@@ -13,6 +14,19 @@ mixin _BlocLifecycle {
 class PatientOrderPaymentBloc
     extends Bloc<PatientOrderPaymentEvent, PatientOrderPaymentState>
     with _BlocLifecycle {
+=======
+import 'package:hyper_ui/bloc_util.dart';
+import 'package:hyper_ui/module/patient/patient_doctor_detail/bloc/patient_doctor_detail_bloc.dart';
+import 'package:hyper_ui/service/order_service/order_service.dart';
+
+import '../event/patient_order_payment_event.dart';
+import '../state/patient_order_payment_state.dart';
+
+
+class PatientOrderPaymentBloc
+    extends Bloc<PatientOrderPaymentEvent, PatientOrderPaymentState>
+    implements IBlocBase {
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
   PatientOrderPaymentBloc() : super(PatientOrderPaymentState()) {
     on<PatientOrderPaymentIncrementEvent>((event, emit) {
       state.counter++;
@@ -36,12 +50,16 @@ class PatientOrderPaymentBloc
   void initState() {
     //initState event
     add(PatientOrderPaymentLoadEvent());
+<<<<<<< HEAD
     super.initState();
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
   }
 
   @override
   void dispose() {
     //dispose event
+<<<<<<< HEAD
     super.dispose();
   }
 
@@ -49,5 +67,11 @@ class PatientOrderPaymentBloc
   Future<void> close() {
     dispose();
     return super.close();
+=======
+  }
+
+  void ready() {
+    //ready event
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
   }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This file configures the analyzer, which statically analyzes Dart code to
 # check for errors, warnings, and lints.
 #
@@ -27,3 +28,13 @@ linter:
     unused_local_variable: ignore
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+=======
+include: package:flutter_lints/flutter.yaml
+linter:
+  rules:
+    avoid_print: false  
+    unused_local_variable: ignore
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870

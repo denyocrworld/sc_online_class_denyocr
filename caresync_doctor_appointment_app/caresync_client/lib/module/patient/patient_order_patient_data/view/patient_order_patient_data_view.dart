@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import 'package:hyper_ui/shared/util/validator/validator.dart';
@@ -13,6 +14,10 @@ import 'package:hyper_ui/shared/widget/form/textfield/text_field.dart';
 import '../bloc/patient_order_patient_data_bloc.dart';
 import '../event/patient_order_patient_data_event.dart';
 import '../state/patient_order_patient_data_state.dart';
+=======
+import 'package:get_it/get_it.dart';
+import 'package:hyper_ui/core.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class PatientOrderPatientDataView extends StatefulWidget {
   const PatientOrderPatientDataView({Key? key}) : super(key: key);
@@ -29,7 +34,17 @@ class _PatientOrderPatientDataViewState
 
   @override
   void initState() {
+<<<<<<< HEAD
     bloc.initState();
+=======
+    if (GetIt.I.isRegistered<PatientOrderPatientDataBloc>())
+      GetIt.I.unregister<PatientOrderPatientDataBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 
@@ -100,7 +115,11 @@ class _PatientOrderPatientDataViewState
                       QTextField(
                         label: "Full name",
                         validator: Validator.required,
+<<<<<<< HEAD
                         value: null,
+=======
+                        value: state.fullName,
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
                         onChanged: (value) {
                           state.fullName = value;
                         },
@@ -111,7 +130,11 @@ class _PatientOrderPatientDataViewState
                       QDatePicker(
                         label: "Birth date",
                         validator: Validator.required,
+<<<<<<< HEAD
                         value: null,
+=======
+                        value: DateTime.tryParse(state.birthDate.toString()),
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
                         onChanged: (value) {
                           state.birthDate = DateFormat("y-MM-dd").format(value);
                         },
@@ -122,6 +145,10 @@ class _PatientOrderPatientDataViewState
                       QRadioField2(
                         label: "Gender",
                         validator: Validator.atLeastOneitem,
+<<<<<<< HEAD
+=======
+                        value: state.gender,
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
                         items: [
                           {
                             "label": "Female",
@@ -142,7 +169,11 @@ class _PatientOrderPatientDataViewState
                       QTextField(
                         label: "ID Card",
                         validator: Validator.required,
+<<<<<<< HEAD
                         value: null,
+=======
+                        value: state.idCard,
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
                         onChanged: (value) {
                           state.idCard = value;
                         },
@@ -153,7 +184,11 @@ class _PatientOrderPatientDataViewState
                       QMemoField(
                         label: "Address",
                         validator: Validator.required,
+<<<<<<< HEAD
                         value: null,
+=======
+                        value: state.address,
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
                         onChanged: (value) {
                           state.address = value;
                         },

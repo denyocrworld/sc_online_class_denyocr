@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\.plugin_symlinks\geolocator_windows\windows\geolocator_windows.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\.plugin_symlinks\geolocator_windows\windows\geolocator_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\.plugin_symlinks\geolocator_windows\windows\include\geolocator_windows\geolocator_windows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\.plugin_symlinks\geolocator_windows\windows\geolocator_plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\.plugin_symlinks\geolocator_windows\windows\geolocator_enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\.plugin_symlinks\geolocator_windows\windows\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{473675A7-D3F3-3546-89C0-4AF58D3DDF8E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{274DD384-7180-3C71-AC1A-6371A5DC599C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

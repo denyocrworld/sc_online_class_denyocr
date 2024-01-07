@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 import 'package:injectable/injectable.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
+<<<<<<< HEAD
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class StepNavigation extends StatefulWidget {
   final List<String> navigations;
@@ -23,7 +29,10 @@ class StepNavigation extends StatefulWidget {
   State<StepNavigation> createState() => StepNavigationController();
 }
 
+<<<<<<< HEAD
 // @singleton
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 class StepNavigationController extends State<StepNavigation> {
   static late StepNavigationController instance;
   int selectedIndex = 0;

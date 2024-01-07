@@ -10,11 +10,14 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/model/doctor/doctor.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/module/patient/patient_doctor_detail/model/patient_doctor_detail_schedule_list.dart';
 import 'package:hyper_ui/module/patient/patient_order/view/patient_order_view.dart';
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import 'package:hyper_ui/state_util.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class PatientDoctorDetaulSchedules extends StatelessWidget {
   final Doctor doctor;

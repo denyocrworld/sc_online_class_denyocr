@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+<<<<<<< HEAD
+=======
+import 'package:get_it/get_it.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 import '../bloc/doctor_main_navigation_bloc.dart';
 import '../event/doctor_main_navigation_event.dart';
 import '../state/doctor_main_navigation_state.dart';
@@ -17,7 +21,17 @@ class _DoctorMainNavigationViewState extends State<DoctorMainNavigationView> {
 
   @override
   void initState() {
+<<<<<<< HEAD
     bloc.initState();
+=======
+    if (GetIt.I.isRegistered<DoctorMainNavigationBloc>())
+      GetIt.I.unregister<DoctorMainNavigationBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 

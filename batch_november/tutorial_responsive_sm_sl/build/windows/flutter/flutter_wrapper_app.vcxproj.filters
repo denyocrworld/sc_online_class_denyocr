@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2ED362AC-6B87-37EB-BC98-65E57A42F3AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{274DD384-7180-3C71-AC1A-6371A5DC599C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

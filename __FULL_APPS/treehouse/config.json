@@ -1,0 +1,26 @@
+{
+    "modules": [
+        "welcome",
+        "login",
+        "sign_up",
+        "user_main_navigation",
+        "user_dashboard",
+        "user_profile",
+        "user_course_list",
+        "user_course_favorite_list",
+        "user_course_detail",
+        "user_search_category_list",
+        "admin_main_navigation",
+        "admin_dashboard",
+        "admin_profile"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": false,
+    "ignore_core_generator_for_directories": [
+        "lib/model",
+        "lib/models"
+    ]
+}

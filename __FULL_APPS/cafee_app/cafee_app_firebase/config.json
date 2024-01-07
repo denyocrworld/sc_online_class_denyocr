@@ -1,0 +1,31 @@
+{
+    "modules": [
+        "login",
+        "register",
+        "main_navigation",
+        "dashboard",
+        "order",
+        "profile",
+        "edit_profile",
+        "product_detail",
+        "product_list",
+        "category_list",
+        "cart",
+        "product_crud_list",
+        "product_crud_form",
+        "product_category_crud_list",
+        "product_category_crud_form",
+        "pos",
+        "pos_payment",
+        "data_manager"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": true,
+    "ignore_core_generator_for_directories": [
+        "lib/model",
+        "lib/models"
+    ]
+}

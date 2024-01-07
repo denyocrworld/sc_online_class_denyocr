@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hyper_ui/core.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/shared/theme/theme_config.dart';
 import 'package:hyper_ui/shared/widget/container/qcontainer.dart';
 import '../bloc/patient_order_detail_bloc.dart';
 import '../event/patient_order_detail_event.dart';
 import '../state/patient_order_detail_state.dart';
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class PatientOrderDetailView extends StatefulWidget {
   PatientOrderDetailView({
@@ -18,17 +21,35 @@ class PatientOrderDetailView extends StatefulWidget {
 }
 
 class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
+<<<<<<< HEAD
   // PatientOrderDetailBloc bloc = PatientOrderDetailBloc();
 
   @override
   void initState() {
     // bloc.initState();
+=======
+  PatientOrderDetailBloc bloc = PatientOrderDetailBloc();
+
+  @override
+  void initState() {
+    if (GetIt.I.isRegistered<PatientOrderDetailBloc>())
+      GetIt.I.unregister<PatientOrderDetailBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 
   @override
   void dispose() {
+<<<<<<< HEAD
     // bloc.dispose();
+=======
+    bloc.dispose();
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.dispose();
   }
 
@@ -72,12 +93,17 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
     //     ),
     //   );
     // });
+<<<<<<< HEAD
     return MultiBlocProvider(
       providers: [
         BlocProvider<PatientOrderDetailBloc>(
           create: (BuildContext context) => PatientOrderDetailBloc(),
         ),
       ],
+=======
+    return BlocProvider(
+      create: (BuildContext context) => bloc,
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
       child: BlocListener<PatientOrderDetailBloc, PatientOrderDetailState>(
         listener: (context, state) {},
         child: BlocBuilder<PatientOrderDetailBloc, PatientOrderDetailState>(
@@ -100,8 +126,12 @@ class _PatientOrderDetailViewState extends State<PatientOrderDetailView> {
     PatientOrderDetailBloc bloc,
     PatientOrderDetailState state,
   ) {
+<<<<<<< HEAD
     GetIt getIt = GetIt.instance;
     final patientDoctorDetailBloc = getIt<PatientDoctorDetailBloc>();
+=======
+    final patientDoctorDetailBloc = GetIt.I<PatientDoctorDetailBloc>();
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     final doctor = patientDoctorDetailBloc.state.doctor!;
     final schedule = patientDoctorDetailBloc.state.schedule!;
 

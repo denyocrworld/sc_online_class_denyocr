@@ -1,0 +1,6 @@
+{
+  "getit": {
+    "prefix": "getit",
+    "body": "GetIt.I<LoginBloc>();"
+  }
+}

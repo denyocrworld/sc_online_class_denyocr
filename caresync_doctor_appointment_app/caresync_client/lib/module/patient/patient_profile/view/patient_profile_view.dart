@@ -1,11 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/core.dart';
 import 'package:hyper_ui/shared/widget/container/qcontainer.dart';
 import '../bloc/patient_profile_bloc.dart';
 import '../event/patient_profile_event.dart';
 import '../state/patient_profile_state.dart';
+=======
+import 'package:get_it/get_it.dart';
+import 'package:hyper_ui/core.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class PatientProfileView extends StatefulWidget {
   PatientProfileView({Key? key}) : super(key: key);
@@ -19,7 +24,17 @@ class _PatientProfileViewState extends State<PatientProfileView> {
 
   @override
   void initState() {
+<<<<<<< HEAD
     bloc.initState();
+=======
+    if (GetIt.I.isRegistered<PatientProfileBloc>())
+      GetIt.I.unregister<PatientProfileBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 

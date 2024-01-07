@@ -1,0 +1,10 @@
+^D:\FLUTTER_PROJECT\__SC_ONLINE_CLASS_DENYOCR\BATCH_NOVEMBER\TUTORIAL_RESPONSIVE_SM_SL\BUILD\WINDOWS\_DEPS\NUGET-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/FLUTTER_PROJECT/__sc_online_class_denyocr/batch_november/tutorial_responsive_sm_sl/build/windows/_deps/nuget-subbuild -BD:/FLUTTER_PROJECT/__sc_online_class_denyocr/batch_november/tutorial_responsive_sm_sl/build/windows/_deps/nuget-subbuild --check-stamp-file D:/FLUTTER_PROJECT/__sc_online_class_denyocr/batch_november/tutorial_responsive_sm_sl/build/windows/_deps/nuget-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

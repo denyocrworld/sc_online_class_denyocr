@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hyper_ui/core.dart';
 import '../bloc/login_bloc.dart';
 import '../event/login_event.dart';
 import '../state/login_state.dart';
+=======
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:hyper_ui/core.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class LoginView extends StatefulWidget {
   LoginView({Key? key}) : super(key: key);
@@ -18,7 +24,17 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   void initState() {
+<<<<<<< HEAD
     bloc.initState();
+=======
+    if (GetIt.I.isRegistered<LoginBloc>())
+      GetIt.I.unregister<LoginBloc>();
+    GetIt.I.registerSingleton(bloc);
+    bloc.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => bloc.ready(),
+    );
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
     super.initState();
   }
 

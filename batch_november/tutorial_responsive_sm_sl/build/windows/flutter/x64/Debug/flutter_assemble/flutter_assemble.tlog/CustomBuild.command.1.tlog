@@ -1,0 +1,28 @@
+^D:\FLUTTER_PROJECT\__SC_ONLINE_CLASS_DENYOCR\BATCH_NOVEMBER\TUTORIAL_RESPONSIVE_SM_SL\BUILD\WINDOWS\CMAKEFILES\453F68587754CA9368CC21508E4A66BE\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=c:\flutter PROJECT_DIR=D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl FLUTTER_ROOT=c:\flutter FLUTTER_EPHEMERAL_DIR=D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\windows\flutter\ephemeral PROJECT_DIR=D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl FLUTTER_TARGET=D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC83NjdkOGM3NWU4OTgwOTFiOTI1NTE5ODAzODMwZmMyNzIxNjU4ZDA3Lw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\FLUTTER_PROJECT\__sc_online_class_denyocr\batch_november\tutorial_responsive_sm_sl\.dart_tool\package_config.json c:/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\FLUTTER_PROJECT\__SC_ONLINE_CLASS_DENYOCR\BATCH_NOVEMBER\TUTORIAL_RESPONSIVE_SM_SL\BUILD\WINDOWS\CMAKEFILES\53CEF279DFEFDF61BF354D4B9B344079\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\FLUTTER_PROJECT\__SC_ONLINE_CLASS_DENYOCR\BATCH_NOVEMBER\TUTORIAL_RESPONSIVE_SM_SL\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/FLUTTER_PROJECT/__sc_online_class_denyocr/batch_november/tutorial_responsive_sm_sl/windows -BD:/FLUTTER_PROJECT/__sc_online_class_denyocr/batch_november/tutorial_responsive_sm_sl/build/windows --check-stamp-file D:/FLUTTER_PROJECT/__sc_online_class_denyocr/batch_november/tutorial_responsive_sm_sl/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

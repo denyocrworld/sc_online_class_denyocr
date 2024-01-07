@@ -29,6 +29,7 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
       children: [
         Container(
           width: MediaQuery.of(context).size.width,
+<<<<<<< HEAD
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             clipBehavior: Clip.antiAlias,
@@ -69,12 +70,24 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
                   ),
                 );
 
+=======
+          child: Row(
+              children: List.generate(widget.headers.length, (index) {
+            var header = widget.headers[index];
+            bool selected = selectedIndex == index;
+
+            if (selected)
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
               return InkWell(
                 onTap: () => updateIndex(index),
                 child: Container(
                   padding: const EdgeInsets.all(12.0),
                   decoration: BoxDecoration(
+<<<<<<< HEAD
                     color: Color(0xfff3f3f3),
+=======
+                    color: Colors.white,
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(
                         4.0,
@@ -92,13 +105,18 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
                     child: Text(
                       "$header",
                       style: TextStyle(
+<<<<<<< HEAD
                         color: Colors.grey,
+=======
+                        color: infoColor,
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
                         fontSize: 12.0,
                       ),
                     ),
                   ),
                 ),
               );
+<<<<<<< HEAD
             })),
           ),
         ),
@@ -108,6 +126,42 @@ class _CustomTabNavigationState extends State<CustomTabNavigation> {
             children: widget.children,
           ),
         ),
+=======
+
+            return InkWell(
+              onTap: () => updateIndex(index),
+              child: Container(
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                  color: Color(0xfff3f3f3),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(
+                      4.0,
+                    ),
+                    topRight: Radius.circular(
+                      4.0,
+                    ),
+                  ),
+                  border: Border.all(
+                    width: 1.0,
+                    color: Colors.grey[300]!,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    "$header",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12.0,
+                    ),
+                  ),
+                ),
+              ),
+            );
+          })),
+        ),
+        widget.children[selectedIndex],
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
       ],
     );
   }

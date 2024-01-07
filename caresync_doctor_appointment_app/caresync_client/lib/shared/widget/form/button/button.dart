@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hyper_ui/core.dart';
+<<<<<<< HEAD
 import 'package:hyper_ui/shared/theme/theme_size.dart';
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 
 class QButton extends StatelessWidget {
   final String label;

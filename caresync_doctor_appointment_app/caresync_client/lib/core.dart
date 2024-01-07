@@ -3,18 +3,25 @@ We believe, the class name must be unique.
 If there is a conflicting class name in this file,
 it means you have to rename it to something more unique.
 */
+<<<<<<< HEAD
+=======
+export 'package:hyper_ui/bloc_util.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 export 'package:hyper_ui/config.dart';
 export 'package:hyper_ui/core_package.dart';
 export 'package:hyper_ui/demo.dart';
 export 'package:hyper_ui/firebase_options.dart';
 export 'package:hyper_ui/injection.config.dart';
 export 'package:hyper_ui/injection.dart';
+<<<<<<< HEAD
 // export 'package:hyper_ui/model/doctor/doctor.dart';
 // export 'package:hyper_ui/model/doctor/doctor_schedule.dart';
 // export 'package:hyper_ui/model/doctor/hospital.dart';
 // export 'package:hyper_ui/model/doctor/specialization.dart';
 // export 'package:hyper_ui/model/order/order.dart';
 // export 'package:hyper_ui/model/order/schedule.dart';
+=======
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
 export 'package:hyper_ui/module/auth/login/bloc/login_bloc.dart';
 export 'package:hyper_ui/module/auth/login/event/login_event.dart';
 export 'package:hyper_ui/module/auth/login/state/login_state.dart';
@@ -162,7 +169,15 @@ export 'package:hyper_ui/shared/widget/navigation/custom_tab_navigation/custom_t
 export 'package:hyper_ui/shared/widget/step_navigation/step_navigation.dart';
 export 'package:hyper_ui/shared/widget/typography/heading.dart';
 export 'package:hyper_ui/shared/widget/widget_demo/widget_demo.dart';
+<<<<<<< HEAD
 export 'package:hyper_ui/state_util.dart';
 export 'package:hyper_ui/test.dart';
 export 'core_package.dart';
 export 'setup.dart';
+=======
+export 'package:hyper_ui/snippet.dart';
+export 'package:hyper_ui/state_util.dart';
+export 'package:hyper_ui/test.dart';
+export 'core_package.dart';
+export 'setup.dart';
+>>>>>>> 029e828ba1fa19a5c181eaeabecf7dd320d61870
